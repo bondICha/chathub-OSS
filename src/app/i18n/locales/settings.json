@@ -694,5 +694,149 @@
     "ja": "クリップボードにコピーしました",
     "zh-CN": "",
     "zh-TW": ""
+  },
+  "Settings Assistant": {
+    "en": "Settings Assistant",
+    "ja": "設定アシスタント",
+    "zh-CN": "设置助手",
+    "zh-TW": "設定助手"
+  },
+  "Ask about settings": {
+    "en": "Ask about your settings",
+    "ja": "設定について質問する",
+    "zh-CN": "询问您的设置",
+    "zh-TW": "詢問您的設定"
+  },
+  "Settings Chat Placeholder": {
+    "en": "Ask about your settings...",
+    "ja": "設定について質問してください...",
+    "zh-CN": "询问您的设置...",
+    "zh-TW": "詢問您的設定..."
+  },
+  "Settings Chat No Bot": {
+    "en": "No chatbots configured. Please add a chatbot in settings first.",
+    "ja": "チャットボットが設定されていません。先にチャットボットを追加してください。",
+    "zh-CN": "没有配置聊天机器人。请先在设置中添加一个聊天机器人。",
+    "zh-TW": "沒有配置聊天機器人。請先在設定中添加一個聊天機器人。"
+  },
+  "Settings Chat Security Note": {
+    "en": "Ask me anything about your current settings. API keys and endpoint URLs are never shared with the AI.",
+    "ja": "現在の設定について何でも聞いてください。APIキーとエンドポイントURLはAIには送信されません。",
+    "zh-CN": "请随意询问您当前的设置。API密钥和端点URL不会发送给AI。",
+    "zh-TW": "請隨意詢問您當前的設定。API密鑰和端點URL不會發送給AI。"
+  },
+  "Settings Chat Security Note Short": {
+    "en": "API keys excluded",
+    "ja": "APIキーは除外済み",
+    "zh-CN": "API密钥已排除",
+    "zh-TW": "API密鑰已排除"
+  },
+  "Settings Proposal Label": {
+    "en": "Settings change proposed",
+    "ja": "設定変更の提案",
+    "zh-CN": "提议更改设置",
+    "zh-TW": "建議更改設定"
+  },
+  "Add Chatbot": {
+    "en": "Add chatbot",
+    "ja": "チャットボットを追加",
+    "zh-CN": "添加聊天机器人",
+    "zh-TW": "添加聊天機器人"
+  },
+  "Update Chatbot": {
+    "en": "Update chatbot",
+    "ja": "チャットボットを更新",
+    "zh-CN": "更新聊天机器人",
+    "zh-TW": "更新聊天機器人"
+  },
+  "Update General Settings": {
+    "en": "Update general settings",
+    "ja": "一般設定を更新",
+    "zh-CN": "更新常规设置",
+    "zh-TW": "更新一般設定"
+  },
+  "Review & Apply": {
+    "en": "Review & Apply",
+    "ja": "確認して適用",
+    "zh-CN": "查看并应用",
+    "zh-TW": "查看並應用"
+  },
+  "Review Settings Change": {
+    "en": "Review Settings Change",
+    "ja": "設定変更の確認",
+    "zh-CN": "确认设置更改",
+    "zh-TW": "確認設定更改"
+  },
+  "Settings Apply Add Chatbot Label": {
+    "en": "Adding chatbot",
+    "ja": "追加するチャットボット",
+    "zh-CN": "添加聊天机器人",
+    "zh-TW": "添加聊天機器人"
+  },
+  "Settings Apply Update Chatbot Label": {
+    "en": "Updating chatbot",
+    "ja": "更新するチャットボット",
+    "zh-CN": "更新聊天机器人",
+    "zh-TW": "更新聊天機器人"
+  },
+  "Settings Apply Update General Label": {
+    "en": "General settings",
+    "ja": "一般設定",
+    "zh-CN": "常规设置",
+    "zh-TW": "一般設定"
+  },
+  "Settings Apply Credentials Note": {
+    "en": "Enter credentials below. They are stored locally and never sent to the AI.",
+    "ja": "認証情報を入力してください。ローカルに保存され、AIには送信されません。",
+    "zh-CN": "请在下方输入凭据。它们将存储在本地，不会发送给AI。",
+    "zh-TW": "請在下方輸入憑據。它們將存儲在本地，不會發送給AI。"
+  },
+  "API Key": {
+    "en": "API Key",
+    "ja": "APIキー",
+    "zh-CN": "API密钥",
+    "zh-TW": "API密鑰"
+  },
+  "API Host": {
+    "en": "API Host",
+    "ja": "APIホスト",
+    "zh-CN": "API主机",
+    "zh-TW": "API主機"
+  },
+  "optional": {
+    "en": "optional",
+    "ja": "省略可",
+    "zh-CN": "可选",
+    "zh-TW": "可選"
+  },
+  "Settings Apply Not Saved Note": {
+    "en": "Changes will be added to settings but not saved until you click Save Changes.",
+    "ja": "変更は設定に反映されますが、「変更を保存」をクリックするまで保存されません。",
+    "zh-CN": "更改将添加到设置中，但在您点击「保存更改」之前不会保存。",
+    "zh-TW": "更改將添加到設定中，但在您點擊「保存更改」之前不會保存。"
+  },
+  "Apply to Settings": {
+    "en": "Apply to Settings",
+    "ja": "設定に適用",
+    "zh-CN": "应用到设置",
+    "zh-TW": "應用到設定"
+  },
+  "Select bot": {
+    "en": "Select bot",
+    "ja": "ボットを選択",
+    "zh-CN": "选择机器人",
+    "zh-TW": "選擇機器人"
+  },
+  "No bot": {
+    "en": "No bot configured",
+    "ja": "ボット未設定",
+    "zh-CN": "未配置机器人",
+    "zh-TW": "未配置機器人"
+  },
+  "Cancel": {
+    "en": "Cancel",
+    "ja": "キャンセル",
+    "zh-CN": "取消",
+    "zh-TW": "取消"
   }
 }
