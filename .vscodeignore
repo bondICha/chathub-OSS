@@ -1,0 +1,13 @@
+.vscode/**
+.gitignore
+src/**
+node_modules/**
+esbuild.mjs
+vite.config.ts
+tsconfig.json
+tsconfig.extension.json
+tailwind.config.cjs
+postcss.config.cjs
+global.d.ts
+**/*.map
+references/**

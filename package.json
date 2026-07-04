@@ -1,0 +1,177 @@
+{
+  "name": "huddlellm-vscode",
+  "displayName": "HuddleLLM",
+  "description": "Chat with multiple AI APIs together, side by side, inside VS Code",
+  "version": "0.1.0",
+  "publisher": "huddlellm",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "huddlellm.open",
+        "title": "Open Chat",
+        "category": "HuddleLLM"
+      },
+      {
+        "command": "huddlellm.openSettings",
+        "title": "Open Settings",
+        "category": "HuddleLLM"
+      },
+      {
+        "command": "huddlellm.openHistory",
+        "title": "Open History",
+        "category": "HuddleLLM"
+      },
+      {
+        "command": "huddlellm.quickAsk",
+        "title": "Quick Ask",
+        "category": "HuddleLLM"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "huddlellm.open",
+        "key": "alt+j",
+        "mac": "cmd+j alt+j"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "huddlellm",
+          "title": "HuddleLLM",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "huddlellm": [
+        {
+          "type": "webview",
+          "id": "huddlellm.sidePanel",
+          "name": "Chat"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.extension.json",
+    "build:webview": "vite build",
+    "build:extension": "node esbuild.mjs --production",
+    "build": "npm run check-types && npm run build:webview && npm run build:extension",
+    "watch:webview": "vite build --watch",
+    "watch:extension": "node esbuild.mjs --watch",
+    "vscode:prepublish": "npm run build:webview && npm run build:extension",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@headlessui/tailwindcss": "^0.2.0",
+    "@types/humanize-duration": "^3.27.3",
+    "@types/lodash-es": "^4.17.12",
+    "@types/md5": "^2.3.5",
+    "@types/node": "^20.14.0",
+    "@types/react": "18.2.45",
+    "@types/react-color": "^3.0.10",
+    "@types/react-dom": "18.2.18",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/turndown": "^5.0.4",
+    "@types/uuid": "^9.0.7",
+    "@types/vscode": "^1.90.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "esbuild": "^0.24.0",
+    "postcss": "^8.4.32",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^12.0.2",
+    "process": "^0.11.10",
+    "sass": "^1.69.5",
+    "tailwind-scrollbar": "^3.0.5",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "vite": "5.4.11",
+    "vite-tsconfig-paths": "^4.2.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.755.0",
+    "@epic-web/cachified": "^4.0.0",
+    "@floating-ui/react": "^0.26.4",
+    "@google/genai": "^1.31.0",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.1.1",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@tanstack/react-router": "^1.43.6",
+    "antd": "^5.24.3",
+    "async-cache-dedupe": "^2.0.0",
+    "browser-fs-access": "^0.35.0",
+    "browser-image-compression": "^2.0.2",
+    "clsx": "^2.0.0",
+    "compare-versions": "^6.1.0",
+    "dayjs": "^1.11.10",
+    "eventsource-parser": "^1.1.1",
+    "framer-motion": "^10.16.16",
+    "fuse.js": "^7.0.0",
+    "github-markdown-css": "5.8.1",
+    "gpt3-tokenizer": "^1.1.5",
+    "highlight.js": "^11.9.0",
+    "humanize-duration": "^3.31.0",
+    "i18next": "^23.7.11",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "immer": "^10.0.3",
+    "inter-ui": "^3.19.3",
+    "jotai": "^2.6.0",
+    "jotai-immer": "^0.2.0",
+    "js-base64": "^3.7.5",
+    "katex": "^0.16.45",
+    "lodash-es": "^4.17.21",
+    "lucide-react": "^0.394.0",
+    "md5": "^2.3.0",
+    "mermaid": "^11.14.0",
+    "nanoid": "^5.0.4",
+    "ofetch": "^1.3.3",
+    "pdfjs-dist": "^5.4.54",
+    "react": "18.2.0",
+    "react-color": "^2.19.3",
+    "react-confetti-explosion": "^2.1.2",
+    "react-copy-to-clipboard-ts": "^1.1.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-i18next": "^13.5.0",
+    "react-icons": "^5.4.0",
+    "react-markdown": "^10.1.0",
+    "react-node-to-string": "^0.1.2",
+    "react-spinners": "^0.13.8",
+    "react-syntax-highlighter": "^15.6.1",
+    "react-textarea-autosize": "^8.5.3",
+    "react-viewport-list": "^7.1.2",
+    "rehype-external-links": "^3.0.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-breaks": "^4.0.0",
+    "remark-directive": "^3.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "remark-sub-super": "^1.0.21",
+    "remark-supersub": "^1.0.0",
+    "slashes": "^3.0.12",
+    "styled-components": "^6.1.15",
+    "swr": "^2.2.4",
+    "tailwind-merge": "^2.1.0",
+    "turndown": "^7.1.2",
+    "unified": "^11.0.5",
+    "use-stick-to-bottom": "^1.1.1",
+    "uuid": "^9.0.1"
+  }
+}

@@ -1,0 +1,842 @@
+{
+  "General": {
+    "en": "General",
+    "ja": "一般",
+    "zh-CN": "常规",
+    "zh-TW": "一般"
+  },
+  "Toggle sidebar": {
+    "en": "Toggle sidebar",
+    "ja": "サイドバーの表示切替",
+    "zh-CN": "切换侧边栏",
+    "zh-TW": "切換側邊欄"
+  },
+  "Chatbots": {
+    "en": "Chatbots",
+    "ja": "Chatbots",
+    "zh-CN": "Chatbots",
+    "zh-TW": "Chatbots"
+  },
+  "Danger Zone": {
+    "en": "Danger Zone",
+    "ja": "危険ゾーン",
+    "zh-CN": "危险区域",
+    "zh-TW": "危險區域"
+  },
+  "Drawer Menu": {
+    "en": "Drawer Menu",
+    "ja": "引き出しメニュー: ボタンを押すと表示",
+    "zh-CN": "抽屉菜单: 侧边栏完全隐藏",
+    "zh-TW": "抽屜選單（側邊欄完全隱藏）"
+  },
+  "Sidebar Display Mode": {
+    "en": "Sidebar Mode",
+    "ja": "サイドバー表示モード",
+    "zh-CN": "侧边栏显示模式",
+    "zh-TW": "側邊欄顯示模式"
+  },
+  "Auto (Dynamic based on screen size)": {
+    "en": "Auto (based on screen width)",
+    "ja": "自動（画面幅による）",
+    "zh-CN": "自动（根据屏幕幅）",
+    "zh-TW": "自動（根據螢幕尺寸）"
+  },
+  "Fixed Sidebar": {
+    "en": "Static Sidebar",
+    "ja": "常に表示",
+    "zh-CN": "固定侧边栏",
+    "zh-TW": "固定側邊欄"
+  },
+  "All-In-One": {
+    "en": "All-In-One",
+    "ja": "All-In-One",
+    "zh-CN": "All-In-One",
+    "zh-TW": "All-In-One"
+  },
+  "All-in-One: Not enough enabled models": {
+    "en": "All-in-One: Not enough enabled models. Please enable at least {{count}} models in settings.",
+    "ja": "All-in-One: 有効なモデルが不足しています。設定で少なくとも{{count}}個のモデルを有効にしてください。",
+    "zh-CN": "All-in-One：启用的模型不足。请在设置中至少启用{{count}}个模型。",
+    "zh-TW": "All-in-One：啟用的模型不足。請在設定中至少啟用{{count}}個模型。"
+  },
+  "All-in-One: Failed to resolve models": {
+    "en": "All-in-One: Failed to resolve enabled models. Please check your settings.",
+    "ja": "All-in-One: 有効なモデルの取得に失敗しました。設定を確認してください。",
+    "zh-CN": "All-in-One：无法获取已启用的模型。请检查您的设置。",
+    "zh-TW": "All-in-One：無法取得已啟用的模型。請檢查您的設定。"
+  },
+  "Font Type": {
+    "en": "Font Type",
+    "ja": "書体種別",
+    "zh-CN": "字体类型",
+    "zh-TW": "字體類型"
+  },
+  "AI Title Generation": {
+    "en": "AI Title Generation",
+    "ja": "AIタイトル生成",
+    "zh-CN": "AI标题生成",
+    "zh-TW": "AI標題生成"
+  },
+  "Do not generate title": {
+    "en": "Do not generate title",
+    "ja": "タイトルを生成しない",
+    "zh-CN": "不生成标题",
+    "zh-TW": "不生成標題"
+  },
+  "AI Title Generation Prompt Description": {
+    "en": "Automatically generate session names from conversation content. Select a chatbot to use for title generation.",
+    "ja": "会話内容からセッション名を自動生成します。タイトル生成に使用するチャットボットを選択してください。",
+    "zh-CN": "根据对话内容自动生成会话名称。请选择用于标题生成的聊天机器人。",
+    "zh-TW": "根據對話內容自動生成工作階段名稱。請選擇用於標題生成的聊天機器人。"
+  },
+  "Update title every turn": {
+    "en": "Update title every turn",
+    "ja": "毎回のチャットでタイトルを更新",
+    "zh-CN": "每次对话时更新标题",
+    "zh-TW": "每次對話時更新標題"
+  },
+  "Do not show again": {
+    "en": "Do not show again",
+    "ja": "今後表示しない",
+    "zh-CN": "不再显示",
+    "zh-TW": "不再顯示"
+  },
+  "Title Generation Language": {
+    "en": "Title Generation Language",
+    "ja": "タイトル生成言語",
+    "zh-CN": "标题生成语言",
+    "zh-TW": "標題生成語言"
+  },
+  "Title language hint": {
+    "en": "English is not available — English words are too long to fit in compact spaces like tab titles and history lists. Japanese and Chinese express the same meaning in far fewer characters.",
+    "ja": "英語は選択できません。英単語は1語あたりの文字数が多く、タブタイトルや履歴リストの限られたスペースに収まりにくいためです。",
+    "zh-CN": "不支持英语：英文单词过长，无法在标签标题、历史记录等紧凑空间中正常显示。日语和中文可用较少汉字表达相同含义。",
+    "zh-TW": "不支援英語：英文單詞較長，無法在標籤標題、歷史記錄等有限空間中完整顯示。日語和中文可用較少漢字表達相同含義。"
+  },
+  "Sans-serif (Gothic)": {
+    "en": "Sans-serif (Gothic)",
+    "ja": "ゴシック体",
+    "zh-CN": "黑体",
+    "zh-TW": "Gothic Style"
+  },
+  "Serif (Mincho)": {
+    "en": "Serif (Tomorrow Morning)",
+    "ja": "明朝体",
+    "zh-CN": "明朝体",
+    "zh-TW": "Min Dynasty Style"
+  },
+  "Your browser does not support the video tag.": {
+    "en": "Your browser does not support the video tag.",
+    "ja": "お使いのブラウザは動画タグをサポートしていません。",
+    "zh-CN": "您的浏览器不支持视频标签。",
+    "zh-TW": "您の瀏覽器不支援影片標籤。"
+  },
+  "Settings": {
+    "en": "Settings",
+    "ja": "設定",
+    "zh-CN": "设置",
+    "zh-TW": "設置"
+  },
+  "Startup page": {
+    "en": "Startup page",
+    "ja": "起動ページ",
+    "zh-CN": "启动页面",
+    "zh-TW": "啟動頁面"
+  },
+  "Saved Pairs": {
+    "en": "Saved Pairs",
+    "ja": "保存済みペア",
+    "zh-CN": "已保存的对话组",
+    "zh-TW": "已儲存的對話組"
+  },
+  "Individual Bots": {
+    "en": "Individual Bots",
+    "ja": "個別ボット",
+    "zh-CN": "独立机器人",
+    "zh-TW": "個別機器人"
+  },
+  "Show session restore on startup": {
+    "en": "Show session restore on startup",
+    "ja": "起動時に履歴再開を表示",
+    "zh-CN": "Show session restore on startup",
+    "zh-TW": "Show session restore on startup"
+  },
+  "Chatbots configuration": {
+    "en": "Chatbots configuration",
+    "ja": "チャットボットの設定",
+    "zh-CN": "聊天机器人配置",
+    "zh-TW": "聊天機器人配置"
+  },
+  "Save changes": {
+    "en": "Save changes",
+    "ja": "変更を保存する",
+    "zh-CN": "保存更改",
+    "zh-TW": "保存更改"
+  },
+  "Shortcut to open this app": {
+    "en": "Shortcut to open this app",
+    "ja": "このアプリを開くショートカット",
+    "zh-CN": "打开ChatHub的快捷键",
+    "zh-TW": "打開ChatHubの快捷鍵"
+  },
+  "Change shortcut": {
+    "en": "Change shortcut",
+    "ja": "ショートカットの変更",
+    "zh-CN": "修改快捷键",
+    "zh-TW": "修改快捷鍵"
+  },
+  "More layouts in All-In-One mode": {
+    "en": "More layouts in All-In-One mode",
+    "ja": "All-In-Oneモードでより多くのレイアウト",
+    "zh-CN": "解锁All-In-One模式下更多布局",
+    "zh-TW": "解鎖All-In-One模式下更多佈局"
+  },
+  "Chat with more than 2 bots simultaneously": {
+    "en": "Chat with more than 2 bots simultaneously",
+    "ja": "2つ以上のボットと同時にチャットする",
+    "zh-CN": "同时和两个以上的机器人聊天",
+    "zh-TW": "同時與超過2個機器人聊天"
+  },
+  "Customize theme": {
+    "en": "Customize theme",
+    "ja": "テーマのカスタマイズ",
+    "zh-CN": "自定义主题",
+    "zh-TW": "自定義主題"
+  },
+  "Quick access in Chrome side bar": {
+    "en": "Quick access in Chrome side bar",
+    "ja": "Chromeサイドバーでのクイックアクセス",
+    "zh-CN": "在Chrome侧边栏快速访问",
+    "zh-TW": "在Chrome側邊欄快速訪問"
+  },
+  "Import Export Panel": {
+    "en": "Import Export Panel",
+    "ja": "Import Export Panel",
+    "zh-CN": "导入导出面板",
+    "zh-TW": "導入導出面板"
+  },
+  "All Import Export　（Including API Key）": {
+    "en": "All Import Export (Including API Key)",
+    "ja": "全データのImport・Export（APIキーを含む）",
+    "zh-CN": "全数据导入导出（包含API密钥）",
+    "zh-TW": "全數據導入導出（包含API密鑰）"
+  },
+  "Data includes all your settings, api key, chat histories, and local prompts. Do not share API Key with someone elses.": {
+    "en": "Data includes all your settings, API key, chat histories, and local prompts. Do not share API Key with others.",
+    "ja": "設定、APIキー、チャット履歴、ローカルプロンプトなどすべてのデータが含まれます。APIキーを他人と共有しないでください。",
+    "zh-CN": "数据包括您的所有设置、API密钥、聊天历史和本地提示。请勿与他人分享API密钥。",
+    "zh-TW": "數據包括您の所有設置、API密鑰、聊天歷史和本地提示。請勿與他人分享API密鑰。"
+  },
+  "Import ChatBot Settings": {
+    "en": "Import ChatBot Settings",
+    "ja": "チャットボット設定の読み込み",
+    "zh-CN": "导入聊天机器人设置",
+    "zh-TW": "導入聊天機器人設置"
+  },
+  "Override Chatbot": {
+    "en": "Override Chatbot",
+    "ja": "チャットボット設定の上書き",
+    "zh-CN": "替换聊天机器人",
+    "zh-TW": "覆蓋聊天機器人"
+  },
+  "Settings saved. Please reload the extension to reflect changes in the Sidebar.": {
+    "en": "Settings saved. Please reload the extension to reflect changes in the Sidebar.",
+    "ja": "設定が保存されました。Sidebarに変更を反映するには、拡張機能を再読み込みしてください。",
+    "zh-CN": "设置已保存。请重新加载扩展以在侧边栏中反映更改。",
+    "zh-TW": "設置已保存。請重新加載擴展以在側邊欄中反映更改。"
+  },
+  "Settings saved": {
+    "en": "Settings saved",
+    "ja": "設定が保存されました",
+    "zh-CN": "设置已保存",
+    "zh-TW": "設置已保存"
+  },
+  "Export/Import All Data": {
+    "en": "Export/Import All Data",
+    "ja": "すべてのデータのエクスポート/インポート",
+    "zh-CN": "导出/导入数据",
+    "zh-TW": "導出/導入數據"
+  },
+  "Data includes all your settings, chat histories, and local prompts": {
+    "en": "Data includes all your settings, chat histories, and local prompts",
+    "ja": "データにはすべての設定、チャット履歴、ローカルプロンプトが含まれます",
+    "zh-CN": "数据包括所有设置、聊天记录和本地prompts",
+    "zh-TW": "數據包括所有設置、聊天記錄和本地prompts"
+  },
+  "Display": {
+    "en": "Display",
+    "ja": "表示",
+    "zh-CN": "显示",
+    "zh-TW": "顯示"
+  },
+  "Display Settings": {
+    "en": "Display Settings",
+    "ja": "表示設定",
+    "zh-CN": "显示设置",
+    "zh-TW": "顯示設置"
+  },
+  "Theme Mode": {
+    "en": "Theme Mode",
+    "ja": "テーマモード",
+    "zh-CN": "主题模式",
+    "zh-TW": "主題模式"
+  },
+  "Auto": {
+    "en": "Auto",
+    "ja": "自動",
+    "zh-CN": "自动",
+    "zh-TW": "自動"
+  },
+  "Light": {
+    "en": "Light",
+    "ja": "Light",
+    "zh-CN": "Light",
+    "zh-TW": "Light"
+  },
+  "Dark": {
+    "en": "Dark",
+    "ja": "Dark",
+    "zh-CN": "Dark",
+    "zh-TW": "Dark"
+  },
+  "Theme Color": {
+    "en": "Theme Color",
+    "ja": "テーマカラー",
+    "zh-CN": "主题色",
+    "zh-TW": "主題色"
+  },
+  "Follow Arc browser theme": {
+    "en": "Follow Arc browser theme",
+    "ja": "Arcブラウザのテーマカラーに従う",
+    "zh-CN": "跟随Arc浏览器主题色",
+    "zh-TW": "跟隨Arc瀏覽器主題色"
+  },
+  "Display size": {
+    "en": "Display size",
+    "ja": "表示サイズ",
+    "zh-CN": "显示大小",
+    "zh-TW": "顯示大小"
+  },
+  "Language": {
+    "en": "Language",
+    "ja": "言語",
+    "zh-CN": "语言",
+    "zh-TW": "語言"
+  },
+  "Your keys are stored locally": {
+    "en": "Your keys are stored locally",
+    "ja": "キーはローカルに保存されます",
+    "zh-CN": "您的key只会保存在本地",
+    "zh-TW": "您の金鑰只會保存在本地"
+  },
+  "Enable": {
+    "en": "Enable",
+    "ja": "有効",
+    "zh-CN": "启用",
+    "zh-TW": "啟用"
+  },
+  "Disable": {
+    "en": "Disable",
+    "ja": "無効",
+    "zh-CN": "禁用",
+    "zh-TW": "停用"
+  },
+  "Enabled": {
+    "en": "Enabled",
+    "ja": "有効",
+    "zh-CN": "已启用",
+    "zh-TW": "已啟用"
+  },
+  "Disabled": {
+    "en": "Disabled",
+    "ja": "無効",
+    "zh-CN": "已禁用",
+    "zh-TW": "已停用"
+  },
+  "Shortcuts": {
+    "en": "Shortcuts",
+    "ja": "ショートカット",
+    "zh-CN": "快捷方式",
+    "zh-TW": "快捷方式"
+  },
+  "Settings saved. API changes require reload": {
+    "en": "⚠ RELOAD REQUIRED ⚠\n\nSettings saved. API parameter changes will take full effect after reloading the extension.",
+    "ja": "⚠ 要再読み込み ⚠\n\n設定が保存されました。APIパラメータの変更は、拡張機能を再読み込みすると完全に適用されます。",
+    "zh-CN": "⚠ 需要重新加载 ⚠\n\n设置已保存。API参数更改将在重新加载扩展程序后完全生效。",
+    "zh-TW": "⚠ 需要重新載入 ⚠\n\n設定已儲存。API參數變更將在重新載入擴充功能後完全生效。"
+  },
+  "Show Variables": {
+    "en": "Show Variables",
+    "ja": "変数一覧を表示",
+    "zh-CN": "显示变量列表",
+    "zh-TW": "顯示變數列表"
+  },
+  "Show available variables": {
+    "en": "Show available variables",
+    "ja": "利用可能な変数を表示",
+    "zh-CN": "显示可用变量",
+    "zh-TW": "顯示可用變數"
+  },
+  "Variables description": {
+    "en": "These variables in the Common System Message will be replaced with actual values when sent to the AI API:",
+    "ja": "Common System Message内でこれらの変数を使用すると、AI APIに送信する際に実際の値に置き換えられます：",
+    "zh-CN": "在Common System Message中使用这些变量时，发送到AI API时会被替换为实际值：",
+    "zh-TW": "在Common System Message中使用這些變數時，發送到AI API時會被替換為實際值："
+  },
+  "Optimal font display experience for CJK (Chinese, Japanese, Korean)": {
+    "en": "Optimal font display experience for CJK (Chinese, Japanese, Korean)",
+    "ja": "CJK（日中韓）に最適なフォント表示体験",
+    "zh-CN": "为中日韩（CJK）提供最佳字体显示体验",
+    "zh-TW": "CJK（日中韓）最佳字體顯示體驗"
+  },
+  "This application uses Noto CJK fonts. Please download and install them for the best experience:": {
+    "en": "This application uses Noto CJK fonts. Please download and install them for the best experience:",
+    "ja": "このアプリケーションはNoto CJKフォントを使用しています。未インストールの場合は下記からフォントをダウンロードできます。",
+    "zh-CN": "本应用使用 Noto CJK 字体。若尚未安装，可从以下链接下载：",
+    "zh-TW": "本應用使用 Noto CJK 字體。若未安裝，可從以下連結下載："
+  },
+  "Downloading Noto Sans CJK": {
+    "en": "Downloading Noto Sans CJK",
+    "ja": "Noto Sans CJK のダウンロードページ (GitHub)",
+    "zh-CN": "Noto Sans CJK 下载页面（GitHub）",
+    "zh-TW": "Noto Sans CJK 下載頁面（GitHub）"
+  },
+  "Downloading Noto Serif CJK": {
+    "en": "Downloading Noto Serif CJK",
+    "ja": "Noto Serif CJK のダウンロードページ (GitHub)",
+    "zh-CN": "Noto Serif CJK 下载页面（GitHub）",
+    "zh-TW": "Noto Serif CJK 下載頁面（GitHub）"
+  },
+  "Direct download links": {
+    "en": "Direct download links",
+    "ja": "直Link",
+    "zh-CN": "直接下载链接",
+    "zh-TW": "Direct DownloadのLink"
+  },
+  "Noto Sans CJK Variable OTC": {
+    "en": "Noto Sans CJK Variable OTC",
+    "ja": "Noto Sans CJK Variable OTC",
+    "zh-CN": "Noto Sans CJK Variable OTC",
+    "zh-TW": "Noto Sans CJK Variable OTC"
+  },
+  "Noto Sans Mono CJK Variable OTC": {
+    "en": "Noto Sans Mono CJK Variable OTC",
+    "ja": "Noto Sans Mono CJK Variable OTC",
+    "zh-CN": "Noto Sans Mono CJK Variable OTC",
+    "zh-TW": "Noto Sans Mono CJK Variable OTC"
+  },
+  "Noto Serif CJK Variable OTC": {
+    "en": "Noto Serif CJK Variable OTC",
+    "ja": "Noto Serif CJK Variable OTC",
+    "zh-CN": "Noto Serif CJK Variable OTC",
+    "zh-TW": "Noto Serif CJK Variable OTC"
+  },
+  "Quick Settings": {
+    "en": "Quick Settings",
+    "ja": "クイック設定",
+    "zh-CN": "快速设置",
+    "zh-TW": "快速設定"
+  },
+  "Temporary": {
+    "en": "Temporary",
+    "ja": "一時",
+    "zh-CN": "临时",
+    "zh-TW": "暫時"
+  },
+  "Quick settings are temporary and reset on reload": {
+    "en": "Quick settings are temporary and reset on reload",
+    "ja": "クイック設定は一時的です。再読み込みするとリセットされます",
+    "zh-CN": "快速设置仅临时生效，刷新后会重置",
+    "zh-TW": "快速設定僅暫時生效，重新載入後會重設"
+  },
+  "Export/Import Data": {
+    "en": "Export/Import Data",
+    "ja": "データのエクスポート/インポート",
+    "zh-CN": "导出/导入数据",
+    "zh-TW": "匯出/匯入資料"
+  },
+  "Export size warning": {
+    "en": "Your history data is about {{size}} MB. Exporting large data may cause an error (currently being improved). Continue?",
+    "ja": "履歴データが約 {{size}} MB あります。データ量が大きい場合、エクスポート中にエラーが発生する可能性があります（現在改善中です）。続行しますか？",
+    "zh-CN": "历史数据约有 {{size}} MB。数据量较大时，导出过程中可能会出现错误（正在改进中）。是否继续？",
+    "zh-TW": "歷史資料約有 {{size}} MB。資料量較大時，匯出過程中可能會發生錯誤（正在改進中）。是否繼續？"
+  },
+  "Exporting...": {
+    "en": "Exporting...",
+    "ja": "エクスポート中...",
+    "zh-CN": "正在导出...",
+    "zh-TW": "正在匯出..."
+  },
+  "Importing...": {
+    "en": "Importing...",
+    "ja": "インポート中...",
+    "zh-CN": "正在导入...",
+    "zh-TW": "正在匯入..."
+  },
+  "Indexing...": {
+    "en": "Indexing...",
+    "ja": "インデックス作成中...",
+    "zh-CN": "正在建立索引...",
+    "zh-TW": "正在建立索引..."
+  },
+  "Building file...": {
+    "en": "Building file...",
+    "ja": "ファイルを生成中...",
+    "zh-CN": "正在生成文件...",
+    "zh-TW": "正在生成檔案..."
+  },
+  "export_progress_key": {
+    "en": "({{current}}/{{total}}) {{key}}",
+    "ja": "({{current}}/{{total}}) {{key}}",
+    "zh-CN": "({{current}}/{{total}}) {{key}}",
+    "zh-TW": "({{current}}/{{total}}) {{key}}"
+  },
+  "export_progress_key_skipped": {
+    "en": "({{current}}/{{total}}) {{key}} — skipped",
+    "ja": "({{current}}/{{total}}) {{key}} — スキップ",
+    "zh-CN": "({{current}}/{{total}}) {{key}} — 已跳过",
+    "zh-TW": "({{current}}/{{total}}) {{key}} — 已略過"
+  },
+  "Reading file...": {
+    "en": "Reading {{size}}MB file...",
+    "ja": "{{size}}MBのファイルを読み込み中...",
+    "zh-CN": "正在读取 {{size}}MB 文件...",
+    "zh-TW": "正在讀取 {{size}}MB 檔案..."
+  },
+  "Parsing JSON...": {
+    "en": "Parsing JSON...",
+    "ja": "JSONを解析中...",
+    "zh-CN": "正在解析 JSON...",
+    "zh-TW": "正在解析 JSON..."
+  },
+  "Failed to read import file": {
+    "en": "Failed to read import file: {{error}}\n\nFile size: {{size}}MB",
+    "ja": "インポートファイルの読み込みに失敗しました: {{error}}\n\nファイルサイズ: {{size}}MB",
+    "zh-CN": "导入文件读取失败：{{error}}\n\n文件大小：{{size}}MB",
+    "zh-TW": "匯入檔案讀取失敗：{{error}}\n\n檔案大小：{{size}}MB"
+  },
+  "Confirm import overwrite": {
+    "en": "Are you sure you want to import data? This will overwrite your current data.",
+    "ja": "データをインポートしますか？現在のデータは上書きされます。",
+    "zh-CN": "确定要导入数据吗？这将覆盖当前数据。",
+    "zh-TW": "確定要匯入資料嗎？這將覆寫目前資料。"
+  },
+  "Clearing local storage...": {
+    "en": "Clearing local storage...",
+    "ja": "ローカルストレージをクリア中...",
+    "zh-CN": "正在清空本地存储...",
+    "zh-TW": "正在清空本地儲存..."
+  },
+  "Clearing sync storage...": {
+    "en": "Clearing sync storage...",
+    "ja": "同期ストレージをクリア中...",
+    "zh-CN": "正在清空同步存储...",
+    "zh-TW": "正在清空同步儲存..."
+  },
+  "import_progress_local": {
+    "en": "local ({{current}}/{{total}}) {{key}}",
+    "ja": "local ({{current}}/{{total}}) {{key}}",
+    "zh-CN": "local ({{current}}/{{total}}) {{key}}",
+    "zh-TW": "local ({{current}}/{{total}}) {{key}}"
+  },
+  "import_progress_sync": {
+    "en": "sync ({{current}}/{{total}}) {{key}}",
+    "ja": "sync ({{current}}/{{total}}) {{key}}",
+    "zh-CN": "sync ({{current}}/{{total}}) {{key}}",
+    "zh-TW": "sync ({{current}}/{{total}}) {{key}}"
+  },
+  "Restoring localStorage...": {
+    "en": "Restoring localStorage...",
+    "ja": "localStorageを復元中...",
+    "zh-CN": "正在恢复 localStorage...",
+    "zh-TW": "正在還原 localStorage..."
+  },
+  "Requesting host permissions...": {
+    "en": "Requesting host permissions...",
+    "ja": "ホスト権限をリクエスト中...",
+    "zh-CN": "正在请求主机权限...",
+    "zh-TW": "正在請求主機權限..."
+  },
+  "Done.": {
+    "en": "Done.",
+    "ja": "完了。",
+    "zh-CN": "完成。",
+    "zh-TW": "完成。"
+  },
+  "Import completed": {
+    "en": "Import completed",
+    "ja": "インポートが完了しました",
+    "zh-CN": "导入完成",
+    "zh-TW": "匯入完成"
+  },
+  "Import completed with warnings": {
+    "en": "Import completed with warnings",
+    "ja": "警告ありでインポートが完了しました",
+    "zh-CN": "导入完成（含警告）",
+    "zh-TW": "匯入完成（含警告）"
+  },
+  "Import completed successfully.": {
+    "en": "Import completed successfully.",
+    "ja": "インポートが正常に完了しました。",
+    "zh-CN": "导入成功完成。",
+    "zh-TW": "匯入成功完成。"
+  },
+  "import_failure_summary": {
+    "en": "\n\n{{count}} item(s) failed to import:\n{{list}}",
+    "ja": "\n\n{{count}}件のインポートに失敗しました:\n{{list}}",
+    "zh-CN": "\n\n{{count}} 项导入失败：\n{{list}}",
+    "zh-TW": "\n\n{{count}} 項匯入失敗：\n{{list}}"
+  },
+  "import_failure_more": {
+    "en": "\n... and {{count}} more",
+    "ja": "\n... 他 {{count}} 件",
+    "zh-CN": "\n... 还有 {{count}} 项",
+    "zh-TW": "\n... 還有 {{count}} 項"
+  },
+  "Copy to clipboard": {
+    "en": "Copy to clipboard",
+    "ja": "クリップボードにコピー",
+    "zh-CN": "复制到剪贴板",
+    "zh-TW": "複製到剪貼簿"
+  },
+  "Reload now": {
+    "en": "Reload now",
+    "ja": "今すぐリロード",
+    "zh-CN": "立即重新加载",
+    "zh-TW": "立即重新載入"
+  },
+  "import_summary_sessions": {
+    "en": "Chat sessions: {{count}}",
+    "ja": "チャットセッション: {{count}}件",
+    "zh-CN": "聊天会话：{{count}}",
+    "zh-TW": "聊天工作階段：{{count}}"
+  },
+  "import_summary_chatbots": {
+    "en": "AI chatbots: {{count}}{{names}}",
+    "ja": "AIチャットボット: {{count}}{{names}}",
+    "zh-CN": "AI 机器人：{{count}}{{names}}",
+    "zh-TW": "AI 機器人：{{count}}{{names}}"
+  },
+  "import_summary_pairs": {
+    "en": "Saved pairs: {{count}}{{names}}",
+    "ja": "保存済みペア: {{count}}{{names}}",
+    "zh-CN": "已保存配对：{{count}}{{names}}",
+    "zh-TW": "已儲存配對：{{count}}{{names}}"
+  },
+  "import_summary_theme": {
+    "en": "Theme: {{theme}}",
+    "ja": "テーマ: {{theme}}",
+    "zh-CN": "主题：{{theme}}",
+    "zh-TW": "主題：{{theme}}"
+  },
+  "import_summary_language": {
+    "en": "Language: {{language}}",
+    "ja": "言語: {{language}}",
+    "zh-CN": "语言：{{language}}",
+    "zh-TW": "語言：{{language}}"
+  },
+  "Select Items": {
+    "en": "",
+    "ja": "項目を選択",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Chatbot Settings": {
+    "en": "Chatbot Settings",
+    "ja": "チャットボット設定",
+    "zh-CN": "聊天机器人设置",
+    "zh-TW": "聊天機器人設定"
+  },
+  "Chat History": {
+    "en": "",
+    "ja": "チャット履歴",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Local Prompts": {
+    "en": "",
+    "ja": "ローカルプロンプト",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "User Preferences": {
+    "en": "",
+    "ja": "ユーザー設定",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "View Settings": {
+    "en": "",
+    "ja": "設定を表示",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Current Settings": {
+    "en": "",
+    "ja": "現在の設定",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Current settings with API keys masked for security": {
+    "en": "",
+    "ja": "セキュリティのためAPIキーをマスクした現在の設定",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Copy to Clipboard": {
+    "en": "",
+    "ja": "クリップボードにコピー",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Copied to clipboard": {
+    "en": "",
+    "ja": "クリップボードにコピーしました",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Settings Assistant": {
+    "en": "Settings Assistant",
+    "ja": "設定アシスタント",
+    "zh-CN": "设置助手",
+    "zh-TW": "設定助手"
+  },
+  "Ask about settings": {
+    "en": "Ask about your settings",
+    "ja": "設定について質問する",
+    "zh-CN": "询问您的设置",
+    "zh-TW": "詢問您的設定"
+  },
+  "Settings Chat Placeholder": {
+    "en": "Ask about your settings...",
+    "ja": "設定について質問してください...",
+    "zh-CN": "询问您的设置...",
+    "zh-TW": "詢問您的設定..."
+  },
+  "Settings Chat No Bot": {
+    "en": "No chatbots configured. Please add a chatbot in settings first.",
+    "ja": "チャットボットが設定されていません。先にチャットボットを追加してください。",
+    "zh-CN": "没有配置聊天机器人。请先在设置中添加一个聊天机器人。",
+    "zh-TW": "沒有配置聊天機器人。請先在設定中添加一個聊天機器人。"
+  },
+  "Settings Chat Security Note": {
+    "en": "Ask me anything about your current settings. API keys and endpoint URLs are never shared with the AI.",
+    "ja": "現在の設定について何でも聞いてください。APIキーとエンドポイントURLはAIには送信されません。",
+    "zh-CN": "请随意询问您当前的设置。API密钥和端点URL不会发送给AI。",
+    "zh-TW": "請隨意詢問您當前的設定。API密鑰和端點URL不會發送給AI。"
+  },
+  "Settings Chat Security Note Short": {
+    "en": "API keys excluded",
+    "ja": "APIキーは除外済み",
+    "zh-CN": "API密钥已排除",
+    "zh-TW": "API密鑰已排除"
+  },
+  "Settings Proposal Label": {
+    "en": "Settings change proposed",
+    "ja": "設定変更の提案",
+    "zh-CN": "提议更改设置",
+    "zh-TW": "建議更改設定"
+  },
+  "Add Chatbot": {
+    "en": "Add chatbot",
+    "ja": "チャットボットを追加",
+    "zh-CN": "添加聊天机器人",
+    "zh-TW": "添加聊天機器人"
+  },
+  "Update Chatbot": {
+    "en": "Update chatbot",
+    "ja": "チャットボットを更新",
+    "zh-CN": "更新聊天机器人",
+    "zh-TW": "更新聊天機器人"
+  },
+  "Update General Settings": {
+    "en": "Update general settings",
+    "ja": "一般設定を更新",
+    "zh-CN": "更新常规设置",
+    "zh-TW": "更新一般設定"
+  },
+  "Review & Apply": {
+    "en": "Review & Apply",
+    "ja": "確認して適用",
+    "zh-CN": "查看并应用",
+    "zh-TW": "查看並應用"
+  },
+  "Review Settings Change": {
+    "en": "Review Settings Change",
+    "ja": "設定変更の確認",
+    "zh-CN": "确认设置更改",
+    "zh-TW": "確認設定更改"
+  },
+  "Settings Apply Add Chatbot Label": {
+    "en": "Adding chatbot",
+    "ja": "追加するチャットボット",
+    "zh-CN": "添加聊天机器人",
+    "zh-TW": "添加聊天機器人"
+  },
+  "Settings Apply Update Chatbot Label": {
+    "en": "Updating chatbot",
+    "ja": "更新するチャットボット",
+    "zh-CN": "更新聊天机器人",
+    "zh-TW": "更新聊天機器人"
+  },
+  "Settings Apply Update General Label": {
+    "en": "General settings",
+    "ja": "一般設定",
+    "zh-CN": "常规设置",
+    "zh-TW": "一般設定"
+  },
+  "Settings Apply Credentials Note": {
+    "en": "Enter credentials below. They are stored locally and never sent to the AI.",
+    "ja": "認証情報を入力してください。ローカルに保存され、AIには送信されません。",
+    "zh-CN": "请在下方输入凭据。它们将存储在本地，不会发送给AI。",
+    "zh-TW": "請在下方輸入憑據。它們將存儲在本地，不會發送給AI。"
+  },
+  "API Key": {
+    "en": "API Key",
+    "ja": "APIキー",
+    "zh-CN": "API密钥",
+    "zh-TW": "API密鑰"
+  },
+  "API Host": {
+    "en": "API Host",
+    "ja": "APIホスト",
+    "zh-CN": "API主机",
+    "zh-TW": "API主機"
+  },
+  "optional": {
+    "en": "optional",
+    "ja": "省略可",
+    "zh-CN": "可选",
+    "zh-TW": "可選"
+  },
+  "Settings Apply Not Saved Note": {
+    "en": "Changes will be added to settings but not saved until you click Save Changes.",
+    "ja": "変更は設定に反映されますが、「変更を保存」をクリックするまで保存されません。",
+    "zh-CN": "更改将添加到设置中，但在您点击「保存更改」之前不会保存。",
+    "zh-TW": "更改將添加到設定中，但在您點擊「保存更改」之前不會保存。"
+  },
+  "Apply to Settings": {
+    "en": "Apply to Settings",
+    "ja": "設定に適用",
+    "zh-CN": "应用到设置",
+    "zh-TW": "應用到設定"
+  },
+  "Select bot": {
+    "en": "Select bot",
+    "ja": "ボットを選択",
+    "zh-CN": "选择机器人",
+    "zh-TW": "選擇機器人"
+  },
+  "No bot": {
+    "en": "No bot configured",
+    "ja": "ボット未設定",
+    "zh-CN": "未配置机器人",
+    "zh-TW": "未配置機器人"
+  },
+  "Cancel": {
+    "en": "Cancel",
+    "ja": "キャンセル",
+    "zh-CN": "取消",
+    "zh-TW": "取消"
+  }
+}

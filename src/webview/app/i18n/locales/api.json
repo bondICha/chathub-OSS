@@ -1,0 +1,716 @@
+{
+  "Developer Options (Dangerous)": {
+    "en": "Developer Options (Dangerous)",
+    "ja": "開発者用オプション（危険）",
+    "zh-CN": "开发者选项（危险）",
+    "zh-TW": "開發者選項（危險）"
+  },
+  "Allow Only Specific Providers (OpenRouter)": {
+    "en": "Allow Only Specific Providers (OpenRouter)",
+    "ja": "許可するプロバイダーを限定 (OpenRouter)",
+    "zh-CN": "仅允许特定提供商 (OpenRouter)",
+    "zh-TW": "僅允許特定供應商 (OpenRouter)"
+  },
+  "Comma-separated list of providers to allow. See OpenRouter docs.": {
+    "en": "Comma-separated list of providers to allow. See OpenRouter docs.",
+    "ja": "許可するプロバイダーをコンマ区切りで入力。詳細はOpenRouterのドキュメントを参照。",
+    "zh-CN": "允许的提供商列表（以逗号分隔）。请参阅OpenRouter文档。",
+    "zh-TW": "允許的供應商列表（以逗號分隔）。請參閱OpenRouter文檔。"
+  },
+  "Anthropic Beta Headers": {
+    "en": "Anthropic Beta Headers",
+    "ja": "Anthropic Beta Headers",
+    "zh-CN": "Anthropic Beta Headers",
+    "zh-TW": "Anthropic Beta Headers"
+  },
+  "Comma-separated beta feature names (e.g., context-1m-2025-08-07,context-1m-2025-08-07)": {
+    "en": "Comma-separated beta feature names (e.g., context-1m-2025-08-07,context-1m-2025-08-07)",
+    "ja": "コンマ区切りのBeta機能名（例: context-1m-2025-08-07,context-1m-2025-08-07）",
+    "zh-CN": "逗号分隔的Beta功能名称（例如：context-1m-2025-08-07,context-1m-2025-08-07）",
+    "zh-TW": "逗號分隔的Beta功能名稱（例如：context-1m-2025-08-07,context-1m-2025-08-07）"
+  },
+  "API Settings": {
+    "en": "API Settings",
+    "ja": "API設定",
+    "zh-CN": "API设置",
+    "zh-TW": "API設置"
+  },
+  "Template Import Export": {
+    "en": "Template Import Export",
+    "ja": "TemplateのImport Export",
+    "zh-CN": "模板导入导出",
+    "zh-TW": "模板導入導出"
+  },
+  "Import Template": {
+    "en": "Import Template",
+    "ja": "Import Template",
+    "zh-CN": "导入模板",
+    "zh-TW": "導入模板"
+  },
+  "Export Template": {
+    "en": "Export Template",
+    "ja": "Export Template",
+    "zh-CN": "导出模板",
+    "zh-TW": "導出模板"
+  },
+  "No Custom API settings found in the file. Please check the file format.": {
+    "en": "No Custom API settings found in the file. Please check the file format.",
+    "ja": "ファイルにカスタムAPI設定が見つかりません。ファイル形式を確認してください。",
+    "zh-CN": "文件中未找到自定义API设置。请检查文件格式。",
+    "zh-TW": "文件中未找到自定義API設置。請檢查文件格式。"
+  },
+  "Custom API settings imported successfully": {
+    "en": "Custom API settings imported successfully",
+    "ja": "カスタムAPI設定のインポートが完了しました",
+    "zh-CN": "自定义API设置导入成功",
+    "zh-TW": "自定義API設置導入成功"
+  },
+  "Apply Template Settings": {
+    "en": "Chatbot Preset",
+    "ja": "Chatbot Preset",
+    "zh-CN": "聊天机器人预设",
+    "zh-TW": "聊天機器人預設"
+  },
+  "Public Models": {
+    "en": "Public Models",
+    "ja": "一般公開モデル",
+    "zh-CN": "公开模型",
+    "zh-TW": "公開模型"
+  },
+  "Custom API Template": {
+    "en": "Custom API Template",
+    "ja": "カスタムAPIテンプレート",
+    "zh-CN": "自定义API模板",
+    "zh-TW": "自定義API模板"
+  },
+  "Import Custom API Template": {
+    "en": "Import Custom API Template",
+    "ja": "カスタムAPIテンプレートをインポート",
+    "zh-CN": "导入自定义API模板",
+    "zh-TW": "導入自定義API模板"
+  },
+  "Add New Model": {
+    "en": "Add New Model",
+    "ja": "新しいモデルを追加",
+    "zh-CN": "添加新模型",
+    "zh-TW": "新增模型"
+  },
+  "vertex_path_model_hint": {
+    "en": "You can use %model in the endpoint path. It will be replaced by the configured model (URL-encoded) at request time.",
+    "ja": "%model をエンドポイントのパスに使用できます。設定されたモデル名（URLエンコード済み）に置換されます。",
+    "zh-CN": "You can use %model in the endpoint path. It will be replaced by the configured model (URL-encoded) at request time.",
+    "zh-TW": "You can use %model in the endpoint path. It will be replaced by the configured model (URL-encoded) at request time."
+  },
+  "vertex_gemini_nonstream_notice": {
+    "en": "Note: This scheme supports generateContent only and is intended for image generation use cases (:streamGenerateContent is not supported).",
+    "ja": "注意: このSchemeは generateContent のみサポートし、画像生成での利用を想定しています（:streamGenerateContent は対象外）。",
+    "zh-CN": "Note: This scheme supports generateContent only and is intended for image generation use cases (:streamGenerateContent is not supported).",
+    "zh-TW": "Note: This scheme supports generateContent only and is intended for image generation use cases (:streamGenerateContent is not supported)."
+  },
+  "Common API Key": {
+    "en": "Common API Key",
+    "ja": "共通のAPI Key",
+    "zh-CN": "通用API密钥",
+    "zh-TW": "通用API金鑰"
+  },
+  "Common API Host": {
+    "en": "Common API Host",
+    "ja": "共通のAPI Host",
+    "zh-CN": "通用API Host",
+    "zh-TW": "通用API Host"
+  },
+  "Custom Chatbot Name": {
+    "en": "Custom Chatbot Name",
+    "ja": "チャットボットちゃんにお名前をつけてね",
+    "zh-CN": "给你的AI伯特起个名字吧～",
+    "zh-TW": "給你のAI伯特取個名字吧～"
+  },
+  "Choose model": {
+    "en": "Choose model",
+    "ja": "モデルを選択",
+    "zh-CN": "选择模型",
+    "zh-TW": "選擇 model"
+  },
+  "user-defined-model": {
+    "en": "User-defined model",
+    "ja": "user様が独自に入力しました",
+    "zh-CN": "用户自定义模型",
+    "zh-TW": "用戶自定義模型"
+  },
+  "Or enter model name manually": {
+    "en": "Or enter model name manually",
+    "ja": "またはモデル名を直接入力",
+    "zh-CN": "或手动输入模型名称",
+    "zh-TW": "或是手動輸入 model 名稱"
+  },
+  "Advanced Settings": {
+    "en": "Advanced Settings",
+    "ja": "詳細設定",
+    "zh-CN": "高级设置",
+    "zh-TW": "進階設定"
+  },
+  "API Provider": {
+    "en": "API Provider",
+    "ja": "APIプロバイダー",
+    "zh-CN": "API提供商",
+    "zh-TW": "API 供應商"
+  },
+  "Thinking Mode": {
+    "en": "Thinking Mode",
+    "ja": "思考モード",
+    "zh-CN": "思考模式",
+    "zh-TW": "思考模式"
+  },
+  "Thinking Budget": {
+    "en": "Thinking Budget",
+    "ja": "Thinking予算",
+    "zh-CN": "思考预算",
+    "zh-TW": "思考預算"
+  },
+  "Temperature": {
+    "en": "Temperature",
+    "ja": "Temperature",
+    "zh-CN": "Temperature",
+    "zh-TW": "Temperature"
+  },
+  "Confirmed.": {
+    "en": "Confirmed.",
+    "ja": "Confirmed.",
+    "zh-CN": "已确认。",
+    "zh-TW": "已確認。"
+  },
+  "Verify": {
+    "en": "Verify",
+    "ja": "Verify",
+    "zh-CN": "验证",
+    "zh-TW": "驗證"
+  },
+  "Perplexity Icons": {
+    "en": "Perplexity Icons",
+    "ja": "Perplexity Icons",
+    "zh-CN": "Perplexity 图标",
+    "zh-TW": "Perplexity 圖示"
+  },
+  "Export Custom API Config as a Template (No API Keys)": {
+    "en": "Export Custom API Config as a Template (No API Keys)",
+    "ja": "Export Custom API Config as a Template (No API Keys)",
+    "zh-CN": "将自定义API配置导出为模板（不含API密钥）",
+    "zh-TW": "將自定義API配置導出為模板（不含API密鑰）"
+  },
+  "Custom API Models": {
+    "en": "Custom API Models",
+    "ja": "カスタムAPIモデル",
+    "zh-CN": "自定义API模型",
+    "zh-TW": "自定義API模型"
+  },
+  "Host works both with /v1 or without /v1": {
+    "en": "The standard path (e.g., /v1/chat/completions) will be appended if not included, or if the host already ends with /v1, it will not be duplicated.",
+    "ja": "標準パス（例: /v1/chat/completions）が含まれていない場合、自動的に付加されます。ホストが既に/v1で終わっている場合、重複して付加されることはありません。",
+    "zh-CN": "如果标准路径（例如 /v1/chat/completions）未包含，则会自动附加。如果主机已以 /v1 结尾，则不会重复添加。",
+    "zh-TW": "若標準路徑（例如 /v1/chat/completions）未包含，則會自動附加。若主機已以 /v1 結尾，則不會重複添加。"
+  },
+  "Custom Chatbot No.": {
+    "en": "Custom Chatbot No.",
+    "ja": "カスタムチャットボット No.",
+    "zh-CN": "自定义聊天机器人编号",
+    "zh-TW": "自定義聊天機器人編號"
+  },
+  "Move up": {
+    "en": "Move up",
+    "ja": "上に移動",
+    "zh-CN": "上移",
+    "zh-TW": "上移"
+  },
+  "Move down": {
+    "en": "Move down",
+    "ja": "下に移動",
+    "zh-CN": "下移",
+    "zh-TW": "下移"
+  },
+  "Avatar": {
+    "en": "Avatar",
+    "ja": "アバター",
+    "zh-CN": "头像",
+    "zh-TW": "頭像"
+  },
+  "AI Model": {
+    "en": "AI Model",
+    "ja": "言語モデル",
+    "zh-CN": "AI模型",
+    "zh-TW": "AI模型"
+  },
+  "hidden": {
+    "en": "hidden",
+    "ja": "hidden",
+    "zh-CN": "隐藏",
+    "zh-TW": "隱藏"
+  },
+  "thinking_mode_support_note": {
+    "en": "Please check supported models and configure accordingly. Enabling this with unsupported models may cause errors.",
+    "ja": "対応モデルを確認して設定してください。非対応モデルでオンにするとエラーになる場合があります。",
+    "zh-CN": "请确认支持的模型并进行相应配置。在不支持的模型上启用该功能可能导致错误。",
+    "zh-TW": "請確認支援の模型並相應設定。在不支援の模型上啟用此功能可能會導致錯誤。"
+  },
+  "Not supported": {
+    "en": "Not supported",
+    "ja": "サポートされていません",
+    "zh-CN": "Not supported",
+    "zh-TW": "Not supported"
+  },
+  "Extended Thinking is not yet supported with Vertex AI Claude API (vertex-2023-10-16)": {
+    "en": "Extended Thinking is not yet supported with Vertex AI Claude API (vertex-2023-10-16)",
+    "ja": "拡張思考モードはVertex AI Claude API (vertex-2023-10-16) ではまだサポートされていません",
+    "zh-CN": "Extended Thinking is not yet supported with Vertex AI Claude API (vertex-2023-10-16)",
+    "zh-TW": "Extended Thinking is not yet supported with Vertex AI Claude API (vertex-2023-10-16)"
+  },
+  "OpenSource": {
+    "en": "OpenSource",
+    "ja": "OpenSource",
+    "zh-CN": "开源",
+    "zh-TW": "開源"
+  },
+  "GitHub": {
+    "en": "GitHub",
+    "ja": "GitHub",
+    "zh-CN": "GitHub",
+    "zh-TW": "GitHub"
+  },
+  "API Endpoint (Full Path)": {
+    "en": "API Endpoint (Full Path)",
+    "ja": "APIエンドポイント（フルパス）",
+    "zh-CN": "API 端点 (完整路径)",
+    "zh-TW": "API 端點 (完整路徑)"
+  },
+  "Full Path": {
+    "en": "Full Path",
+    "ja": "フルパス",
+    "zh-CN": "完整路径",
+    "zh-TW": "完整路徑"
+  },
+  "Full Path Tooltip Common": {
+    "en": "If \"Full Path\" is ON, enter the complete API endpoint URL. Otherwise, enter only the base host (e.g., https://api.openai.com) and the standard path (e.g., /v1/chat/completions) will be appended automatically.",
+    "ja": "「フルパス」がオンの場合、完全なAPIエンドポイントURLを入力します。オフの場合、ベースホスト（例: https://api.openai.com）のみを入力すると、標準パス（例: /v1/chat/completions）が自動的に付加されます。",
+    "zh-CN": "如果“完整路径”开启，请输入完整的API端点URL。否则，仅输入基础主机名（例如 https://api.openai.com），标准路径（例如 /v1/chat/completions）将自动附加。",
+    "zh-TW": "若「完整路徑」開啟，請輸入完整のAPI端點URL。否則，僅輸入基礎主機名（例如 https://api.openai.com），標準路徑（例如 /v1/chat/completions）將自動附加。"
+  },
+  "Full Path Tooltip Individual": {
+    "en": "If \"Full Path\" is ON, enter the complete API endpoint URL. Otherwise, enter only the base host. If host is blank, Common API Host settings will be used.",
+    "ja": "「フルパス」がオンの場合、完全なAPIエンドポイントURLを入力します。オフの場合、ベースホストのみを入力します。ホストが空欄の場合は、共通APIホスト設定が使用されます。",
+    "zh-CN": "如果“完整路径”开启，请输入完整的API端点URL。否则，仅输入基础主机名。如果主机名为空，则使用通用API主机设置。",
+    "zh-TW": "若「完整路徑」開啟，請輸入完整のAPI端點URL。否則，僅輸入基礎主機名。若主機名為空，則使用通用API主機設定。"
+  },
+  "Host Placeholder Full Path Common": {
+    "en": "https://api.example.com/v1/chat/completions",
+    "ja": "https://api.example.com/v1/chat/completions",
+    "zh-CN": "https://api.example.com/v1/chat/completions",
+    "zh-TW": "https://api.example.com/v1/chat/completions"
+  },
+  "Host Placeholder Base Common": {
+    "en": "https://api.openai.com",
+    "ja": "https://api.openai.com",
+    "zh-CN": "https://api.openai.com",
+    "zh-TW": "https://api.openai.com"
+  },
+  "Host Placeholder Full Path Individual": {
+    "en": "https://api.example.com/v1/chat/completions",
+    "ja": "https://api.example.com/v1/chat/completions",
+    "zh-CN": "https://api.example.com/v1/chat/completions",
+    "zh-TW": "https://api.example.com/v1/chat/completions"
+  },
+  "Host Placeholder Base Individual": {
+    "en": "Leave blank for Common Host, or e.g., https://api.openai.com",
+    "ja": "共通ホストを使用する場合は空欄、または例: https://api.openai.com",
+    "zh-CN": "留空以使用通用主机，或例如 https://api.openai.com",
+    "zh-TW": "留空以使用通用主機，或例如 https://api.openai.com"
+  },
+  "Host Blockquote Full Path": {
+    "en": "The entered URL will be used as is.",
+    "ja": "入力されたURLがそのまま使用されます。",
+    "zh-CN": "输入的URL将按原样使用。",
+    "zh-TW": "輸入のURL將按原樣使用。"
+  },
+  "Host Blockquote Base Individual": {
+    "en": "If host is blank, Common API Host is used. Otherwise, standard path (e.g., /v1/chat/completions) is appended if not included.",
+    "ja": "ホストが空欄の場合は共通APIホストが使用されます。それ以外の場合、標準パス（例: /v1/chat/completions）が含まれていなければ付加されます。",
+    "zh-CN": "如果主机名为空，则使用通用API主机。否则，如果标准路径（例如 /v1/chat/completions）未包含，则会自动附加。",
+    "zh-TW": "若主機名為空，則使用通用API主機。否則，若標準路徑（例如 /v1/chat/completions）未包含，則會自動附加。"
+  },
+  "Not applicable for Google Gemini": {
+    "en": "Not applicable for Google Gemini",
+    "ja": "Google Geminiには適用されません",
+    "zh-CN": "不适用于 Google Gemini",
+    "zh-TW": "不適用於 Google Gemini"
+  },
+  "Vertex AI Mode": {
+    "en": "Vertex AI Mode",
+    "ja": "Vertex AIモード",
+    "zh-CN": "Vertex AI 模式",
+    "zh-TW": "Vertex AI 模式"
+  },
+  "Enable for Vertex AI endpoints and Rakuten AI Gateway": {
+    "en": "Enable for Gemini Enterprise Agent Platform (Vertex AI). A Google Cloud API key (express mode) is enough — leave host blank for the official endpoint, or set a host for gateways like Rakuten AI Gateway.",
+    "ja": "Gemini Enterprise Agent Platform（Vertex AI）を有効化。Google Cloud API Key（express mode）を入力するだけで利用できます。公式エンドポイントを使う場合はホストを空欄のままにし、Rakuten AI Gateway などのゲートウェイを使う場合のみホストを設定してください。",
+    "zh-CN": "启用 Gemini Enterprise Agent Platform（Vertex AI）。只需输入 Google Cloud API 密钥（express 模式）即可使用。使用官方端点时请将主机留空，仅在使用 Rakuten AI Gateway 等网关时才设置主机。",
+    "zh-TW": "啟用 Gemini Enterprise Agent Platform（Vertex AI）。只需輸入 Google Cloud API 金鑰（express 模式）即可使用。使用官方端點時請將主機留空，僅在使用 Rakuten AI Gateway 等閘道時才設定主機。"
+  },
+  "Enable for Vertex AI endpoints and Rakuten AI Gateway (requires vertexai=True in SDK)": {
+    "en": "Enable for Gemini Enterprise Agent Platform (Vertex AI). A Google Cloud API key (express mode) is enough — leave host blank for the official endpoint, or set a host for gateways like Rakuten AI Gateway.",
+    "ja": "Gemini Enterprise Agent Platform（Vertex AI）を有効化。Google Cloud API Key（express mode）を入力するだけで利用できます。公式エンドポイントを使う場合はホストを空欄のままにし、Rakuten AI Gateway などのゲートウェイを使う場合のみホストを設定してください。",
+    "zh-CN": "启用 Gemini Enterprise Agent Platform（Vertex AI）。只需输入 Google Cloud API 密钥（express 模式）即可使用。使用官方端点时请将主机留空，仅在使用 Rakuten AI Gateway 等网关时才设置主机。",
+    "zh-TW": "啟用 Gemini Enterprise Agent Platform（Vertex AI）。只需輸入 Google Cloud API 金鑰（express 模式）即可使用。使用官方端點時請將主機留空，僅在使用 Rakuten AI Gateway 等閘道時才設定主機。"
+  },
+  "Select Provider": {
+    "en": "Select Provider",
+    "ja": "プロバイダーを選択",
+    "zh-CN": "选择提供方",
+    "zh-TW": "選擇提供者"
+  },
+  "Select API Config": {
+    "en": "Select API Config",
+    "ja": "API設定を選択",
+    "zh-CN": "选择 API 配置",
+    "zh-TW": "選擇 API 設定"
+  },
+  "Select Model": {
+    "en": "Select Model",
+    "ja": "モデルを選択",
+    "zh-CN": "选择模型",
+    "zh-TW": "選擇模型"
+  },
+  "Not configured": {
+    "en": "Not configured",
+    "ja": "未設定",
+    "zh-CN": "未配置",
+    "zh-TW": "未設定"
+  },
+  "Use Individual Settings": {
+    "en": "Use Individual Settings",
+    "ja": "個別設定を使用する",
+    "zh-CN": "Use Individual Settings",
+    "zh-TW": "Use Individual Settings"
+  },
+  "Individual Settings": {
+    "en": "Individual Settings",
+    "ja": "個別設定",
+    "zh-CN": "个别设置",
+    "zh-TW": "個別設定"
+  },
+  "Individual": {
+    "en": "Individual",
+    "ja": "個別",
+    "zh-CN": "个别",
+    "zh-TW": "個別"
+  },
+  "Provider reference missing (id: {{id}})": {
+    "en": "Provider reference missing (id: {{id}})",
+    "ja": "Provider参照が見つかりません (id: {{id}})",
+    "zh-CN": "Provider 引用不存在 (id: {{id}})",
+    "zh-TW": "Provider 參照不存在 (id: {{id}})"
+  },
+  "When off, this chatbot uses the selected API Provider reference": {
+    "en": "When off, this chatbot uses the selected API Provider reference",
+    "ja": "オフの場合、このチャットボットは選択されたAPIプロバイダーリファレンスを使用します",
+    "zh-CN": "When off, this chatbot uses the selected API Provider reference",
+    "zh-TW": "When off, this chatbot uses the selected API Provider reference"
+  },
+  "Provider reference": {
+    "en": "Provider reference",
+    "ja": "プロバイダーリファレンス",
+    "zh-CN": "Provider reference",
+    "zh-TW": "Provider reference"
+  },
+  "None (not set)": {
+    "en": "None (not set)",
+    "ja": "なし（未設定）",
+    "zh-CN": "None (not set)",
+    "zh-TW": "None (not set)"
+  },
+  "All hosts": {
+    "en": "All hosts",
+    "ja": "すべてのホスト",
+    "zh-CN": "All hosts",
+    "zh-TW": "All hosts"
+  },
+  "Matching hosts": {
+    "en": "Matching hosts",
+    "ja": "一致するホスト",
+    "zh-CN": "Matching hosts",
+    "zh-TW": "Matching hosts"
+  },
+  "API Providers": {
+    "en": "API Providers",
+    "ja": "APIプロバイダー",
+    "zh-CN": "API Providers",
+    "zh-TW": "API Providers"
+  },
+  "Provider–Chatbot Relationships": {
+    "en": "Provider–Chatbot Relationships",
+    "ja": "プロバイダー–チャットボット関係図",
+    "zh-CN": "Provider–聊天机器人关系图",
+    "zh-TW": "Provider–聊天機器人關係圖"
+  },
+  "{{p}} providers / {{b}} chatbots": {
+    "en": "{{p}} providers / {{b}} chatbots",
+    "ja": "プロバイダー {{p}} 個 / チャットボット {{b}} 個",
+    "zh-CN": "{{p}} 个 Provider / {{b}} 个聊天机器人",
+    "zh-TW": "{{p}} 個 Provider / {{b}} 個聊天機器人"
+  },
+  "Provider defines shared API infrastructure (host, authentication). Chatbot defines per-model behavior (model, parameters, system prompt). One provider can be referenced by multiple chatbots.": {
+    "en": "Provider defines shared API infrastructure (host, authentication). Chatbot defines per-model behavior (model, parameters, system prompt). One provider can be referenced by multiple chatbots.",
+    "ja": "プロバイダーは共通のAPIインフラ（ホスト、認証情報）を定義します。チャットボットはモデルごとの動作（モデル、パラメータ、システムプロンプト）を定義します。1つのプロバイダーは複数のチャットボットから参照できます。",
+    "zh-CN": "Provider 定义共享的 API 基础设施（主机、认证信息）。聊天机器人定义每个模型的行为（模型、参数、系统提示）。一个 Provider 可被多个聊天机器人引用。",
+    "zh-TW": "Provider 定義共享的 API 基礎設施（主機、認證資訊）。聊天機器人定義每個模型的行為（模型、參數、系統提示）。一個 Provider 可被多個聊天機器人引用。"
+  },
+  "Hover a row to highlight related items. Click to jump to its settings.": {
+    "en": "Hover a row to highlight related items. Click to jump to its settings.",
+    "ja": "行にカーソルを合わせると関連項目がハイライトされます。クリックで該当設定にジャンプします。",
+    "zh-CN": "将鼠标悬停在行上以高亮显示相关项。点击可跳转到对应设置。",
+    "zh-TW": "將滑鼠停留在列上以高亮相關項目。點擊可跳到對應設定。"
+  },
+  "Click to jump to settings": {
+    "en": "Click to jump to settings",
+    "ja": "クリックで設定へジャンプ",
+    "zh-CN": "点击跳转到设置",
+    "zh-TW": "點擊跳到設定"
+  },
+  "No providers configured": {
+    "en": "No providers configured",
+    "ja": "プロバイダーが未設定です",
+    "zh-CN": "尚未配置 Provider",
+    "zh-TW": "尚未設定 Provider"
+  },
+  "No chatbots configured": {
+    "en": "No chatbots configured",
+    "ja": "チャットボットが未設定です",
+    "zh-CN": "尚未配置聊天机器人",
+    "zh-TW": "尚未設定聊天機器人"
+  },
+  "Unused": {
+    "en": "Unused",
+    "ja": "未使用",
+    "zh-CN": "未使用",
+    "zh-TW": "未使用"
+  },
+  "Used by": {
+    "en": "Used by",
+    "ja": "使用中のチャットボット",
+    "zh-CN": "使用此提供商的聊天机器人",
+    "zh-TW": "使用此提供商的聊天機器人"
+  },
+  "Not used by any chatbot": {
+    "en": "Not used by any chatbot",
+    "ja": "このProviderを使用しているチャットボットはありません",
+    "zh-CN": "暂无聊天机器人使用此提供商",
+    "zh-TW": "目前無聊天機器人使用此提供商"
+  },
+  "This chatbot uses individual settings (no provider reference)": {
+    "en": "This chatbot uses individual settings (no provider reference)",
+    "ja": "このチャットボットは個別設定を使用しています（プロバイダー参照なし）",
+    "zh-CN": "此聊天机器人使用个别设置（未引用 Provider）",
+    "zh-TW": "此聊天機器人使用個別設定（未參照 Provider）"
+  },
+  "Add Provider": {
+    "en": "Add Provider",
+    "ja": "プロバイダーを追加",
+    "zh-CN": "Add Provider",
+    "zh-TW": "Add Provider"
+  },
+  "Manage your API provider configurations here. These can be referenced by individual chatbots.": {
+    "en": "Manage your API provider configurations here. These can be referenced by individual chatbots.",
+    "ja": "ここでAPIプロバイダーの設定を管理します。これらは個々のチャットボットから参照できます。",
+    "zh-CN": "Manage your API provider configurations here. These can be referenced by individual chatbots.",
+    "zh-TW": "Manage your API provider configurations here. These can be referenced by individual chatbots."
+  },
+  "Provider name": {
+    "en": "Provider name",
+    "ja": "プロバイダー名",
+    "zh-CN": "Provider name",
+    "zh-TW": "Provider name"
+  },
+  "Are you sure you want to delete this provider?": {
+    "en": "Are you sure you want to delete this provider?",
+    "ja": "このプロバイダーを削除してもよろしいですか？",
+    "zh-CN": "Are you sure you want to delete this provider?",
+    "zh-TW": "Are you sure you want to delete this provider?"
+  },
+  "Provider deleted. Bots referencing it have been switched to individual settings.": {
+    "en": "Provider deleted. Bots referencing it have been switched to individual settings.",
+    "ja": "プロバイダーを削除しました。それを参照していたボットは個別設定に切り替えられました。",
+    "zh-CN": "Provider deleted. Bots referencing it have been switched to individual settings.",
+    "zh-TW": "Provider deleted. Bots referencing it have been switched to individual settings."
+  },
+  "Duplicate": {
+    "en": "Duplicate",
+    "ja": "複製",
+    "zh-CN": "Duplicate",
+    "zh-TW": "Duplicate"
+  },
+  "Enter API Key for this provider": {
+    "en": "Enter API Key for this provider",
+    "ja": "このプロバイダーのAPIキーを入力してください",
+    "zh-CN": "Enter API Key for this provider",
+    "zh-TW": "Enter API Key for this provider"
+  },
+  "Select Provider Icon": {
+    "en": "Select Provider Icon",
+    "ja": "プロバイダーアイコンを選択",
+    "zh-CN": "Select Provider Icon",
+    "zh-TW": "Select Provider Icon"
+  },
+  "Custom Icon URL": {
+    "en": "Custom Icon URL",
+    "ja": "カスタムアイコンURL",
+    "zh-CN": "Custom Icon URL",
+    "zh-TW": "Custom Icon URL"
+  },
+  "https://example.com/icon.png or leave blank to select from presets": {
+    "en": "https://example.com/icon.png or leave blank to select from presets",
+    "ja": "https://example.com/icon.png またはプリセットから選択する場合は空のままにしてください",
+    "zh-CN": "https://example.com/icon.png or leave blank to select from presets",
+    "zh-TW": "https://example.com/icon.png or leave blank to select from presets"
+  },
+  "Or choose from presets below:": {
+    "en": "Or choose from presets below:",
+    "ja": "または以下のプリセットから選択してください：",
+    "zh-CN": "Or choose from presets below:",
+    "zh-TW": "Or choose from presets below:"
+  },
+  "Import API Providers": {
+    "en": "Import API Providers",
+    "ja": "APIプロバイダーをインポート",
+    "zh-CN": "Import API Providers",
+    "zh-TW": "Import API Providers"
+  },
+  "API Scheme": {
+    "en": "API Scheme",
+    "ja": "APIスキーム",
+    "zh-CN": "API方案",
+    "zh-TW": "API方案"
+  },
+  "Edit Provider": {
+    "en": "Edit Provider",
+    "ja": "プロバイダーを編集",
+    "zh-CN": "编辑提供商",
+    "zh-TW": "編輯提供商"
+  },
+  "Provider updated successfully": {
+    "en": "Provider updated successfully",
+    "ja": "プロバイダーが正常に更新されました",
+    "zh-CN": "提供商更新成功",
+    "zh-TW": "提供商更新成功"
+  },
+  "Not set": {
+    "en": "Not set",
+    "ja": "未設定",
+    "zh-CN": "未设置",
+    "zh-TW": "未設定"
+  },
+  "Thinking Level": {
+    "en": "Thinking Level",
+    "ja": "思考レベル",
+    "zh-CN": "思考强度",
+    "zh-TW": "思考強度"
+  },
+  "Available Models": {
+    "en": "",
+    "ja": "利用可能なモデル",
+    "zh-CN": "可用模型",
+    "zh-TW": "可用模型"
+  },
+  "Fetch Models": {
+    "en": "Fetch Models",
+    "ja": "モデルを取得",
+    "zh-CN": "获取模型",
+    "zh-TW": "獲取模型"
+  },
+  "Loading...": {
+    "en": "Loading...",
+    "ja": "読み込み中...",
+    "zh-CN": "加载中...",
+    "zh-TW": "載入中..."
+  },
+  "Search models...": {
+    "en": "Search models...",
+    "ja": "モデルを検索...",
+    "zh-CN": "搜索模型...",
+    "zh-TW": "搜尋模型..."
+  },
+  "Click \"Fetch Models\" to load available models": {
+    "en": "",
+    "ja": "「モデルを取得」をクリックして利用可能なモデルを読み込みます",
+    "zh-CN": "点击“获取模型”加载可用模型",
+    "zh-TW": "點擊「獲取模型」載入可用模型"
+  },
+  "Please configure API Key and Host to fetch models": {
+    "en": "",
+    "ja": "APIキーとホストを設定してモデルを取得してください",
+    "zh-CN": "请配置API密钥和主机以获取模型",
+    "zh-TW": "請配置API金鑰和主機以獲取模型"
+  },
+  "Leave blank to use Common API Key": {
+    "en": "Leave blank to use Common API Key",
+    "ja": "未入力の場合は共通APIキーを使用",
+    "zh-CN": "留空则使用通用 API Key",
+    "zh-TW": "留空則使用通用 API Key"
+  },
+  "API Key is empty. Use Common API Key?": {
+    "en": "API Key is empty. Use Common API Key?",
+    "ja": "APIキーが未入力です。共通APIキーを使用しますか？",
+    "zh-CN": "API Key 为空。使用通用 API Key 吗？",
+    "zh-TW": "API Key 為空。使用通用 API Key 嗎？"
+  },
+  "Active Key": {
+    "en": "Active Key",
+    "ja": "使用中のKey",
+    "zh-CN": "当前密钥",
+    "zh-TW": "當前金鑰"
+  },
+  "Common": {
+    "en": "Common",
+    "ja": "共通",
+    "zh-CN": "通用",
+    "zh-TW": "通用"
+  },
+  "Append": {
+    "en": "Append",
+    "ja": "追記",
+    "zh-CN": "追加",
+    "zh-TW": "附加"
+  },
+  "Override": {
+    "en": "Override",
+    "ja": "上書き",
+    "zh-CN": "覆盖",
+    "zh-TW": "覆蓋"
+  },
+  "No API Key configured": {
+    "en": "No API Key configured",
+    "ja": "API Keyが未設定です",
+    "zh-CN": "未配置API密钥",
+    "zh-TW": "未設定API金鑰"
+  },
+  "Provider": {
+    "en": "Provider",
+    "ja": "Provider",
+    "zh-CN": "提供商",
+    "zh-TW": "提供商"
+  },
+  "API Models": {
+    "en": "API Models",
+    "ja": "APIモデル",
+    "zh-CN": "API模型",
+    "zh-TW": "API模型"
+  },
+  "Refresh models": {
+    "en": "Refresh models",
+    "ja": "モデルを更新",
+    "zh-CN": "刷新模型",
+    "zh-TW": "重新整理模型"
+  },
+  "Use \"{{value}}\" as custom model": {
+    "en": "Use \"{{value}}\" as custom model",
+    "ja": "「{{value}}」をカスタムモデルとして使用",
+    "zh-CN": "使用 \"{{value}}\" 作为自定义模型",
+    "zh-TW": "使用「{{value}}」作為自定義模型"
+  }
+}
