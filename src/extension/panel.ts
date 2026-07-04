@@ -3,6 +3,7 @@ import { getWebviewHtml } from './html'
 import { WebviewRouter, type RouterHost } from './rpc/router'
 
 export const APP_PANEL_VIEW_TYPE = 'huddlellm.app'
+export const BTW_PANEL_VIEW_TYPE = 'huddlellm.btw'
 
 /**
  * The main HuddleLLM app: a webview panel in the editor area running the
@@ -43,32 +44,32 @@ export class AppPanel {
   }
 
   readonly router: WebviewRouter
+
   private constructor(
     context: vscode.ExtensionContext,
     host: RouterHost,
     private readonly panel: vscode.WebviewPanel,
-    private readonly initialRoute?: string,
+    initialRoute?: string,
   ) {
     this.panel.webview.options = {
       enableScripts: true,
       localResourceRoots: [vscode.Uri.joinPath(context.extensionUri, 'dist', 'webview')],
     }
-    this.router = new WebviewRouter(this.panel.webview, 'app', {
-      ...host,
-      storage: host.storage,
-      extensionVersion: host.extensionVersion,
-      takePendingQuery: host.takePendingQuery.bind(host),
-      onRouteChanged: (route) => {
-        // persisted for WebviewPanelSerializer restore
-        void context.globalState.update('huddlellm.lastRoute', route)
+    this.router = new WebviewRouter(
+      this.panel.webview,
+      'app',
+      {
+        ...host,
+        takePendingQuery: host.takePendingQuery.bind(host),
+        openPanel: host.openPanel?.bind(host),
+        onRouteChanged: (route) => {
+          // persisted for WebviewPanelSerializer restore
+          void context.globalState.update('huddlellm.lastRoute', route)
+        },
       },
-    })
+      initialRoute,
+    )
     this.panel.webview.html = getWebviewHtml(this.panel.webview, context.extensionUri)
-    if (this.initialRoute) {
-      // delivered once the webview signals ready and asks for init;
-      // navigation also works later via route.navigate
-      this.router.post({ type: 'route.navigate', route: this.initialRoute })
-    }
     this.panel.onDidDispose(() => {
       this.router.dispose()
       if (AppPanel.current === this) {
@@ -85,4 +86,19 @@ export class AppPanel {
   broadcast(msg: Parameters<WebviewRouter['post']>[0]): void {
     this.router.post(msg)
   }
+}
+
+/**
+ * Auxiliary panel for the BTW ("By The Way") standalone chat — the Chrome
+ * version opened a popup window; here it's a second webview panel.
+ */
+export function openAuxPanel(context: vscode.ExtensionContext, host: RouterHost, route: string): void {
+  const panel = vscode.window.createWebviewPanel(BTW_PANEL_VIEW_TYPE, 'HuddleLLM — BTW', vscode.ViewColumn.Beside, {
+    enableScripts: true,
+    retainContextWhenHidden: true,
+    localResourceRoots: [vscode.Uri.joinPath(context.extensionUri, 'dist', 'webview')],
+  })
+  const router = new WebviewRouter(panel.webview, 'app', host, route)
+  panel.webview.html = getWebviewHtml(panel.webview, context.extensionUri)
+  panel.onDidDispose(() => router.dispose())
 }

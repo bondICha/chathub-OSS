@@ -1,3 +1,4 @@
+import * as os from 'os'
 import * as vscode from 'vscode'
 import type { HostToWebviewMessage, WebviewToHostMessage } from '../../shared/protocol'
 import type { InitPayload, WebviewMode } from '../../shared/protocol'
@@ -9,6 +10,8 @@ export interface RouterHost {
   readonly extensionVersion: string
   /** query text queued by the Quick Ask command before a panel existed */
   takePendingQuery(): string | undefined
+  /** opens an auxiliary app panel at the given route (BTW popup equivalent) */
+  openPanel?(route: string): void
   onRouteChanged?(route: string): void
 }
 
@@ -24,6 +27,7 @@ export class WebviewRouter implements vscode.Disposable {
     private readonly webview: vscode.Webview,
     private readonly mode: WebviewMode,
     private readonly host: RouterHost,
+    private readonly initialRoute?: string,
   ) {
     this.disposables.push(webview.onDidReceiveMessage((msg) => this.onMessage(msg as WebviewToHostMessage)))
   }
@@ -41,6 +45,7 @@ export class WebviewRouter implements vscode.Disposable {
           colorThemeKind: vscode.window.activeColorTheme.kind,
           lsSnapshot: await this.host.storage.getLsSnapshot(),
           pendingQuery: this.host.takePendingQuery(),
+          initialRoute: this.initialRoute,
           version: this.host.extensionVersion,
         }
         this.post({ type: 'init', payload })
@@ -86,6 +91,28 @@ export class WebviewRouter implements vscode.Disposable {
         break
       case 'ui.openExternal':
         void vscode.env.openExternal(vscode.Uri.parse(msg.url))
+        break
+      case 'ui.openPanel':
+        this.host.openPanel?.(msg.route)
+        break
+      case 'ui.openKeybindings':
+        void vscode.commands.executeCommand('workbench.action.openGlobalKeybindings', 'huddlellm')
+        break
+      case 'ui.saveFile':
+        try {
+          const target = await vscode.window.showSaveDialog({
+            defaultUri: vscode.Uri.joinPath(
+              vscode.workspace.workspaceFolders?.[0]?.uri ?? vscode.Uri.file(os.homedir()),
+              msg.filename,
+            ),
+          })
+          if (target) {
+            await vscode.workspace.fs.writeFile(target, Buffer.from(msg.base64, 'base64'))
+          }
+          this.post({ type: 'kv.result', id: msg.id, ok: true })
+        } catch (err) {
+          this.post({ type: 'kv.result', id: msg.id, ok: false, error: String(err) })
+        }
         break
       case 'state.route':
         this.host.onRouteChanged?.(msg.route)

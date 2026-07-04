@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import { saveBlobViaHost } from '~platform/save-file'
 import type { ChatMessageModel } from '~services/chat-history'
 import {
   loadHistoryMessages,
@@ -103,13 +104,6 @@ export async function buildSessionJSON(item: SessionListItem): Promise<string> {
 }
 
 export function downloadBlob(blob: Blob, fileName: string) {
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = fileName
-  a.style.display = 'none'
-  document.body.appendChild(a)
-  a.click()
-  document.body.removeChild(a)
-  setTimeout(() => URL.revokeObjectURL(url), 1000)
+  // VS Code webview では <a download> が使えないため、ホストの保存ダイアログを使う
+  void saveBlobViaHost(blob, fileName)
 }

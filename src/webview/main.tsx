@@ -14,6 +14,9 @@ async function bootstrap() {
   const payload = await rpc.init()
   initLocalStorageMirror(payload.lsSnapshot)
 
+  const { applyStoredZoom } = await import('./platform/browser-shim')
+  applyStoredZoom()
+
   const { applyVsCodeLanguageDefault } = await import('./platform/language')
   if (payload.mode === 'sidepanel') {
     await import('./app/sidepanel')

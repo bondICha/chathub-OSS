@@ -77,6 +77,14 @@ class RpcClient {
     })
   }
 
+  saveFile(filename: string, base64: string): Promise<Record<string, unknown> | undefined> {
+    const id = this.newId()
+    return new Promise((resolve, reject) => {
+      this.kvPending.set(id, { resolve, reject })
+      this.post({ type: 'ui.saveFile', id, filename, base64 })
+    })
+  }
+
   registerFetch(id: string, handler: FetchStreamHandler): void {
     this.fetchHandlers.set(id, handler)
   }

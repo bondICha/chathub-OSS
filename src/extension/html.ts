@@ -10,7 +10,6 @@ export function getWebviewHtml(webview: vscode.Webview, extensionUri: vscode.Uri
   const distRoot = vscode.Uri.joinPath(extensionUri, 'dist', 'webview')
   const baseUri = webview.asWebviewUri(distRoot)
   const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(distRoot, 'assets', 'index.js'))
-  const styleUri = webview.asWebviewUri(vscode.Uri.joinPath(distRoot, 'assets', 'index.css'))
   const nonce = getNonce()
 
   const csp = [
@@ -33,7 +32,6 @@ export function getWebviewHtml(webview: vscode.Webview, extensionUri: vscode.Uri
   <meta http-equiv="Content-Security-Policy" content="${csp}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <base href="${baseUri.toString()}/" />
-  <link rel="stylesheet" href="${styleUri.toString()}" />
   <title>HuddleLLM</title>
 </head>
 <body>

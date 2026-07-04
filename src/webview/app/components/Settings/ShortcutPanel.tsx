@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Browser from 'webextension-polyfill'
 import Button from '~app/components/Button'
 import KDB from '~app/components/Settings/KDB'
+import { rpc } from '~platform/rpc-client'
 
 function ShortcutPanel() {
   const [shortcuts, setShortcuts] = useState<string[]>([])
@@ -12,7 +13,6 @@ function ShortcutPanel() {
     Browser.commands.getAll().then((commands) => {
       for (const c of commands) {
         if (c.name === 'open-app' && c.shortcut) {
-          console.debug(c.shortcut)
           setShortcuts(c.shortcut ? [c.shortcut] : [])
         }
       }
@@ -33,7 +33,7 @@ function ShortcutPanel() {
         <Button
           text={t('Change shortcut')}
           size="small"
-          onClick={() => Browser.tabs.create({ url: 'chrome://extensions/shortcuts' })}
+          onClick={() => rpc.post({ type: 'ui.openKeybindings' })}
         />
       </div>
     </div>

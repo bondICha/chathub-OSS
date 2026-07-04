@@ -1,6 +1,7 @@
 import i18next from 'i18next'
 import { fileOpen } from 'browser-fs-access'
 import Browser from 'webextension-polyfill'
+import { saveBlobViaHost } from '~platform/save-file'
 import { requestHostPermissions } from '~services/host-permissions'
 import { CustomApiConfig, ProviderConfig, CustomApiProvider } from '~services/user-config'
 import {
@@ -13,19 +14,11 @@ import {
 import { getCompanyProfileConfigs } from '~services/company-profile'
 
 /**
- * Helper function to download a blob as a file
- * Uses traditional <a> tag method to avoid SecurityError with showSaveFilePicker
+ * Helper function to download a blob as a file.
+ * VS Code webview では <a download> が使えないため、ホストの保存ダイアログを使う。
  */
 function downloadBlob(blob: Blob, fileName: string) {
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = fileName
-  a.style.display = 'none'
-  document.body.appendChild(a)
-  a.click()
-  document.body.removeChild(a)
-  URL.revokeObjectURL(url)
+  void saveBlobViaHost(blob, fileName)
 }
 
 /**

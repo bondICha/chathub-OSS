@@ -1,4 +1,4 @@
-import { ModelInfo } from '../src/services/user-config'
+import { ModelInfo } from '../webview/services/user-config'
 
 // モデルリストをプロバイダーごとに階層化
 export const MODEL_LIST: Record<string, Record<string, string | ModelInfo>> = {

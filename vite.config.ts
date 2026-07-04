@@ -21,8 +21,7 @@ export default defineConfig(({ mode }) => {
         output: {
           entryFileNames: 'assets/index.js',
           chunkFileNames: 'assets/[name]-[hash].js',
-          assetFileNames: (assetInfo) =>
-            assetInfo.name?.endsWith('.css') ? 'assets/index[extname]' : 'assets/[name]-[hash][extname]',
+          assetFileNames: 'assets/[name]-[hash][extname]',
           manualChunks: {
             vendor: ['react', 'react-dom'],
             icons: ['react-icons'],

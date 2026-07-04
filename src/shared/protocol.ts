@@ -5,8 +5,12 @@
 
 export type WebviewMode = 'app' | 'sidepanel'
 
-/** Storage namespaces. 'local'/'sync' mirror Browser.storage.*; 'ls' mirrors window.localStorage. */
-export type KvNamespace = 'local' | 'sync' | 'ls'
+/**
+ * Storage namespaces. 'local'/'sync'/'session' mirror Browser.storage.*
+ * ('session' is host-memory only, shared across webviews); 'ls' mirrors
+ * window.localStorage.
+ */
+export type KvNamespace = 'local' | 'sync' | 'session' | 'ls'
 
 export interface SerializedBodyText {
   kind: 'text'
@@ -48,6 +52,10 @@ export type WebviewToHostMessage =
   | { type: 'kv.remove'; id: string; ns: KvNamespace; keys: string[] }
   | { type: 'kv.clear'; id: string; ns: KvNamespace }
   | { type: 'ui.openExternal'; url: string }
+  | { type: 'ui.openPanel'; route: string }
+  | { type: 'ui.openKeybindings' }
+  /** save dialog + write on the host; answered with kv.result (data unused) */
+  | { type: 'ui.saveFile'; id: string; filename: string; base64: string }
   | { type: 'state.route'; route: string }
 
 /* ------------------------------- host -> webview ------------------------------ */
@@ -62,6 +70,8 @@ export interface InitPayload {
   lsSnapshot: Record<string, string>
   /** query passed from the Quick Ask command, replaces the Chrome omnibox flow */
   pendingQuery?: string
+  /** hash route to navigate to right after mount (settings/history/btw panels) */
+  initialRoute?: string
   /** extension version from package.json */
   version: string
 }

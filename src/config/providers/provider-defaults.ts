@@ -1,4 +1,4 @@
-import { CustomApiProvider } from '../../src/services/user-config'
+import { CustomApiProvider } from '../../webview/services/user-config'
 
 /**
  * Provider-specific default configuration

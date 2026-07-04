@@ -10,6 +10,8 @@ import type { KvChange, KvNamespace } from '../../shared/protocol'
 export class KvStorage {
   private localCache = new Map<string, unknown>()
   private localLoaded = false
+  /** chrome.storage.session equivalent: host memory, shared across webviews */
+  private sessionItems = new Map<string, unknown>()
   private writeQueue: Promise<void> = Promise.resolve()
   private changeListeners: ((ns: KvNamespace, changes: KvChange[]) => void)[] = []
 
@@ -108,6 +110,13 @@ export class KvStorage {
   /* --------------------------------- get/set ---------------------------------- */
 
   async get(ns: KvNamespace, keys: string[] | null): Promise<Record<string, unknown>> {
+    if (ns === 'session') {
+      const out: Record<string, unknown> = {}
+      for (const k of keys ?? [...this.sessionItems.keys()]) {
+        if (this.sessionItems.has(k)) out[k] = this.sessionItems.get(k)
+      }
+      return out
+    }
     if (ns === 'ls') {
       const snapshot = await this.getLsSnapshot()
       if (keys === null) return snapshot
@@ -145,6 +154,12 @@ export class KvStorage {
 
   async set(ns: KvNamespace, items: Record<string, unknown>): Promise<void> {
     const changes: KvChange[] = []
+    if (ns === 'session') {
+      for (const [k, v] of Object.entries(items)) {
+        this.sessionItems.set(k, v)
+      }
+      return
+    }
     if (ns === 'ls') {
       await this.enqueueWrite(() => this.setLs(items))
       this.emitChanges(ns, Object.entries(items).map(([key, newValue]) => ({ key, newValue })))
@@ -173,6 +188,10 @@ export class KvStorage {
 
   async remove(ns: KvNamespace, keys: string[]): Promise<void> {
     const changes: KvChange[] = []
+    if (ns === 'session') {
+      for (const k of keys) this.sessionItems.delete(k)
+      return
+    }
     if (ns === 'ls') {
       await this.enqueueWrite(() => this.setLs({}, keys))
       this.emitChanges(ns, keys.map((key) => ({ key })))
@@ -200,6 +219,10 @@ export class KvStorage {
   }
 
   async clear(ns: KvNamespace): Promise<void> {
+    if (ns === 'session') {
+      this.sessionItems.clear()
+      return
+    }
     if (ns === 'ls') {
       await this.enqueueWrite(async () => {
         await vscode.workspace.fs.writeFile(this.lsFile, Buffer.from('{}', 'utf8'))

@@ -1,13 +1,9 @@
-import Browser from 'webextension-polyfill'
-
-export async function requestHostPermissions(hosts: string[]) {
-  const permissions: Browser.Permissions.Permissions = { origins: hosts }
-  if (await Browser.permissions.contains(permissions)) {
-    return true
-  }
-  return Browser.permissions.request(permissions)
+// VS Code 拡張にはホストパーミッションの概念がないため常に許可される。
+// 呼び出し側（各ボット実装）を無改造で使うためのスタブ。
+export async function requestHostPermissions(_hosts: string[]) {
+  return true
 }
 
-export async function requestHostPermission(host: string) {
-  return requestHostPermissions([host])
+export async function requestHostPermission(_host: string) {
+  return true
 }

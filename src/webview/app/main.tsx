@@ -27,8 +27,15 @@ function App() {
   useCleanCopy()
 
   useEffect(() => {
+    const initPayload = rpc.getInitPayload()
+
+    // openSettings / openHistory コマンドや BTW パネルの初期ルート
+    if (initPayload.initialRoute) {
+      void router.navigate({ to: initPayload.initialRoute })
+    }
+
     // Quick Ask コマンド（Chrome拡張の omnibox 相当）からのクエリを受け取る
-    const pending = rpc.getInitPayload().pendingQuery
+    const pending = initPayload.pendingQuery
     if (pending && pending.trim() !== '') {
       setPendingSearchQuery(pending)
       void markOmniboxSearchAsUsed()

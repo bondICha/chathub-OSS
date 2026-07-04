@@ -63,7 +63,7 @@ export class FetchProxy {
   }
 }
 
-function deserializeBody(init: SerializedRequestInit): BodyInit | undefined {
+function deserializeBody(init: SerializedRequestInit): string | Buffer | FormData | undefined {
   const body = init.body
   if (!body) return undefined
   switch (body.kind) {

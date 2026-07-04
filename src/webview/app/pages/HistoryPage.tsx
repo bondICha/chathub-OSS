@@ -324,8 +324,8 @@ const HistoryPage: FC = () => {
   }, [visibleSessions, previewMap])
 
   const openAppTab = useCallback(async (hashPath: string) => {
-    const url = `${Browser.runtime.getURL('app.html')}${hashPath}`
-    await Browser.tabs.create({ url })
+    // VS Code版はシングルウィンドウ運用: 同一 webview 内でルート遷移する
+    window.location.hash = hashPath
   }, [])
 
   const doRestoreSession = useCallback(

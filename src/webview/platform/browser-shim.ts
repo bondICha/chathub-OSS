@@ -7,7 +7,8 @@
 import type { KvChange, KvNamespace } from '../../shared/protocol'
 import { rpc } from './rpc-client'
 
-type StorageItems = Record<string, unknown>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type StorageItems = Record<string, any>
 type GetKeys = string | string[] | StorageItems | null | undefined
 
 export interface StorageChange {
@@ -50,29 +51,23 @@ class StorageArea {
   }
 }
 
-/** chrome.storage.session equivalent: webview-lifetime only, in memory. */
-class SessionStorageArea {
-  private items: StorageItems = {}
+// Chrome の tabs.setZoom 相当を CSS zoom で再現。localStorage ミラー経由で永続化。
+const ZOOM_KEY = 'huddlellm.zoomLevel'
 
-  async get(keys?: GetKeys): Promise<StorageItems> {
-    const { wanted, defaults } = normalizeGet(keys)
-    const out: StorageItems = { ...defaults }
-    for (const k of wanted ?? Object.keys(this.items)) {
-      if (k in this.items) out[k] = this.items[k]
-    }
-    return out
-  }
+function currentZoom(): number {
+  const v = parseFloat(window.localStorage.getItem(ZOOM_KEY) ?? '1')
+  return Number.isFinite(v) && v > 0 ? v : 1
+}
 
-  async set(items: StorageItems): Promise<void> {
-    Object.assign(this.items, items)
-  }
+function applyZoomStyle(factor: number): void {
+  ;(document.documentElement.style as CSSStyleDeclaration & { zoom: string }).zoom = String(factor)
+}
 
-  async remove(keys: string | string[]): Promise<void> {
-    for (const k of Array.isArray(keys) ? keys : [keys]) delete this.items[k]
-  }
-
-  async clear(): Promise<void> {
-    this.items = {}
+/** Called once at webview startup, after the localStorage mirror is seeded. */
+export function applyStoredZoom(): void {
+  const zoom = currentZoom()
+  if (zoom !== 1) {
+    applyZoomStyle(zoom)
   }
 }
 
@@ -94,7 +89,8 @@ const Browser = {
   storage: {
     local: new StorageArea('local'),
     sync: new StorageArea('sync'),
-    session: new SessionStorageArea(),
+    // host memory: shared across the panel / side view / BTW panel webviews
+    session: new StorageArea('session'),
     onChanged: {
       addListener(listener: OnChangedListener) {
         onChangedListeners.add(listener)
@@ -115,8 +111,55 @@ const Browser = {
     getManifest(): { version: string; name: string } {
       return { version: rpc.getInitPayload().version, name: 'HuddleLLM' }
     },
-    async sendMessage(_message: unknown): Promise<unknown> {
-      throw new Error('Browser.runtime.sendMessage is not available in VS Code')
+    // Chrome版では background service worker が CORS 回避のため FETCH_URL を
+    // 代理実行していた。VS Code版では fetch 自体がホストへプロキシされるので、
+    // ここで直接 fetch して同じ応答契約 {success, content, ...} を返す。
+    async sendMessage(message: unknown): Promise<unknown> {
+      const msg = message as { type?: string; url?: string; responseType?: string }
+      if (msg?.type === 'FETCH_URL' && typeof msg.url === 'string') {
+        try {
+          const response = await fetch(msg.url)
+          if (!response.ok) {
+            return { success: false, error: `HTTP ${response.status}: ${response.statusText}` }
+          }
+          const contentType = response.headers.get('content-type') || ''
+          if (contentType.includes('application/pdf') || msg.url.toLowerCase().endsWith('.pdf')) {
+            return { success: false, error: 'PDF content is not supported.' }
+          }
+          if (msg.responseType === 'arraybuffer') {
+            const buffer = await response.arrayBuffer()
+            return { success: true, content: Array.from(new Uint8Array(buffer)), contentType }
+          }
+          const buffer = await response.arrayBuffer()
+          const bytes = new Uint8Array(buffer)
+          if (bytes.slice(0, 100).some((b) => b === 0)) {
+            return {
+              success: false,
+              error: 'Binary content detected (PDF, image, or other non-text format). Cannot process as text.',
+            }
+          }
+          let charset = 'utf-8'
+          const charsetMatch = contentType.match(/charset=([^;]+)/i)
+          if (charsetMatch) {
+            charset = charsetMatch[1].toLowerCase()
+          }
+          let content: string
+          try {
+            content = new TextDecoder(charset).decode(bytes)
+          } catch {
+            content = new TextDecoder('utf-8').decode(bytes)
+          }
+          return {
+            success: true,
+            content,
+            status: response.status,
+            statusText: response.statusText,
+          }
+        } catch (err) {
+          return { success: false, error: err instanceof Error ? err.message : String(err) }
+        }
+      }
+      throw new Error(`Browser.runtime.sendMessage is not supported in VS Code (type: ${msg?.type})`)
     },
   },
   tabs: {
@@ -126,17 +169,23 @@ const Browser = {
       }
     },
     async getZoom(): Promise<number> {
-      return 1
+      return currentZoom()
     },
-    async setZoom(_factor: number): Promise<void> {
-      // no-op: zoom is managed by VS Code itself
+    async setZoom(factor: number): Promise<void> {
+      window.localStorage.setItem(ZOOM_KEY, String(factor))
+      applyZoomStyle(factor)
     },
   },
   windows: {
-    async create(options: { url?: string }): Promise<void> {
-      if (options.url) {
-        rpc.post({ type: 'ui.openExternal', url: options.url })
+    async create(options: { url?: string; [key: string]: unknown }): Promise<void> {
+      if (typeof options.url !== 'string') return
+      // Chrome版の BTW ポップアップ (app.html#/btw) は補助 webview パネルで開く
+      const hashIndex = options.url.indexOf('#')
+      if (hashIndex >= 0) {
+        rpc.post({ type: 'ui.openPanel', route: options.url.slice(hashIndex + 1) })
+        return
       }
+      rpc.post({ type: 'ui.openExternal', url: options.url })
     },
   },
   permissions: {

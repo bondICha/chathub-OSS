@@ -1,4 +1,4 @@
-import { CompanyProfilePreset } from '../src/services/company-profile'
+import { CompanyProfilePreset } from '../webview/services/company-profile'
 
 // NOTE: This file should be customized for your organization and excluded from git tracking.
 // Add this file to .gitignore and create your own version with your company's specific settings.

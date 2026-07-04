@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { AppPanel, APP_PANEL_VIEW_TYPE } from './panel'
+import { AppPanel, APP_PANEL_VIEW_TYPE, openAuxPanel } from './panel'
 import { SideViewProvider, SIDE_VIEW_ID } from './side-view'
 import { KvStorage } from './rpc/storage'
 import type { RouterHost } from './rpc/router'
@@ -17,6 +17,9 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
       const q = pendingQuery
       pendingQuery = undefined
       return q
+    },
+    openPanel(route: string) {
+      openAuxPanel(context, host, route)
     },
   }
 
