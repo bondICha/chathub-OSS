@@ -34,6 +34,13 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
 
   context.subscriptions.push(
     vscode.commands.registerCommand('huddlellm.open', () => {
+      // Chrome版の onInstalled → welcome ページ表示に相当: 初回のみ /welcome を開く
+      const welcomed = context.globalState.get<boolean>('huddlellm.welcomed')
+      if (!welcomed) {
+        void context.globalState.update('huddlellm.welcomed', true)
+        AppPanel.createOrShow(context, host, '/welcome')
+        return
+      }
       AppPanel.createOrShow(context, host)
     }),
     vscode.commands.registerCommand('huddlellm.openSettings', () => {

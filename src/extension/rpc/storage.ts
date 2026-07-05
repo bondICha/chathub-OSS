@@ -57,12 +57,83 @@ export class KvStorage {
       if (type !== vscode.FileType.File || !name.endsWith('.json')) continue
       try {
         const bytes = await vscode.workspace.fs.readFile(vscode.Uri.joinPath(this.localDir, name))
-        this.localCache.set(this.filenameToKey(name), JSON.parse(Buffer.from(bytes).toString('utf8')))
+        const key = this.filenameToKey(name)
+        const value = JSON.parse(Buffer.from(bytes).toString('utf8'))
+        this.localCache.set(key, await this.reinjectSecrets('local', key, value))
       } catch {
         // unreadable entry: skip rather than fail the whole store
       }
     }
     this.localLoaded = true
+  }
+
+  /* ------------------------------ secret handling ------------------------------ */
+  // API キーは平文で disk / globalState / Settings Sync に載せず SecretStorage に
+  // 退避する。webview 側（メモリ上）は常に実際の値を見るので既存コードは無改造。
+
+  private isSecretArrayKey(key: string): boolean {
+    return key === 'customApiConfigs' || key === 'providerConfigs'
+  }
+
+  private isSecretScalarKey(key: string): boolean {
+    return key === 'customApiKey'
+  }
+
+  private secretId(ns: KvNamespace, key: string): string {
+    return `huddlellm.secrets.${ns}.${key}`
+  }
+
+  /** Returns the value to persist, moving apiKey fields into SecretStorage. */
+  private async sanitizeSecrets(ns: KvNamespace, key: string, value: unknown): Promise<unknown> {
+    if (this.isSecretScalarKey(key) && typeof value === 'string') {
+      await this.context.secrets.store(this.secretId(ns, key), value)
+      return value ? SECRET_PLACEHOLDER : value
+    }
+    if (this.isSecretArrayKey(key) && Array.isArray(value)) {
+      const secretMap: Record<number, string> = {}
+      const sanitized = value.map((item, i) => {
+        if (item && typeof item === 'object' && typeof (item as { apiKey?: unknown }).apiKey === 'string') {
+          const apiKey = (item as { apiKey: string }).apiKey
+          if (apiKey) {
+            secretMap[i] = apiKey
+            return { ...(item as object), apiKey: SECRET_PLACEHOLDER }
+          }
+        }
+        return item
+      })
+      await this.context.secrets.store(this.secretId(ns, key), JSON.stringify(secretMap))
+      return sanitized
+    }
+    return value
+  }
+
+  /** Restores apiKey fields from SecretStorage into a loaded value. */
+  private async reinjectSecrets(ns: KvNamespace, key: string, value: unknown): Promise<unknown> {
+    if (this.isSecretScalarKey(key) && value === SECRET_PLACEHOLDER) {
+      return (await this.context.secrets.get(this.secretId(ns, key))) ?? ''
+    }
+    if (this.isSecretArrayKey(key) && Array.isArray(value)) {
+      const raw = await this.context.secrets.get(this.secretId(ns, key))
+      if (!raw) return value
+      let secretMap: Record<number, string>
+      try {
+        secretMap = JSON.parse(raw)
+      } catch {
+        return value
+      }
+      return value.map((item, i) => {
+        if (
+          item &&
+          typeof item === 'object' &&
+          (item as { apiKey?: unknown }).apiKey === SECRET_PLACEHOLDER &&
+          secretMap[i] !== undefined
+        ) {
+          return { ...(item as object), apiKey: secretMap[i] }
+        }
+        return item
+      })
+    }
+    return value
   }
 
   private enqueueWrite(fn: () => Promise<void>): Promise<void> {
@@ -72,7 +143,8 @@ export class KvStorage {
 
   private async writeLocalKey(key: string, value: unknown): Promise<void> {
     const target = vscode.Uri.joinPath(this.localDir, this.keyToFilename(key))
-    const data = Buffer.from(JSON.stringify(value), 'utf8')
+    const persisted = await this.sanitizeSecrets('local', key, value)
+    const data = Buffer.from(JSON.stringify(persisted), 'utf8')
     await vscode.workspace.fs.writeFile(target, data)
   }
 
@@ -140,14 +212,15 @@ export class KvStorage {
     if (keys === null) {
       for (const k of this.context.globalState.keys()) {
         if (k.startsWith(SYNC_PREFIX)) {
-          out[k.slice(SYNC_PREFIX.length)] = this.context.globalState.get(k)
+          const key = k.slice(SYNC_PREFIX.length)
+          out[key] = await this.reinjectSecrets('sync', key, this.context.globalState.get(k))
         }
       }
       return out
     }
     for (const k of keys) {
       const v = this.context.globalState.get(SYNC_PREFIX + k)
-      if (v !== undefined) out[k] = v
+      if (v !== undefined) out[k] = await this.reinjectSecrets('sync', k, v)
     }
     return out
   }
@@ -181,7 +254,7 @@ export class KvStorage {
     }
     for (const [k, v] of Object.entries(items)) {
       changes.push({ key: k, oldValue: this.context.globalState.get(SYNC_PREFIX + k), newValue: v })
-      await this.context.globalState.update(SYNC_PREFIX + k, v)
+      await this.context.globalState.update(SYNC_PREFIX + k, await this.sanitizeSecrets('sync', k, v))
     }
     this.emitChanges(ns, changes)
   }
@@ -244,3 +317,5 @@ export class KvStorage {
 }
 
 const SYNC_PREFIX = 'huddlellm.sync.'
+/** persisted in place of an API key; the real value lives in SecretStorage */
+const SECRET_PLACEHOLDER = '__HUDDLELLM_SECRET__'
