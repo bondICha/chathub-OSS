@@ -13,6 +13,11 @@
     "AI",
     "Chat"
   ],
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bondICha/HuddleLLM---Chat-with-multiple-AI-API-together"
+  },
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
