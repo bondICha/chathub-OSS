@@ -1,4 +1,5 @@
-import { createHashHistory, createRootRoute, createRoute, createRouter, useParams, Navigate } from '@tanstack/react-router'
+import { createBrowserHistory, parseHref } from '@tanstack/history'
+import { createRootRoute, createRoute, createRouter, useParams, Navigate } from '@tanstack/react-router'
 import Layout from './components/Layout'
 import MultiBotChatPanel from './pages/MultiBotChatPanel'
 import SettingPage from './pages/SettingPage'
@@ -65,7 +66,30 @@ const routeTree = rootRoute.addChildren([
   btwRoute,
 ])
 
-const hashHistory = createHashHistory()
+/**
+ * VS Code Webview は <base href="…"> でバンドルルートを基準にしている。
+ * @tanstack/history の createHashHistory は createHref で
+ *   `${pathname}${search}#${href}`
+ * を返すため、<base> がパスを CDN ルートに書き換えて目的地URLが崩れる。
+ *
+ * ここでは createBrowserHistory の parseLocation/createHref を
+ * ハッシュベースルーティングと同じ挙動に上書きして回避する。
+ * parseHref は相対パスを分解するだけなので <base> の影響を受けない。
+ * createHref は `#${href}` のsame-document参照のみ返す。
+ */
+const hashHistory = createBrowserHistory({
+  parseLocation: () => {
+    const hashSplit = window.location.hash.split('#').slice(1)
+    const pathPart = hashSplit[0] ?? '/'
+    const searchPart = window.location.search
+    const hashEntries = hashSplit.slice(1)
+    return parseHref(
+      `${pathPart}${searchPart}${hashEntries.length === 0 ? '' : `#${hashEntries.join('#')}`}`,
+      window.history.state,
+    )
+  },
+  createHref: (href) => `#${href}`,
+})
 const router = createRouter({ routeTree, history: hashHistory })
 
 export { router }
