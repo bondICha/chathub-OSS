@@ -56,6 +56,8 @@ export type WebviewToHostMessage =
   | { type: 'ui.openKeybindings' }
   /** save dialog + write on the host; answered with kv.result (data unused) */
   | { type: 'ui.saveFile'; id: string; filename: string; base64: string }
+  /** open dialog on the host; answered with kv.result { files: [{base64,filename}] } or undefined if cancelled */
+  | { type: 'ui.openFile'; id: string; extensions?: string[]; multiple?: boolean }
   | { type: 'state.route'; route: string }
 
 /* ------------------------------- host -> webview ------------------------------ */

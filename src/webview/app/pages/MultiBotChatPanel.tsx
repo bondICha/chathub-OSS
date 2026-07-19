@@ -301,12 +301,12 @@ const GeneralChatPanel: FC<{
     const enabledIndices = await resolveEnabledBotIndices()
 
     if (enabledIndices.length === 0) {
-      alert(t('All-in-One: Failed to resolve models'))
+      toast.error(t('All-in-One: Failed to resolve models'))
       return
     }
 
     if (enabledIndices.length < newPanelCount) {
-      alert(t('All-in-One: Not enough enabled models', { count: newPanelCount }))
+      toast.error(t('All-in-One: Not enough enabled models', { count: newPanelCount }))
       return
     }
 
@@ -550,13 +550,13 @@ const GeneralChatPanel: FC<{
       // 有効なボットのインデックスを取得
       const enabledIndices = await resolveEnabledBotIndices()
       if (enabledIndices.length === 0) {
-        alert(t('All-in-One: Failed to resolve models'))
+        toast.error(t('All-in-One: Failed to resolve models'))
         return
       }
 
       // 選択されたボットが有効か確認
       if (!enabledIndices.includes(newIndex)) {
-        alert(t('All-in-One: Failed to resolve models'))
+        toast.error(t('All-in-One: Failed to resolve models'))
         return
       }
 
@@ -565,7 +565,7 @@ const GeneralChatPanel: FC<{
       
       // 必要なボット数が有効なボット数を超えていないか確認
       if (enabledIndices.length < panelCount) {
-        alert(t('All-in-One: Not enough enabled models', { count: panelCount }))
+        toast.error(t('All-in-One: Not enough enabled models', { count: panelCount }))
         return
       }
 
@@ -582,7 +582,7 @@ const GeneralChatPanel: FC<{
       )
 
       if (!updatedPanelBots) {
-        alert(t('All-in-One: Not enough enabled models', { count: panelCount }))
+        toast.error(t('All-in-One: Not enough enabled models', { count: panelCount }))
         return
       }
 
@@ -1048,7 +1048,7 @@ const MultiBotChatPanel: FC = () => {
       try {
         const snapshot = await getSessionSnapshot(restoreSessionUUID)
         if (!snapshot) {
-          alert(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
+          toast.error(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
           // 不正なUUIDは消す（F5ループ防止）
           clearUrlParams()
           return
@@ -1064,7 +1064,7 @@ const MultiBotChatPanel: FC = () => {
         })
         // 成功時はURLを残す（リロード/共有/ブックマークで再復元）
       } catch (error) {
-        alert(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
+        toast.error(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
         clearUrlParams()
       }
     })()
@@ -1090,7 +1090,7 @@ const MultiBotChatPanel: FC = () => {
         const sessions = await loadAllInOneSessions()
         const session = sessions.find(s => s.id === restoreAllInOneSessionId)
         if (!session) {
-          alert(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
+          toast.error(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
           // 不正なIDは消す（F5ループ防止）
           clearUrlParams()
           return
@@ -1106,7 +1106,7 @@ const MultiBotChatPanel: FC = () => {
         })
         // 成功時はURLを残す（リロード/共有/ブックマークで再復元）
       } catch (error) {
-        alert(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
+        toast.error(`${t('Restore Session')}: ${t('Failed to restore session.')}`)
         clearUrlParams()
       }
     })()

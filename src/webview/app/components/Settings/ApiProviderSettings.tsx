@@ -10,6 +10,7 @@ import Blockquote from './Blockquote';
 import IconSelectModal from './IconSelectModal';
 import BotIcon from '../BotIcon';
 import ProviderEditModal from './ProviderEditModal';
+import ConfirmDialog from '../ConfirmDialog';
 import CopyIcon from '../icons/CopyIcon';
 import { resolveActiveKeyForProvider, maskKey } from '~/utils/active-api-key';
 import { cx } from '~/utils';
@@ -23,6 +24,7 @@ const ApiProviderSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
   const { t } = useTranslation();
   const [providerIconEditIndex, setProviderIconEditIndex] = useState<number | null>(null);
   const [editingProviderIndex, setEditingProviderIndex] = useState<number | null>(null);
+  const [deleteConfirmIndex, setDeleteConfirmIndex] = useState<number | null>(null);
 
   const providerConfigs = userConfig.providerConfigs || [];
 
@@ -251,20 +253,7 @@ const ApiProviderSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
                     </button>
                     <button
                       className="p-1.5 rounded hover:bg-white/20 text-red-400"
-                      onClick={() => {
-                        if (!window.confirm(t('Are you sure you want to delete this provider?'))) return;
-                        const updatedProviders = [...providerConfigs];
-                        updatedProviders.splice(pIndex, 1);
-                        const updatedBots = (userConfig.customApiConfigs || []).map((c) => {
-                          if (c.providerRefId === prov.id) return { ...c, providerRefId: undefined };
-                          return c;
-                        });
-                        updateConfigValue({
-                          providerConfigs: updatedProviders,
-                          customApiConfigs: updatedBots,
-                        });
-                        toast.success(t('Provider deleted. Bots referencing it have been switched to individual settings.'));
-                      }}
+                      onClick={() => setDeleteConfirmIndex(pIndex)}
                       title={t('Delete')}
                     >
                       <BiTrash size={14} />
@@ -309,6 +298,29 @@ const ApiProviderSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
             updateProviderConfigs(updated);
             toast.success(t('Provider updated successfully'));
           }
+        }}
+      />
+
+      <ConfirmDialog
+        open={deleteConfirmIndex !== null}
+        message={t('Are you sure you want to delete this provider?')}
+        confirmText={t('Delete')}
+        onCancel={() => setDeleteConfirmIndex(null)}
+        onConfirm={() => {
+          if (deleteConfirmIndex === null) return;
+          const prov = providerConfigs[deleteConfirmIndex];
+          const updatedProviders = [...providerConfigs];
+          updatedProviders.splice(deleteConfirmIndex, 1);
+          const updatedBots = (userConfig.customApiConfigs || []).map((c) => {
+            if (c.providerRefId === prov.id) return { ...c, providerRefId: undefined };
+            return c;
+          });
+          updateConfigValue({
+            providerConfigs: updatedProviders,
+            customApiConfigs: updatedBots,
+          });
+          toast.success(t('Provider deleted. Bots referencing it have been switched to individual settings.'));
+          setDeleteConfirmIndex(null);
         }}
       />
     </>

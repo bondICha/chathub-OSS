@@ -8,6 +8,9 @@ import './sidepanel.css'
 import { CHATBOTS_UPDATED_EVENT } from './consts'
 import { revalidateEnabledBots } from './hooks/use-enabled-bots'
 import { useCleanCopy } from './hooks/use-clean-copy'
+import { installExternalLinkInterceptor } from '~platform/external-links'
+
+installExternalLinkInterceptor()
 
 function SidePanelApp() {
   useCleanCopy()

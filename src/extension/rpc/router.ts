@@ -114,6 +114,35 @@ export class WebviewRouter implements vscode.Disposable {
           this.post({ type: 'kv.result', id: msg.id, ok: false, error: String(err) })
         }
         break
+      case 'ui.openFile': {
+        try {
+          const filters: Record<string, string[]> = {}
+          if (msg.extensions?.length) {
+            filters['Files'] = msg.extensions.map((e) => e.replace(/^\./, ''))
+          }
+          const uris = await vscode.window.showOpenDialog({
+            canSelectMany: msg.multiple ?? false,
+            filters: Object.keys(filters).length ? filters : undefined,
+          })
+          if (!uris || uris.length === 0) {
+            this.post({ type: 'kv.result', id: msg.id, ok: true, data: undefined })
+          } else {
+            const files = await Promise.all(
+              uris.map(async (uri) => {
+                const bytes = await vscode.workspace.fs.readFile(uri)
+                return {
+                  base64: Buffer.from(bytes).toString('base64'),
+                  filename: uri.path.split('/').pop() ?? 'file',
+                }
+              }),
+            )
+            this.post({ type: 'kv.result', id: msg.id, ok: true, data: { files } })
+          }
+        } catch (err) {
+          this.post({ type: 'kv.result', id: msg.id, ok: false, error: String(err) })
+        }
+        break
+      }
       case 'state.route':
         this.host.onRouteChanged?.(msg.route)
         break

@@ -7,6 +7,7 @@ import Select from '../Select';
 import Switch from '../Switch';
 import Button from '../Button';
 import ExpandableDialog from '../ExpandableDialog';
+import ConfirmDialog from '../ConfirmDialog';
 import HostSearchInput from './HostSearchInput';
 import BotIcon from '../BotIcon';
 import IconSelectModal from './IconSelectModal';
@@ -26,6 +27,7 @@ const ProviderEditModal: FC<Props> = ({ open, onClose, provider, commonApiKey = 
   const { t } = useTranslation();
   const [editingProvider, setEditingProvider] = useState<ProviderConfig | null>(null);
   const [iconModalOpen, setIconModalOpen] = useState(false);
+  const [showEmptyKeyConfirm, setShowEmptyKeyConfirm] = useState(false);
   const iconModalClosingRef = useRef(false);
 
   // Update editingProvider when provider prop changes
@@ -35,10 +37,11 @@ const ProviderEditModal: FC<Props> = ({ open, onClose, provider, commonApiKey = 
     }
   }, [provider]);
 
-  const handleSave = () => {
+  const handleSave = (skipConfirm = false) => {
     if (editingProvider) {
-      if (!editingProvider.apiKey?.trim() && commonApiKey.trim()) {
-        if (!window.confirm(t('API Key is empty. Use Common API Key?'))) return;
+      if (!skipConfirm && !editingProvider.apiKey?.trim() && commonApiKey.trim()) {
+        setShowEmptyKeyConfirm(true);
+        return;
       }
       onSave(editingProvider);
       onClose();
@@ -74,7 +77,7 @@ const ProviderEditModal: FC<Props> = ({ open, onClose, provider, commonApiKey = 
             <Button
               text={t('Save')}
               color="primary"
-              onClick={handleSave}
+              onClick={() => handleSave()}
             />
           </div>
         }
@@ -396,6 +399,17 @@ const ProviderEditModal: FC<Props> = ({ open, onClose, provider, commonApiKey = 
         value={editingProvider.icon || ''}
         onChange={(val) => {
           setEditingProvider({ ...editingProvider, icon: val });
+        }}
+      />
+
+      <ConfirmDialog
+        open={showEmptyKeyConfirm}
+        message={t('API Key is empty. Use Common API Key?')}
+        confirmText={t('OK')}
+        onCancel={() => setShowEmptyKeyConfirm(false)}
+        onConfirm={() => {
+          setShowEmptyKeyConfirm(false);
+          handleSave(true);
         }}
       />
     </>

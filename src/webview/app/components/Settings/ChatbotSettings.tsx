@@ -27,6 +27,7 @@ import ImageAgentSettings from './ImageAgentSettings';
 import HostSearchInput from './HostSearchInput';
 import IconSelectModal from './IconSelectModal';
 import BotIcon from '../BotIcon';
+import ConfirmDialog from '../ConfirmDialog';
 
 interface Props {
   userConfig: UserConfig;
@@ -50,6 +51,7 @@ const ChatbotSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
   const [nestedTemplateOptions, setNestedTemplateOptions] = useState<NestedDropdownOption[]>([]);
   const [chatbotIconEditIndex, setChatbotIconEditIndex] = useState<number | null>(null);
   const [editingToolDefinition, setEditingToolDefinition] = useState<{ index: number; text: string } | null>(null);
+  const [deleteModelConfirmIndex, setDeleteModelConfirmIndex] = useState<number | null>(null);
 
   const { loading: modelsLoading, fetchSingleModel, modelsPerConfig, errorsPerConfig, isProviderSupported } = useApiModels();
   const prevModelsPerConfigRef = useRef<Record<number, ApiModel[]>>({});
@@ -226,7 +228,7 @@ const ChatbotSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
 
   const addNewCustomModel = () => {
     if (customApiConfigs.length >= MAX_CUSTOM_MODELS) {
-      alert(t(`Maximum number of custom models (${MAX_CUSTOM_MODELS}) reached.`));
+      toast.error(t(`Maximum number of custom models (${MAX_CUSTOM_MODELS}) reached.`));
       return;
     }
     const newId = Math.max(...customApiConfigs.map(c => c.id ?? 0), 0) + 1;
@@ -251,19 +253,22 @@ const ChatbotSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
     updateCustomApiConfigs([...customApiConfigs, newConfig]);
   };
 
-  const deleteCustomModel = async (index: number) => {
+  const deleteCustomModel = (index: number) => {
     if (customApiConfigs.length <= 1) {
-      alert(t('Cannot delete the last custom model.'));
+      toast.error(t('Cannot delete the last custom model.'));
       return;
     }
-    if (!window.confirm(t('Are you sure you want to delete this custom model?'))) {
-      return;
-    }
+    setDeleteModelConfirmIndex(index);
+  };
+
+  const confirmDeleteCustomModel = () => {
+    if (deleteModelConfirmIndex === null) return;
     const updatedConfigs = [...customApiConfigs];
-    updatedConfigs.splice(index, 1);
+    updatedConfigs.splice(deleteModelConfirmIndex, 1);
     updateCustomApiConfigs(updatedConfigs);
     revalidateEnabledBots();
     toast.success(t('Model deleted. Please save changes to persist.'));
+    setDeleteModelConfirmIndex(null);
   };
 
   const toggleBotEnabledState = (index: number) => {
@@ -271,7 +276,7 @@ const ChatbotSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
     const config = updatedConfigs[index];
     const isEnabled = config.enabled === true;
     if (isEnabled && updatedConfigs.filter(c => c.enabled).length <= 1) {
-      alert(t('At least one bot should be enabled'));
+      toast.error(t('At least one bot should be enabled'));
       return;
     }
     updatedConfigs[index].enabled = !isEnabled;
@@ -1172,9 +1177,7 @@ const ChatbotSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
                                   }}
                                   onBlur={(e) => {
                                     if (!e.currentTarget.value.trim() && commonKey.trim()) {
-                                      if (!window.confirm(t('API Key is empty. Use Common API Key?'))) {
-                                        e.currentTarget.focus();
-                                      }
+                                      toast(t('API Key is empty. Common API Key will be used.'));
                                     }
                                   }}
                                   type="password"
@@ -1583,6 +1586,13 @@ const ChatbotSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
             updateCustomApiConfigs(updated);
           }
         }}
+      />
+      <ConfirmDialog
+        open={deleteModelConfirmIndex !== null}
+        message={t('Are you sure you want to delete this custom model?')}
+        confirmText={t('Delete')}
+        onCancel={() => setDeleteModelConfirmIndex(null)}
+        onConfirm={confirmDeleteCustomModel}
       />
     </>
   );

@@ -40,8 +40,23 @@
         "command": "huddlellm.quickAsk",
         "title": "Quick Ask",
         "category": "HuddleLLM"
+      },
+      {
+        "command": "huddlellm.openInMainTab",
+        "title": "Open in Main Tab",
+        "category": "HuddleLLM",
+        "icon": "$(link-external)"
       }
     ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "huddlellm.openInMainTab",
+          "when": "view == huddlellm.sidePanel",
+          "group": "navigation"
+        }
+      ]
+    },
     "keybindings": [
       {
         "command": "huddlellm.open",
@@ -92,6 +107,7 @@
     "@types/uuid": "^9.0.7",
     "@types/vscode": "^1.90.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vscode/vsce": "^3.9.2",
     "autoprefixer": "^10.4.16",
     "esbuild": "^0.24.0",
     "postcss": "^8.4.32",

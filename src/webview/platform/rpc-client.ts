@@ -85,6 +85,14 @@ class RpcClient {
     })
   }
 
+  openFile(options?: { extensions?: string[]; multiple?: boolean }): Promise<Record<string, unknown> | undefined> {
+    const id = this.newId()
+    return new Promise((resolve, reject) => {
+      this.kvPending.set(id, { resolve, reject })
+      this.post({ type: 'ui.openFile', id, extensions: options?.extensions, multiple: options?.multiple })
+    })
+  }
+
   registerFetch(id: string, handler: FetchStreamHandler): void {
     this.fetchHandlers.set(id, handler)
   }

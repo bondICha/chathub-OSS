@@ -1,6 +1,7 @@
 import { FC, useCallback } from 'react'
 import { UserConfig } from '~services/user-config'
 import { useTranslation } from 'react-i18next'
+import toast from 'react-hot-toast'
 
 interface Props {
   userConfig: UserConfig
@@ -19,7 +20,7 @@ const EnabledBotsSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
           // 無効にする前に、有効なボットが他にもあるかチェック
           const enabledCount = updatedConfigs.filter(config => config.enabled === true).length
           if (enabledCount <= 1) {
-            alert('At least one bot should be enabled')
+            toast.error('At least one bot should be enabled')
             return
           }
         }

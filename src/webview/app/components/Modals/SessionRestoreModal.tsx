@@ -1,6 +1,7 @@
 import { FC, useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { Dialog, Tab } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
+import toast from 'react-hot-toast'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import { useNavigate } from '@tanstack/react-router'
 import { loadHistoryMessages, loadSessionSnapshots, loadLatestSession, loadNext3Sessions } from '~services/chat-history'
@@ -575,11 +576,11 @@ const SessionRestoreModal: FC = () => {
   const handleDeleteSession = async (_session: SessionData, e: React.MouseEvent) => {
     e.stopPropagation() // セッションをクリックしてRestoreしないように
 
-    alert('Session削除機能は現在実装中です。今は、各Chatbotの履歴画面から削除してください。\n\nSession deletion feature is currently under development. Please delete from each Chatbot\'s history page.\n\n会话删除功能正在开发中。请从各聊天机器人的历史页面删除。')
+    toast('Session削除機能は現在実装中です。今は、各Chatbotの履歴画面から削除してください。\n\nSession deletion feature is currently under development. Please delete from each Chatbot\'s history page.\n\n会话删除功能正在开发中。请从各聊天机器人的历史页面删除。')
   }
 
   const handleDeleteAllSessions = async () => {
-    alert('Session削除機能は現在実装中です。今は、各Chatbotの履歴画面から削除してください。\n\nSession deletion feature is currently under development. Please delete from each Chatbot\'s history page.\n\n会话删除功能正在开发中。请从各聊天机器人的历史页面删除。')
+    toast('Session削除機能は現在実装中です。今は、各Chatbotの履歴画面から削除してください。\n\nSession deletion feature is currently under development. Please delete from each Chatbot\'s history page.\n\n会话删除功能正在开发中。请从各聊天机器人的历史页面删除。')
   }
 
   const renderSessionItem = (session: SessionData, _index: number, isSelected: boolean) => (

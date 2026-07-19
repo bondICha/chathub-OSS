@@ -1,6 +1,7 @@
 import { FC, useCallback, useEffect } from 'react'
 import { useSetAtom } from 'jotai'
 import { useTranslation } from 'react-i18next'
+import toast from 'react-hot-toast'
 import { useChat } from '~app/hooks/use-chat'
 import { useSessionNameGenerator } from '~app/hooks/use-session-name'
 import ConversationPanel from '../components/Chat/ConversationPanel'
@@ -44,7 +45,7 @@ const SingleBotChatPanel: FC<Props> = ({ index }) => {
       const conversations = await loadHistoryMessages(index)
       const found = conversations.some(c => c.id === restoreConversationId)
       if (!found) {
-        alert(`${t('Restore Session')}: ${t('No sessions found.')}`)
+        toast.error(`${t('Restore Session')}: ${t('No sessions found.')}`)
         return
       }
       setSessionToRestore({

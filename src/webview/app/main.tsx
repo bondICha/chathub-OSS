@@ -18,6 +18,9 @@ import { useCleanCopy } from './hooks/use-clean-copy'
 import { applyThemeMode } from './utils/color-scheme'
 import { getUserThemeMode } from '~services/theme'
 import { rpc } from '~platform/rpc-client'
+import { installExternalLinkInterceptor } from '~platform/external-links'
+
+installExternalLinkInterceptor()
 
 function App() {
   const setPendingSearchQuery = useSetAtom(pendingSearchQueryAtom)

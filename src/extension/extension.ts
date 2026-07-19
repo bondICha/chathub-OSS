@@ -63,6 +63,9 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
         AppPanel.createOrShow(context, host)
       }
     }),
+    vscode.commands.registerCommand('huddlellm.openInMainTab', () => {
+      AppPanel.createOrShow(context, host)
+    }),
     vscode.window.registerWebviewViewProvider(SIDE_VIEW_ID, sideView, {
       webviewOptions: { retainContextWhenHidden: true },
     }),

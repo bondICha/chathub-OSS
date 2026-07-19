@@ -12,7 +12,7 @@ import {
   useListNavigation,
   useRole,
 } from '@floating-ui/react'
-import { fileOpen } from 'browser-fs-access'
+import { openFilesViaHost } from '~platform/open-file'
 import { cx } from '~/utils'
 import { ClipboardEventHandler, FC, ReactNode, memo, useCallback, useMemo, useRef, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -271,7 +271,6 @@ const ChatMessageInput: FC<Props> = (props) => {
           id: 'transcribing',
           duration: 5000  // Show error for 5 seconds
         });
-        alert(`DEBUG: ${t('Transcription failed')}\n\nError: ${errorMessage}\n\nFile: ${transcribeFile.name}\nSize: ${(transcribeFile.size / (1024 * 1024)).toFixed(2)}MB`);
         // Remove failed attachment
         setAttachments(prev => prev.filter(a => a.id !== tempId));
       } finally {
@@ -394,12 +393,12 @@ const ChatMessageInput: FC<Props> = (props) => {
           const maxSize = 20 * 1024 * 1024; // 20MB
           if (file.size > maxSize) {
             const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
-            alert(`DEBUG: Audio file too large: ${file.name} (${sizeMB}MB / 20MB limit)`);
+            toast.error(`Audio file too large: ${file.name} (${sizeMB}MB / 20MB limit)`);
             break;
           }
           const existingAudio = attachments.find(a => a.type === 'audio');
           if (existingAudio) {
-            alert(`DEBUG: Only one audio file allowed per message`);
+            toast.error(`Only one audio file allowed per message`);
             break;
           }
 
@@ -433,10 +432,8 @@ const ChatMessageInput: FC<Props> = (props) => {
   }, [attachments]);
 
   const selectAttachments = useCallback(async () => {
-    const files = await fileOpen({
-      multiple: true,
-    });
-    handleFileSelect(files);
+    const files = await openFilesViaHost()
+    if (files.length > 0) handleFileSelect(files);
   }, [handleFileSelect]);
 
   const removeAttachment = useCallback((id: string) => {

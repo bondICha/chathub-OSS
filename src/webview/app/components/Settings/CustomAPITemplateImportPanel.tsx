@@ -1,10 +1,11 @@
 import { FC, useState, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BiImport, BiChevronDown, BiChevronRight } from 'react-icons/bi'
-import { fileOpen } from 'browser-fs-access'
+import { openFileViaHost } from '~platform/open-file'
 import { isEqual, omit } from 'lodash-es'
 import Button from '../Button'
 import Dialog from '../Dialog'
+import ConfirmDialog from '../ConfirmDialog'
 import Select from '../Select'
 import Checkbox from '../Checkbox'
 import { UserConfig, CustomApiConfig, updateUserConfig, ProviderConfig } from '~services/user-config'
@@ -118,6 +119,7 @@ const CustomAPITemplateImportPanel: FC<Props> = ({ userConfig, updateConfigValue
   const [expandProviders, setExpandProviders] = useState(false);
   const [expandedPreviews, setExpandedPreviews] = useState<Record<number, boolean>>({});
   const [expandedProviderPreviews, setExpandedProviderPreviews] = useState<Record<string, boolean>>({});
+  const [showImportConfirm, setShowImportConfirm] = useState(false);
 
   const togglePreview = (index: number) => {
     setExpandedPreviews(prev => ({
@@ -247,7 +249,8 @@ const CustomAPITemplateImportPanel: FC<Props> = ({ userConfig, updateConfigValue
   // ファイル選択処理
   const handleFileSelect = async () => {
     try {
-      const blob = await fileOpen({ extensions: ['.json'] })
+      const blob = await openFileViaHost({ extensions: ['.json'] })
+      if (!blob) return
       setLastOpenedFile(blob);
       const text = await blob.text()
       const json = JSON.parse(text);
@@ -329,15 +332,12 @@ const CustomAPITemplateImportPanel: FC<Props> = ({ userConfig, updateConfigValue
   }
 
   // インポート実行
-  const handleImport = async () => {
+  const handleImport = async (skipConfirm = false) => {
+    if (!skipConfirm) {
+      setShowImportConfirm(true);
+      return;
+    }
     try {
-      const confirmMessage = t(
-        'Selected Custom API settings will be imported. This will overwrite existing settings including individual API keys. Common API Key will be preserved. Continue?'
-      );
-      if (!window.confirm(confirmMessage)) {
-        return;
-      }
-
       const newConfigs = [...userConfig.customApiConfigs];
       const configsToAdd: CustomApiConfig[] = [];
 
@@ -681,11 +681,24 @@ const CustomAPITemplateImportPanel: FC<Props> = ({ userConfig, updateConfigValue
           <div className="px-6 py-3 flex-shrink-0 border-t border-primary-border">
             <div className="flex justify-end gap-4">
               <Button text={t('Cancel')} onClick={() => setIsOpen(false)} color="flat" />
-              <Button text={t('Import')} onClick={handleImport} color="primary" />
+              <Button text={t('Import')} onClick={() => handleImport()} color="primary" />
             </div>
           </div>
         </div>
       </Dialog>
+
+      <ConfirmDialog
+        open={showImportConfirm}
+        message={t(
+          'Selected Custom API settings will be imported. This will overwrite existing settings including individual API keys. Common API Key will be preserved. Continue?'
+        )}
+        confirmText={t('Import')}
+        onCancel={() => setShowImportConfirm(false)}
+        onConfirm={() => {
+          setShowImportConfirm(false);
+          void handleImport(true);
+        }}
+      />
     </>
   )
 }

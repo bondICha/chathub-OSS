@@ -1,6 +1,6 @@
 import i18next from 'i18next'
-import { fileOpen } from 'browser-fs-access'
 import Browser from 'webextension-polyfill'
+import { openFileViaHost } from '~platform/open-file'
 import { saveBlobViaHost } from '~platform/save-file'
 import { requestHostPermissions } from '~services/host-permissions'
 import { CustomApiConfig, ProviderConfig, CustomApiProvider } from '~services/user-config'
@@ -76,6 +76,57 @@ function createExportProgressOverlay() {
 }
 
 const yieldToUI = () => new Promise<void>((resolve) => setTimeout(resolve, 0))
+
+function showInlineDialog(message: string, buttons: { label: string; primary?: boolean }[]): Promise<number> {
+  return new Promise((resolve) => {
+    const overlay = document.createElement('div')
+    overlay.style.cssText = [
+      'position:fixed', 'inset:0', 'z-index:2147483648',
+      'background:rgba(0,0,0,0.55)',
+      'display:flex', 'align-items:center', 'justify-content:center',
+      'font-family:system-ui,-apple-system,sans-serif',
+    ].join(';')
+
+    const card = document.createElement('div')
+    card.style.cssText = [
+      'min-width:320px', 'max-width:80vw',
+      'background:#fff', 'color:#111',
+      'border-radius:12px', 'padding:20px 24px',
+      'box-shadow:0 10px 40px rgba(0,0,0,0.3)',
+    ].join(';')
+
+    const msg = document.createElement('div')
+    msg.style.cssText = 'font-size:14px;white-space:pre-wrap;word-break:break-word;margin-bottom:16px'
+    msg.textContent = message
+
+    const btnRow = document.createElement('div')
+    btnRow.style.cssText = 'display:flex;gap:8px;justify-content:flex-end'
+
+    buttons.forEach((b, i) => {
+      const btn = document.createElement('button')
+      btn.textContent = b.label
+      btn.style.cssText = b.primary
+        ? 'padding:8px 16px;border:none;border-radius:6px;background:#3b82f6;color:#fff;cursor:pointer;font-size:13px;font-weight:500'
+        : 'padding:8px 16px;border:1px solid #ddd;border-radius:6px;background:#f5f5f5;color:#111;cursor:pointer;font-size:13px'
+      btn.onclick = () => { overlay.remove(); resolve(i) }
+      btnRow.appendChild(btn)
+    })
+
+    card.appendChild(msg)
+    card.appendChild(btnRow)
+    overlay.appendChild(card)
+    document.body.appendChild(overlay)
+  })
+}
+
+async function showInlineConfirm(message: string, okLabel = 'OK', cancelLabel = 'Cancel'): Promise<boolean> {
+  const idx = await showInlineDialog(message, [{ label: cancelLabel }, { label: okLabel, primary: true }])
+  return idx === 1
+}
+
+async function showInlineAlert(message: string): Promise<void> {
+  await showInlineDialog(message, [{ label: 'OK', primary: true }])
+}
 
 /**
  * Enumerate all storage.local keys the app is known to write to.
@@ -172,7 +223,7 @@ export async function exportData() {
   const MB = bytesInUse / (1024 * 1024)
 
   if (MB > 500) {
-    const proceed = confirm(i18next.t('Export size warning', { size: MB.toFixed(1) }))
+    const proceed = await showInlineConfirm(i18next.t('Export size warning', { size: MB.toFixed(1) }))
     if (!proceed) return
   }
 
@@ -246,7 +297,8 @@ export async function importData() {
   let json: { sync?: Record<string, unknown>; local?: Record<string, unknown>; localStorage?: Record<string, string> } | null = null
   let fileSize = 0
   try {
-    const blob = await fileOpen({ extensions: ['.json'] })
+    const blob = await openFileViaHost({ extensions: ['.json'] })
+    if (!blob) { overlay.destroy(); return }
     fileSize = blob.size
     overlay.update(i18next.t('Reading file...', { size: (fileSize / 1024 / 1024).toFixed(1) }), 0.02)
     await yieldToUI()
@@ -258,7 +310,7 @@ export async function importData() {
   } catch (e) {
     overlay.destroy()
     const errorMsg = e instanceof Error ? e.message : String(e)
-    alert(i18next.t('Failed to read import file', { error: errorMsg, size: (fileSize / 1024 / 1024).toFixed(1) }))
+    await showInlineAlert(i18next.t('Failed to read import file', { error: errorMsg, size: (fileSize / 1024 / 1024).toFixed(1) }))
     return
   }
 
@@ -280,7 +332,8 @@ export async function importData() {
     delete json.sync.customApiConfigs
   }
 
-  if (!window.confirm(i18next.t('Confirm import overwrite'))) {
+  const confirmed = await showInlineConfirm(i18next.t('Confirm import overwrite'), i18next.t('Import'), i18next.t('Cancel'))
+  if (!confirmed) {
     overlay.destroy()
     return
   }
