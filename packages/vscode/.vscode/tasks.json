@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: build-dev",
+      "type": "shell",
+      "command": "npm run build:webview && node esbuild.mjs",
+      "problemMatcher": ["$tsc"],
+      "group": "build"
+    }
+  ]
+}

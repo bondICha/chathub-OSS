@@ -1,0 +1,410 @@
+{
+  "Retry": {
+    "en": "Retry",
+    "ja": "再試行",
+    "zh-CN": "重试",
+    "zh-TW": "重試"
+  },
+  "com_ui_thoughts": {
+    "en": "Thinking Process",
+    "ja": "思考プロセス",
+    "zh-CN": "思考过程",
+    "zh-TW": "思考過程"
+  },
+  "Web Search Results": {
+    "en": "Web Search Results",
+    "ja": "Web検索結果",
+    "zh-CN": "网络搜索结果",
+    "zh-TW": "網路搜尋結果"
+  },
+  "messages": {
+    "en": "messages",
+    "ja": "件",
+    "zh-CN": "条消息",
+    "zh-TW": "則訊息"
+  },
+  "AI Response": {
+    "en": "AI Response",
+    "ja": "AI 応答",
+    "zh-CN": "AI 回复",
+    "zh-TW": "AI 回覆"
+  },
+  "AI Responses": {
+    "en": "AI Responses",
+    "ja": "AI 応答一覧",
+    "zh-CN": "AI 回复列表",
+    "zh-TW": "AI 回覆列表"
+  },
+  "create_new_all_in_one": {
+    "en": "Save current chatbot pair",
+    "ja": "現在のChatbot pairを保存",
+    "zh-CN": "保存当前聊天机器人对",
+    "zh-TW": "保存當前聊天機器人對"
+  },
+  "Address Bar Search Feature": {
+    "en": "Address Bar Search Feature",
+    "ja": "アドレスバー検索機能",
+    "zh-CN": "地址栏搜索功能",
+    "zh-TW": "地址列搜尋功能"
+  },
+  "addressbar_search_feature_description": {
+    "en": "💡 <strong>Did you know?</strong> You can search directly from your browser's address bar!<br><br>Type <code>hl</code> followed by your question in the address bar and press Enter. HuddleLLM will automatically launch and start the conversation.<br><br><strong>Example:</strong><br><div style='background: #f8f9fa; border: 1px solid #e1e5e9; border-radius: 20px; padding: 8px 16px; margin: 8px 0; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif; font-size: 14px; color: #333;'>hl How to deal with colleagues who miss deadlines</div><br><small><em>This notification will continue to appear until you try the address bar search feature.</em></small>",
+    "ja": "💡 <strong>ご存知でしたか？</strong> ブラウザのアドレスバーから直接検索できます！<br><br>アドレスバーに <code>hl</code> と質問を入力してEnterを押すだけで、HuddleLLMが自動的に起動して会話を開始します。<br><br><strong>例：</strong><br><div style='background: #f8f9fa; border: 1px solid #e1e5e9; border-radius: 20px; padding: 8px 16px; margin: 8px 0; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif; font-size: 14px; color: #333;'>hl 締切を守らない同僚 イライラ 解消 上司にクレーム</div><br><small><em>このお知らせは、アドレスバー検索機能を実際に試していただくまで表示され続けます。</em></small>",
+    "zh-CN": "💡 <strong>您知道吗？</strong> 您可以直接从浏览器地址栏进行搜索！<br><br>在地址栏输入 <code>hl</code> 加上您的问题，然后按回车键。HuddleLLM 会自动启动并开始对话。<br><br><strong>示例：</strong><br><div style='background: #f8f9fa; border: 1px solid #e1e5e9; border-radius: 20px; padding: 8px 16px; margin: 8px 0; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif; font-size: 14px; color: #333;'>hl 同事总是拖延工作 怎么向老板投诉</div><br><small><em>此通知将持续显示，直到您尝试地址栏搜索功能。</em></small>",
+    "zh-TW": "💡 <strong>您知道嗎？</strong> 可以直接從瀏覽器地址列進行搜尋唷！<br><br>在地址列輸入 <code>hl</code> 加上您の問題，然後按 Enter 鍵。HuddleLLM 會自動啟動並開始對話呢。<br><br><strong>範例：</strong><br><div style='background: #f8f9fa; border: 1px solid #e1e5e9; border-radius: 20px; padding: 8px 16px; margin: 8px 0; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif; font-size: 14px; color: #333;'>hl 同事老是拖延工作 怎麼跟老闆抱怨</div><br><small><em>這個通知會一直顯示，直到您試用地址列搜尋功能喔。</em></small>"
+  },
+  "Got it!": {
+    "en": "Got it!",
+    "ja": "わかりました！",
+    "zh-CN": "知道了！",
+    "zh-TW": "了解啦！"
+  },
+  "Don't show again": {
+    "en": "Don't show again",
+    "ja": "今後表示しない",
+    "zh-CN": "不再显示",
+    "zh-TW": "不要再顯示"
+  },
+  "layout_2_vertical": {
+    "en": "縦",
+    "ja": "縦",
+    "zh-CN": "縦",
+    "zh-TW": "縦"
+  },
+  "layout_2_horizontal": {
+    "en": "横",
+    "ja": "横",
+    "zh-CN": "横",
+    "zh-TW": "横"
+  },
+  "layout_decrease": {
+    "en": "Decrease panel count",
+    "ja": "パネル数を減らす",
+    "zh-CN": "减少面板数量",
+    "zh-TW": "減少面板數量"
+  },
+  "layout_increase": {
+    "en": "Increase panel count",
+    "ja": "パネル数を増やす",
+    "zh-CN": "增加面板数量",
+    "zh-TW": "增加面板數量"
+  },
+  "Use ↑↓ keys to navigate, Enter to select, Esc to start new session": {
+    "en": "Use ↑↓ keys to navigate, Enter to select, Esc to start new session",
+    "ja": "↑↓キーで移動、Enterで選択、Escで新規開始",
+    "zh-CN": "Use ↑↓ keys to navigate, Enter to select, Esc to start new session",
+    "zh-TW": "Use ↑↓ keys to navigate, Enter to select, Esc to start new session"
+  },
+  "Start New Session": {
+    "en": "Start New Session",
+    "ja": "新規セッション開始",
+    "zh-CN": "开始新会话",
+    "zh-TW": "開始新工作階段"
+  },
+  "Begin a fresh conversation": {
+    "en": "Begin a fresh conversation",
+    "ja": "新しい会話を開始",
+    "zh-CN": "开始新的对话",
+    "zh-TW": "開始新の對話"
+  },
+  "No previous sessions found": {
+    "en": "No previous sessions found",
+    "ja": "過去のセッションが見つかりません",
+    "zh-CN": "未找到之前的会话",
+    "zh-TW": "未找到先前の工作階段"
+  },
+  "Click outside or press Esc to start new session": {
+    "en": "Click outside or press Esc to start new session",
+    "ja": "外側をクリックまたはEscキーで新規セッション開始",
+    "zh-CN": "Click outside or press Esc to start new session",
+    "zh-TW": "Click outside or press Esc to start new session"
+  },
+  "Stop": {
+    "en": "Stop",
+    "ja": "停止する",
+    "zh-CN": "停止",
+    "zh-TW": "停止"
+  },
+  "Send": {
+    "en": "Send",
+    "ja": "送信する",
+    "zh-CN": "发送",
+    "zh-TW": "發送"
+  },
+  "Share conversation": {
+    "en": "Share conversation",
+    "ja": "会話を共有する",
+    "zh-CN": "分享会话",
+    "zh-TW": "分享會話"
+  },
+  "Clear conversation": {
+    "en": "Clear conversation",
+    "ja": "会話をクリアする",
+    "zh-CN": "清空会话",
+    "zh-TW": "清空會話"
+  },
+  "Web Access": {
+    "en": "Web Search",
+    "ja": "Web検索",
+    "zh-CN": "联网搜索",
+    "zh-TW": "聯網搜索"
+  },
+  "Deactivate": {
+    "en": "Deactivate",
+    "ja": "無効化する",
+    "zh-CN": "反激活",
+    "zh-TW": "反啟用"
+  },
+  "Improving accuracy by searching up-to-date information from the internet": {
+    "en": "Improving accuracy by searching up-to-date information from the internet",
+    "ja": "インターネットから最新情報を検索して精度を向上させる",
+    "zh-CN": "通过智能联网搜索最新信息，提高回答准确度",
+    "zh-TW": "通過智能聯網搜索最新信息，提高回答準確度"
+  },
+  "System Prompt": {
+    "en": "System Prompt",
+    "ja": "システムプロンプト",
+    "zh-CN": "System Prompt",
+    "zh-TW": "System Prompt"
+  },
+  "Compose Message": {
+    "en": "Compose Message",
+    "ja": "メッセージ作成",
+    "zh-CN": "撰写消息",
+    "zh-TW": "撰寫訊息"
+  },
+  "Are you sure you want to clear history messages?": {
+    "en": "Are you sure you want to clear history messages?",
+    "ja": "履歴メッセージをクリアしてもよろしいですか？",
+    "zh-CN": "确定要清空历史消息吗？",
+    "zh-TW": "確定要清空歷史消息嗎？"
+  },
+  "Clear history messages": {
+    "en": "Clear history messages",
+    "ja": "履歴メッセージをクリアする",
+    "zh-CN": "清空消息",
+    "zh-TW": "清空消息"
+  },
+  "Use / to select prompts, Shift+Enter to add new line": {
+    "en": "Use / to select prompts, Shift+Enter to add new line",
+    "ja": "プロンプトを選択するには/を使用し、Shift+Enterで新しい行を追加します",
+    "zh-CN": "使用 / 选择提示词，Shift+Enter添加换行",
+    "zh-TW": "使用 / 選擇提示詞，Shift+Enter添加換行"
+  },
+  "Use / to select prompts, @URL to fetch content, Shift+Enter to add new line": {
+    "en": "Use / to select prompts, @URL to fetch content, Shift+Enter to add new line",
+    "ja": "プロンプトを選択するには/を使用し、@URLでコンテンツを取得し、Shift+Enterで新しい行を追加します",
+    "zh-CN": "使用 / 选择提示词，@URL获取内容，Shift+Enter添加换行",
+    "zh-TW": "使用 / 選擇提示詞，@URL獲取內容，Shift+Enter添加換行"
+  },
+  "singlebot_input_placeholder": {
+    "en": "Use / to select prompts, @URL to fetch content, Shift+Enter to add new line",
+    "ja": "プロンプトを選択するには/を使用し、@URLでコンテンツを取得し、Shift+Enterで新しい行を追加します",
+    "zh-CN": "使用 / 选择提示词，@URL获取内容，Shift+Enter添加换行",
+    "zh-TW": "使用 / 選擇提示詞，@URL獲取內容，Shift+Enter添加換行"
+  },
+  "allinone_input_placeholder": {
+    "en": "Use / to select prompts, /btw to compare AI answers, @URL获取内容，Shift+Enter to add new line",
+    "ja": "/でプロンプト選択、/btwでAI回答を比較、@URLでコンテンツを取得、Shift+Enterで改行",
+    "zh-CN": "/ 选择提示词，/btw 比较 AI 回答，@URL获取内容，Shift+Enter 换行",
+    "zh-TW": "/ 選擇提示詞，/btw 比較 AI 回覆，@URL 取得內容，Shift+Enter 換行"
+  },
+  "Reference Sites": {
+    "en": "Reference Sites",
+    "ja": "参考サイト",
+    "zh-CN": "参考网站",
+    "zh-TW": "參考網站"
+  },
+  "Propaganda action is irreversible.\nClick again to confirm.": {
+    "en": "Propaganda action is irreversible.\nClick again to confirm.",
+    "ja": "一度実行したプロパガンダは取り消しできません。\nもう一度クリックして確認してください。",
+    "zh-CN": "宣传行为不可逆，再次点击确认",
+    "zh-TW": "宣傳行為不可逆，再次點擊以確認。"
+  },
+  "Propaganda👊": {
+    "en": "Propaganda👊",
+    "ja": "プロパガンダ👊",
+    "zh-CN": "宣传👊",
+    "zh-TW": "宣傳👊"
+  },
+  "System Message": {
+    "en": "System Message",
+    "ja": "システムメッセージ",
+    "zh-CN": "系统消息",
+    "zh-TW": "系統訊息"
+  },
+  "{{provider}} Web Search": {
+    "en": "{{provider}} Web Search",
+    "ja": "{{provider}} Web検索",
+    "zh-CN": "{{provider}} 网页搜索",
+    "zh-TW": "{{provider}} 網頁搜尋"
+  },
+  "Use {{provider}} web search (OFF: HuddleLLM Web Access)": {
+    "en": "Use {{provider}}'s web search (OFF: HuddleLLM Web Access)",
+    "ja": "{{provider}}のWeb検索を使用（OFF時: HuddleLLMのWeb検索）",
+    "zh-CN": "使用 {{provider}} 的网页搜索（OFF时: HuddleLLM网页搜索）",
+    "zh-TW": "使用 {{provider}} 的網頁搜尋（OFF時: HuddleLLM網頁搜尋）"
+  },
+  "Use ↑↓ keys to navigate, Enter to select, Esc to close": {
+    "en": "Use ↑↓ keys to navigate, Enter to select, Esc to close",
+    "ja": "↑↓キーで移動、Enterで選択、Escで閉じる",
+    "zh-CN": "使用↑↓键导航，Enter选择，Esc关闭",
+    "zh-TW": "使用↑↓鍵導覽，Enter選擇，Esc關閉"
+  },
+  "Click outside or press Esc to close": {
+    "en": "Click outside or press Esc to close",
+    "ja": "外側をクリックまたはEscキーで閉じる",
+    "zh-CN": "点击外部或按Esc关闭",
+    "zh-TW": "點擊外部或按Esc關閉"
+  },
+  "agent_search_thinking": {
+    "en": "Searching the web for \"{{query}}\"",
+    "ja": "\"{{query}}\"をWebで検索しています。",
+    "zh-CN": "正在搜索\"{{query}}\"",
+    "zh-TW": "正在搜尋\"{{query}}\""
+  },
+  "agent_empty_search_results": {
+    "en": "Search results were empty\n⚠️ No search results found.\nQuery: \"{{query}}\"\nProvider: {{provider}}\n\nThe search engine may not have returned results.",
+    "ja": "検索結果が空白でした\n⚠️ 検索結果が見つかりませんでした。\nクエリ: \"{{query}}\"\nプロバイダー: {{provider}}\n\n検索エンジンから結果が返されていない可能性があります。",
+    "zh-CN": "搜索结果为空\n⚠️ 未找到搜索结果。\n查询: \"{{query}}\"\n提供商: {{provider}}\n\n搜索引擎可能未返回结果。",
+    "zh-TW": "搜尋結果為空\n⚠️ 未找到搜尋結果。\n查詢: \"{{query}}\"\n提供商: {{provider}}\n\n搜尋引擎可能未返回結果。"
+  },
+  "agent_context_prompt": {
+    "en": "Use the provided context delimited by triple quotes to answer questions. The answer should use the same language as the user question or follow user instruction, instead of context language.",
+    "ja": "三重引用符で区切られた参考情報を使用して質問に回答してください。回答は参考情報の言語ではなく、ユーザーの質問と同じ言語またはユーザーの指示に従って行ってください。",
+    "zh-CN": "使用三重引号分隔的参考资料来回答问题。答案应该使用与用户问题相同的语言或遵循用户指示，而不是参考资料的语言。",
+    "zh-TW": "使用三重引號分隔の參考資料來回答問題。答案應該使用與用戶問題相同の語言或遵循用戶指示，而不是參考資料の語言。"
+  },
+  "agent_question_label": {
+    "en": "Question:",
+    "ja": "質問：",
+    "zh-CN": "问题：",
+    "zh-TW": "問題："
+  },
+  "agent_context_label": {
+    "en": "Context:",
+    "ja": "参考情報：",
+    "zh-CN": "参考资料：",
+    "zh-TW": "參考資料："
+  },
+  "agent_final_instruction": {
+    "en": "Answer the following question based on the provided context in a natural, conversational way.",
+    "ja": "参考情報に基づいて、以下の質問に自然な会話の流れで答えてください。",
+    "zh-CN": "基于提供的参考资料，以自然对话的方式回答以下问题。",
+    "zh-TW": "基於提供の參考資料，以自然對話の方式回答以下問題。"
+  },
+  "agent_continue_search_instruction": {
+    "en": "Based on the search results so far, if you need more information to provide a complete answer, you can search again with different keywords. Otherwise, provide your final answer based on the available context.",
+    "ja": "Based on the search results so far, if you need more information to provide a complete answer, you can search again with different keywords. Otherwise, provide your final answer based on the available context.",
+    "zh-CN": "Based on the search results so far, if you need more information to provide a complete answer, you can search again with different keywords. Otherwise, provide your final answer based on the available context.",
+    "zh-TW": "Based on the search results so far, if you need more information to provide a complete answer, you can search again with different keywords. Otherwise, provide your final answer based on the available context."
+  },
+  "Enter to add a new line, Shift+Enter to send.": {
+    "en": "Enter to add a new line, Shift+Enter to send.",
+    "ja": "Enterで改行、Shift+Enterで送信します。",
+    "zh-CN": "输入 Enter 换行，Shift+Enter 发送。",
+    "zh-TW": "輸入 Enter 換行，Shift+Enter 發送。"
+  },
+  "Btw drawer subtitle": {
+    "en": "Chat with one AI using all other responses as context",
+    "ja": "他のAIの回答を参照しながら、一対一で深掘りできます",
+    "zh-CN": "将其他 AI 的回答作为上下文进行对话",
+    "zh-TW": "將其他 AI 的回覆作為背景進行對話"
+  },
+  "Btw bot selector label": {
+    "en": "Ask",
+    "ja": "質問先",
+    "zh-CN": "提问对象",
+    "zh-TW": "提問對象"
+  },
+  "Btw context label": {
+    "en": "Context",
+    "ja": "参照情報",
+    "zh-CN": "参考对话",
+    "zh-TW": "參考對話"
+  },
+  "Btw no response yet": {
+    "en": "No response yet",
+    "ja": "まだ回答がありません",
+    "zh-CN": "暂无回复",
+    "zh-TW": "尚無回覆"
+  },
+  "Btw empty state": {
+    "en": "Ask anything — all AI responses are included as context",
+    "ja": "何でも聞いてみましょう。全AIの回答がコンテキストに含まれています",
+    "zh-CN": "畅所欲言 — 所有 AI 的回答都已作为上下文",
+    "zh-TW": "盡情提問 — 所有 AI 的回覆均已納入背景"
+  },
+  "Btw input placeholder": {
+    "en": "Ask a follow-up...",
+    "ja": "続けて質問する...",
+    "zh-CN": "继续提问…",
+    "zh-TW": "繼續提問…"
+  },
+  "Btw context preamble": {
+    "en": "The following are conversations with other AIs for your reference:",
+    "ja": "参考情報として、他のAIとの会話履歴を以下に示します：",
+    "zh-CN": "以下是与其他 AI 的对话记录，供参考：",
+    "zh-TW": "以下是與其他 AI 的對話記錄，供參考："
+  },
+  "Btw comparison System-prompt": {
+    "en": "By default, respond with a markdown comparison table where each AI is a column and each row is a characteristic (e.g. Key Points, Agreements, Disagreements, Unique Insights). Adapt the format naturally to best fit the user's request.",
+    "ja": "基本的にはMarkdown比較テーブル（列：各AI、行：要点・合意点・相違点・独自の洞察など）で出力してください。ユーザーのリクエストに応じて、形式は柔軟に調整してください。",
+    "zh-CN": "默认以 Markdown 对比表格的形式输出（列为各 AI，行包含要点、共识、分歧、独特洞察等）。请根据用户的需求，灵活调整格式。",
+    "zh-TW": "預設以 Markdown 比較表格的形式輸出（欄為各 AI，列包含要點、共識、分歧、獨特洞見等）。請依使用者的需求，彈性調整格式。"
+  },
+  "Btw combobox description": {
+    "en": "Chat with context from all AI responses so far",
+    "ja": "ここまでのチャット履歴を参照しながらチャットできます",
+    "zh-CN": "结合目前所有 AI 的回答进行对话",
+    "zh-TW": "結合目前所有 AI 的回覆進行對話"
+  },
+  "Btw hint message": {
+    "en": "Want to compare AI answers? Use /btw to discuss them with another AI.",
+    "ja": "AIの回答を比較したいですか？ /btw で別のAIに分析してもらいましょう。",
+    "zh-CN": "想比较这些 AI 的回答吗？输入 /btw 让另一个 AI 帮你分析。",
+    "zh-TW": "想比較這些 AI 的回覆嗎？輸入 /btw 讓另一個 AI 幫你分析唷！"
+  },
+  "Btw hint try button": {
+    "en": "Try /btw",
+    "ja": "/btw を試す",
+    "zh-CN": "试试 /btw",
+    "zh-TW": "試試 /btw"
+  },
+  "Btw hint dismiss": {
+    "en": "Maybe later",
+    "ja": "あとで",
+    "zh-CN": "稍后再说",
+    "zh-TW": "稍後再說"
+  },
+  "Btw hint default query": {
+    "en": "Compare responses",
+    "ja": "それぞれの返答を比較してください。以上よろしくお願いします。",
+    "zh-CN": "人工 比较回答一下，谢了！",
+    "zh-TW": "幫我比較一下這些 AI の回覆唷！"
+  },
+  "pair_save_hint": {
+    "en": "You can save this layout as a pair",
+    "ja": "この構成をペアとして保存できます",
+    "zh-CN": "可以将当前配置保存为 Pair",
+    "zh-TW": "可以將目前配置儲存為 Pair"
+  },
+  "pair_save_action": {
+    "en": "Save",
+    "ja": "保存する",
+    "zh-CN": "保存",
+    "zh-TW": "儲存"
+  },
+  "pair_empty_hint": {
+    "en": "Save your favorite layouts as pairs to switch quickly",
+    "ja": "よく使う構成をペアとして保存できます",
+    "zh-CN": "可将常用配置保存为 Pair 快速切换",
+    "zh-TW": "可將常用配置儲存為 Pair 快速切換"
+  },
+  "pair_save_action_long": {
+    "en": "+ Save current layout",
+    "ja": "+ 現在の構成を保存",
+    "zh-CN": "+ 保存当前配置",
+    "zh-TW": "+ 儲存目前配置"
+  }
+}

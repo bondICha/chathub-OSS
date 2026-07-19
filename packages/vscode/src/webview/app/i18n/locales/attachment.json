@@ -1,0 +1,266 @@
+{
+  "Image input": {
+    "en": "Image input",
+    "ja": "画像入力",
+    "zh-CN": "图片输入",
+    "zh-TW": "圖片輸入"
+  },
+  "Attach file (Non-binary-text)": {
+    "en": "Attach file (Non-binary-text)",
+    "ja": "ファイルを添付 (バイナリではないText)",
+    "zh-CN": "附加文件（非二进制文本）",
+    "zh-TW": "附加檔案（非二進位文字）"
+  },
+  "Attach files": {
+    "en": "Attach files",
+    "ja": "ファイルを添付",
+    "zh-CN": "附加文件",
+    "zh-TW": "附加檔案"
+  },
+  "Attachment tooltip header type": {
+    "en": "Type",
+    "ja": "種別",
+    "zh-CN": "类型",
+    "zh-TW": "類型"
+  },
+  "Attachment tooltip header details": {
+    "en": "Details",
+    "ja": "内容",
+    "zh-CN": "说明",
+    "zh-TW": "說明"
+  },
+  "Attachment tooltip row text label": {
+    "en": "Text",
+    "ja": "テキスト",
+    "zh-CN": "文本",
+    "zh-TW": "文字"
+  },
+  "Attachment tooltip row text detail": {
+    "en": "CSV/JSON/TXT only.",
+    "ja": "CSV/JSON/TXTなどのテキスト形式のみ。",
+    "zh-CN": "仅支持 CSV/JSON/TXT。",
+    "zh-TW": "僅支援 CSV/JSON/TXT。"
+  },
+  "Attachment tooltip row audio label": {
+    "en": "Audio",
+    "ja": "音声",
+    "zh-CN": "音频",
+    "zh-TW": "音訊"
+  },
+  "Attachment tooltip row audio detail": {
+    "en": "Gemini: direct audio. Others: transcription.",
+    "ja": "Geminiは直接音声、他は文字起こし。",
+    "zh-CN": "Gemini 可直接上传音频，其他用转写。",
+    "zh-TW": "Gemini 可直接上傳音訊，其他用轉寫。"
+  },
+  "Attachment tooltip row image label": {
+    "en": "Picture",
+    "ja": "画像",
+    "zh-CN": "图片",
+    "zh-TW": "圖片"
+  },
+  "Attachment tooltip row image detail": {
+    "en": "Sent directly to AI API.",
+    "ja": "AI APIに直接送信。",
+    "zh-CN": "直接发送给 AI API。",
+    "zh-TW": "直接傳給 AI API。"
+  },
+  "Attachment tooltip row pdf label": {
+    "en": "PDF",
+    "ja": "PDF",
+    "zh-CN": "PDF",
+    "zh-TW": "PDF"
+  },
+  "Attachment tooltip row pdf detail": {
+    "en": "Sent directly to AI API. Requires API support.",
+    "ja": "AI APIに直接送信。APIの対応が必要",
+    "zh-CN": "直接发送给 AI API。需要 API 支持。",
+    "zh-TW": "直接傳給 AI API。需要 API 支援。"
+  },
+  "Attachment popup hint": {
+    "en": "Attach text, audio, video, images, and PDFs.\nDrag & drop files. Also supports pasting images.",
+    "ja": "テキスト・音声・動画・画像・PDFを添付できます。\nドラッグ＆ドロップ、画像の貼り付けにも対応。",
+    "zh-CN": "可附加文本、音频、视频、图片和 PDF。\n支持拖放，也支持粘贴图片。",
+    "zh-TW": "可附加文字、音訊、影片、圖片與 PDF。\n支援拖放，也支援貼上圖片。"
+  },
+  "Edit file content...": {
+    "en": "Edit file content...",
+    "ja": "ファイル内容を編集...",
+    "zh-CN": "编辑文件内容...",
+    "zh-TW": "編輯檔案內容..."
+  },
+  "Drop files to attach": {
+    "en": "Drop to attach",
+    "ja": "ドロップして添付",
+    "zh-CN": "拖放以附加",
+    "zh-TW": "拖放以附加"
+  },
+  "Images and text files are supported": {
+    "en": "Supports images, audio, video, text, and PDF",
+    "ja": "画像・音声・動画・テキスト・PDFに対応",
+    "zh-CN": "支持图片、音频、视频、文本和 PDF",
+    "zh-TW": "支援圖片、音訊、影片、文字與 PDF"
+  },
+  "Transcribe Audio": {
+    "en": "Transcribe Audio",
+    "ja": "音声をテキスト化",
+    "zh-CN": "音频转写",
+    "zh-TW": "音訊轉寫"
+  },
+  "Transcribe": {
+    "en": "Transcribe",
+    "ja": "文字起こし",
+    "zh-CN": "转写",
+    "zh-TW": "轉寫"
+  },
+  "Classic Whisper model. Good balance.": {
+    "en": "Classic Whisper model. Good balance.",
+    "ja": "従来の Whisper モデル。バランスの良い標準品質です。",
+    "zh-CN": "经典 Whisper 模型，效果与性能较为均衡。",
+    "zh-TW": "經典 Whisper 模型，品質與速度較為均衡。"
+  },
+  "Newer models may offer better accuracy.": {
+    "en": "Newer models may offer better accuracy.",
+    "ja": "新しいモデルの方が高精度になる場合があります。",
+    "zh-CN": "较新的模型通常可以提供更高的准确率。",
+    "zh-TW": "較新の模型通常可以提供更高的準確度。"
+  },
+  "Select Gemini Bot": {
+    "en": "Select Gemini Bot",
+    "ja": "Geminiボットを選択",
+    "zh-CN": "选择 Gemini 机器人",
+    "zh-TW": "選擇 Gemini 機器人"
+  },
+  "No Gemini bots configured.": {
+    "en": "No Gemini bots configured.",
+    "ja": "Geminiボットが設定されていません。",
+    "zh-CN": "尚未配置任何 Gemini 机器人。",
+    "zh-TW": "尚未設定任何 Gemini 機器人。"
+  },
+  "The selected Gemini bot will be used to transcribe the audio.": {
+    "en": "The selected Gemini bot will be used to transcribe the audio.",
+    "ja": "選択したGeminiボットを使って音声を文字起こしします。",
+    "zh-CN": "将使用所选的 Gemini 机器人来转写音频。",
+    "zh-TW": "將使用所選的 Gemini 機器人來轉寫音訊。"
+  },
+  "Transcribing audio...": {
+    "en": "Transcribing audio...",
+    "ja": "音声を文字起こし中...",
+    "zh-CN": "正在转写音频...",
+    "zh-TW": "正在轉寫音訊..."
+  },
+  "Transcription complete": {
+    "en": "Transcription complete",
+    "ja": "文字起こしが完了しました",
+    "zh-CN": "转写完成",
+    "zh-TW": "轉寫完成"
+  },
+  "Transcription failed": {
+    "en": "Transcription failed",
+    "ja": "文字起こしに失敗しました",
+    "zh-CN": "转写失败",
+    "zh-TW": "轉寫失敗"
+  },
+  "GPT-4o with speaker identification (diarization).": {
+    "en": "GPT-4o with speaker identification (diarization).",
+    "ja": "話者識別機能付きGPT-4o",
+    "zh-CN": "GPT-4o带说话人识别（分离）",
+    "zh-TW": "GPT-4o帶說話人識別（分離）"
+  },
+  "Without transcription, the audio file will only be sent to audio-capable AIs (e.g., Gemini). Other AIs (Claude, GPT, etc.) will not receive the audio content.": {
+    "en": "Without transcription, the audio file will only be sent to audio-capable AIs (e.g., Gemini). Other AIs (Claude, GPT, etc.) will not receive the audio content.",
+    "ja": "文字起こしなしの場合、音声ファイルは音声対応AI（Geminiなど）にのみ送信されます。その他のAI（Claude、GPTなど）は音声コンテンツを受け取りません。",
+    "zh-CN": "不进行转录时，音频文件只会发送给支持音频的AI（如Gemini）。其他AI（Claude、GPT等）将无法接收音频内容。",
+    "zh-TW": "不進行轉錄時，音訊檔案只會發送給支援音訊的AI（如Gemini）。其他AI（Claude、GPT等）將無法接收音訊內容。"
+  },
+  "Attach without transcription": {
+    "en": "Attach without transcription",
+    "ja": "文字起こしなしで添付",
+    "zh-CN": "不转录直接附加",
+    "zh-TW": "不轉錄直接附加"
+  },
+  "Audio file attached without transcription": {
+    "en": "Audio file attached without transcription",
+    "ja": "音声ファイルを文字起こしなしで添付しました",
+    "zh-CN": "已附加音频文件（未转录）",
+    "zh-TW": "已附加音訊檔案（未轉錄）"
+  },
+  "Audio-capable AIs (e.g., Gemini) will receive the audio file directly. Transcribed text will be sent to other AIs (Claude, GPT, etc.).": {
+    "en": "Audio-capable AIs (e.g., Gemini) will receive the audio file directly. Transcribed text will be sent to other AIs (Claude, GPT, etc.).",
+    "ja": "音声対応AI（Geminiなど）には音声ファイルが直接送信されます。文字起こしテキストはその他のAI（Claude、GPTなど）に送信されます。",
+    "zh-CN": "支持音频的AI（如Gemini）将直接接收音频文件。转录文本将发送给其他AI（Claude、GPT等）。",
+    "zh-TW": "支援音訊的AI（如Gemini）將直接接收音訊檔案。轉錄文字將發送給其他AI（Claude、GPT等）。"
+  },
+  "file_error_unsupported_audio_format": {
+    "en": "Unsupported audio format \"{{type}}\". Supported: {{supported}}",
+    "ja": "未対応の音声形式です（{{type}}）。対応形式: {{supported}}",
+    "zh-CN": "不支持的音频格式（{{type}}）。支持：{{supported}}",
+    "zh-TW": "不支援的音訊格式（{{type}}）。支援：{{supported}}"
+  },
+  "file_error_pdf_not_supported": {
+    "en": "PDF file \"{{name}}\" is not supported.",
+    "ja": "PDFファイル「{{name}}」はサポートされていません。",
+    "zh-CN": "不支持PDF文件\"{{name}}\"。",
+    "zh-TW": "不支援 PDF 檔案「{{name}}」。"
+  },
+  "pdf_not_supported_provider": {
+    "en": "{{model}} does not support PDF input. The PDF will be ignored.",
+    "ja": "{{model}} はPDF入力をサポートしていないため、PDFは無視されます。",
+    "zh-CN": "{{model}} 不支持 PDF 输入，PDF 将被忽略。",
+    "zh-TW": "{{model}} 不支援 PDF 輸入，PDF 將被忽略。"
+  },
+  "file_error_binary_not_supported": {
+    "en": "File \"{{name}}\" appears to be a binary file and is not supported.",
+    "ja": "ファイル「{{name}}」はバイナリのためサポートされていません。",
+    "zh-CN": "文件\"{{name}}\"是二进制文件，无法处理。",
+    "zh-TW": "檔案「{{name}}」為二進位檔，無法處理。"
+  },
+  "file_error_process_failed": {
+    "en": "Could not process file \"{{name}}\": {{message}}",
+    "ja": "ファイル「{{name}}」を処理できませんでした: {{message}}",
+    "zh-CN": "无法处理文件\"{{name}}\"：{{message}}",
+    "zh-TW": "無法處理檔案「{{name}}」：{{message}}"
+  },
+  "audio_warning_uncommon_format": {
+    "en": "Non-standard MIME type: {{type}} (.{{ext}}). May not be supported by all AI providers.",
+    "ja": "非標準のMIMEタイプ: {{type}} (.{{ext}})。一部のAIプロバイダーでサポートされていない可能性があります。",
+    "zh-CN": "非标准MIME类型：{{type}} (.{{ext}})。部分AI提供商可能不支持。",
+    "zh-TW": "非標準MIME類型：{{type}} (.{{ext}})。部分AI提供者可能不支援。"
+  },
+  "audio_warning_extension_fallback": {
+    "en": "MIME type undetected. Using .{{ext}} extension fallback. Reliability reduced; some AI providers may reject this file.",
+    "ja": "MIMEタイプを検出できませんでした。拡張子 .{{ext}} によるフォールバックを使用します。信頼性が低下しており、一部のAIプロバイダーでファイルが拒否される可能性があります。",
+    "zh-CN": "未检测到MIME类型。使用 .{{ext}} 扩展名回退。可靠性降低；部分AI提供商可能拒绝此文件。",
+    "zh-TW": "未偵測到MIME類型。使用 .{{ext}} 副檔名回退。可靠性降低；部分AI提供者可能拒絕此檔案。"
+  },
+  "Attachment tooltip row video label": {
+    "en": "Video",
+    "ja": "動画",
+    "zh-CN": "视频",
+    "zh-TW": "影片"
+  },
+  "Attachment tooltip row video detail": {
+    "en": "Gemini / OpenRouter. Sent directly to AI API.",
+    "ja": "Gemini / OpenRouter対応。AI APIに直接送信。",
+    "zh-CN": "Gemini / OpenRouter 支持，直接发送给 AI API。",
+    "zh-TW": "Gemini / OpenRouter 支援，直接傳給 AI API。"
+  },
+  "video_not_supported_provider": {
+    "en": "{{model}} does not support video input. Video files will be ignored.",
+    "ja": "{{model}} は動画入力をサポートしていないため、動画ファイルは無視されます。",
+    "zh-CN": "{{model}} 不支持视频输入，视频文件将被忽略。",
+    "zh-TW": "{{model}} 不支援影片輸入，影片檔案將被忽略。"
+  },
+  "video_warning_uncommon_format": {
+    "en": "Non-standard video MIME type: {{type}} (.{{ext}}). May not be supported by all AI providers.",
+    "ja": "非標準の動画MIMEタイプ: {{type}} (.{{ext}})。一部のAIプロバイダーでサポートされていない可能性があります。",
+    "zh-CN": "非标准视频MIME类型：{{type}} (.{{ext}})。部分AI提供商可能不支持。",
+    "zh-TW": "非標準影片MIME類型：{{type}} (.{{ext}})。部分AI提供者可能不支援。"
+  },
+  "video_warning_extension_fallback": {
+    "en": "MIME type undetected. Using .{{ext}} extension fallback for video. Some AI providers may reject this file.",
+    "ja": "MIMEタイプを検出できませんでした。動画の拡張子 .{{ext}} によるフォールバックを使用します。一部のAIプロバイダーでファイルが拒否される可能性があります。",
+    "zh-CN": "未检测到MIME类型。使用 .{{ext}} 扩展名回退识别为视频。部分AI提供商可能拒绝此文件。",
+    "zh-TW": "未偵測到MIME類型。使用 .{{ext}} 副檔名回退識別為影片。部分AI提供者可能拒絕此檔案。"
+  }
+}

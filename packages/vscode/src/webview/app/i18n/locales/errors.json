@@ -1,0 +1,122 @@
+{
+  "Error Details": {
+    "en": "Error Details",
+    "ja": "詳細エラーメッセージ",
+    "zh-CN": "错误详情",
+    "zh-TW": "錯誤詳情"
+  },
+  "Failed to restore session.": {
+    "en": "Failed to restore session.",
+    "ja": "セッションの復元に失敗しました。",
+    "zh-CN": "恢复会话失败。",
+    "zh-TW": "恢復工作階段失敗。"
+  },
+  "Invalid file format: \"sync\" property not found": {
+    "en": "Invalid file format: \"sync\" property not found",
+    "ja": "無効なファイル形式：\"sync\"プロパティが見つかりません",
+    "zh-CN": "无效的文件格式：未找到\"sync\"属性",
+    "zh-TW": "無效の文件格式：未找到\"sync\"屬性"
+  },
+  "Invalid file format: customApiConfigCount is 0 or not defined": {
+    "en": "Invalid file format: customApiConfigCount is 0 or not defined",
+    "ja": "無効なファイル形式：customApiConfigCountが0または未定義です",
+    "zh-CN": "无效的文件格式：customApiConfigCount为0或未定义",
+    "zh-TW": "無效の文件格式：customApiConfigCount為0或未定義"
+  },
+  "Failed to extract Custom API settings: ": {
+    "en": "Failed to extract Custom API settings: ",
+    "ja": "カスタムAPI設定の抽出に失敗しました：",
+    "zh-CN": "提取自定义API设置失败：",
+    "zh-TW": "提取自定義API設置失敗："
+  },
+  "Invalid JSON format: ": {
+    "en": "Invalid JSON format: ",
+    "ja": "無効なJSON形式：",
+    "zh-CN": "无效的JSON格式：",
+    "zh-TW": "無效のJSON格式："
+  },
+  "Failed to read file content: ": {
+    "en": "Failed to read file content: ",
+    "ja": "ファイル内容の読み取りに失敗しました：",
+    "zh-CN": "读取文件内容失败：",
+    "zh-TW": "讀取文件內容失敗："
+  },
+  "Failed to open file: ": {
+    "en": "Failed to open file: ",
+    "ja": "ファイルのオープンに失敗しました：",
+    "zh-CN": "打开文件失败：",
+    "zh-TW": "打開文件失敗："
+  },
+  "Failed to apply mappings: ": {
+    "en": "Failed to apply mappings: ",
+    "ja": "マッピングの適用に失敗しました：",
+    "zh-CN": "应用映射失败：",
+    "zh-TW": "應用映射失敗："
+  },
+  "Failed to save settings to storage: ": {
+    "en": "Failed to save settings to storage: ",
+    "ja": "設定の保存に失敗しました：",
+    "zh-CN": "保存设置到存储失败：",
+    "zh-TW": "保存設置到存儲失敗："
+  },
+  "Failed to update enabled bots: ": {
+    "en": "Failed to update enabled bots: ",
+    "ja": "有効ボットの更新に失敗しました：",
+    "zh-CN": "更新启用的机器人失败：",
+    "zh-TW": "更新啟用の機器人失敗："
+  },
+  "Failed to process configurations: ": {
+    "en": "Failed to process configurations: ",
+    "ja": "設定の処理に失敗しました：",
+    "zh-CN": "处理配置失败：",
+    "zh-TW": "處理配置失敗："
+  },
+  "Failed to apply imported settings: ": {
+    "en": "Failed to apply imported settings: ",
+    "ja": "インポート設定の適用に失敗しました：",
+    "zh-CN": "应用导入设置失败：",
+    "zh-TW": "應用導入設置失敗："
+  },
+  "Please check your network connection": {
+    "en": "Please check your network connection",
+    "ja": "ネットワーク接続を確認してください",
+    "zh-CN": "请检查您的网络连接，中国用户可能需要科学上网",
+    "zh-TW": "請檢查您の網絡連接"
+  },
+  "Error cleaning up old storage keys": {
+    "en": "Error cleaning up old storage keys",
+    "ja": "古いストレージキーのクリーンアップ中にエラーが発生しました",
+    "zh-CN": "清理旧存储密钥时出错",
+    "zh-TW": "清理舊儲存金鑰時出錯"
+  },
+  "Failed to reset settings. Please try again.": {
+    "en": "Failed to reset settings. Please try again.",
+    "ja": "設定のリセットに失敗しました。もう一度お試しください。",
+    "zh-CN": "重置设置失败。请重试。",
+    "zh-TW": "重置設定失敗。請重試。"
+  },
+  "Failed to reset flags. Please try again.": {
+    "en": "Failed to reset flags. Please try again.",
+    "ja": "フラグのリセットに失敗しました。もう一度お試しください。",
+    "zh-CN": "重置标志失败。请重试。",
+    "zh-TW": "重置旗標失敗。請重試。"
+  },
+  "Failed to update system prompt": {
+    "en": "Failed to update system prompt",
+    "ja": "システムプロンプトの更新に失敗しました",
+    "zh-CN": "系统提示词更新失败",
+    "zh-TW": "系統提示詞更新失敗"
+  },
+  "Invalid import file format": {
+    "en": "",
+    "ja": "インポートファイルの形式が無効です",
+    "zh-CN": "",
+    "zh-TW": ""
+  },
+  "Failed to copy": {
+    "en": "",
+    "ja": "コピーに失敗しました",
+    "zh-CN": "",
+    "zh-TW": ""
+  }
+}

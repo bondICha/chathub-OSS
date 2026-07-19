@@ -1,0 +1,126 @@
+@use 'inter-ui/default' as inter-ui with (
+  $inter-font-display: swap,
+  $inter-font-path: 'inter-ui/Inter (web)'
+);
+@use 'inter-ui/variable' as inter-ui-variable with (
+  $inter-font-display: swap,
+  $inter-font-path: 'inter-ui/Inter (web)'
+);
+@include inter-ui.weight-400-normal;
+@include inter-ui.weight-500-normal;
+@include inter-ui.weight-600-normal;
+@include inter-ui.weight-700-normal;
+@include inter-ui-variable.normal;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: 'Inter', 'Noto Sans CJK JP', 'Noto Sans CJK SC', 'Noto Sans CJK TC', 'system-ui';
+}
+
+@supports (font-variation-settings: normal) {
+  html,
+  body {
+    font-family: 'Inter var', 'Noto Sans CJK JP', 'Noto Sans CJK SC', 'Noto Sans CJK TC', 'system-ui';
+  }
+}
+
+body {
+  font-size: 100%;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+@mixin light-theme {
+  color-scheme: light;
+  --color-primary-blue: 73 135 252; // #4987FC
+  --color-secondary: 246 242 234; // #f6f2ea Inspired by clXXdX
+  --color-primary-purple: 103 86 189; // #6756BD
+  --primary-background: 255 255 255; // #FFFFFF
+  --primary-text: 48 48 48; // #303030
+  --secondary-text: 128 128 128; // #808080
+  --light-text: 190 190 190; // #BEBEBE
+  --primary-border: 237 237 237; // #EDEDED
+}
+
+@mixin dark-theme {
+  color-scheme: dark;
+  --color-primary-blue: 50 104 206; // #3268CE
+  --color-secondary: 42 40 38; // # Inspired by clXXdX
+  --color-primary-purple: 57 41 141; // #39298D
+  --primary-background: 25 25 25; // #191919
+  --primary-text: 223 223 223; // #DFDFDF
+  --secondary-text: 127 127 127; // #7F7F7F
+  --light-text: 79 79 79; // #4F4F4F
+  --primary-border: 53 53 53; // #353535
+}
+
+// /btw 機能共通のアンバー系カラー
+.light .text-btw { color: #864e00; }
+.dark  .text-btw { color: #e8a317; }
+
+@layer base {
+  :root {
+    opacity: 0.88;
+  }
+}
+
+:root.light {
+  @include light-theme;
+  @import 'highlight.js/scss/github.scss';
+}
+
+:root.dark {
+  @include dark-theme;
+  @import 'highlight.js/scss/github-dark.scss';
+}
+
+
+/* Custom Thin Scrollbar */
+.custom-scrollbar {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode styles */
+.dark .custom-scrollbar {
+  /* Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Adjust ScrollToBottom button position */
+.custom-scrollbar > button {
+  bottom: 3rem; /* Raise it above the input area */
+}
