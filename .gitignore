@@ -21,9 +21,11 @@ dist-ssr
 
 # Company-specific configuration (exclude from git tracking)
 config/company-profiles.ts
+**/config/company-profiles.ts
 *.sln
 *.sw?
 rules/remove-origin-header.json
+**/rules/remove-origin-header.json
 
 
 .env

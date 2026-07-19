@@ -1,0 +1,10 @@
+{
+  "name": "@huddlellm/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared HuddleLLM app, bots, and services consumed as source by the Chrome and VS Code packages",
+  "scripts": {
+    "test": "jest"
+  }
+}

@@ -17,10 +17,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "~*": ["./src/webview/*", "../core/src/*"],
-      "webextension-polyfill": ["./src/webview/platform/browser-shim"]
-    }
+      "~*": ["./src/*", "../core/src/*"]
+    },
+    "types": ["chrome-types", "jest"]
   },
-  "include": ["src/webview", "src/shared", "../core/src", "../core/config", "global.d.ts", "vite.config.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src", "../core/src", "../core/config", "vite.config.ts", "manifest.config.ts"]
 }

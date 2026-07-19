@@ -19,9 +19,9 @@ async function bootstrap() {
 
   const { applyVsCodeLanguageDefault } = await import('./platform/language')
   if (payload.mode === 'sidepanel') {
-    await import('./app/sidepanel')
+    await import('~app/sidepanel')
   } else {
-    await import('./app/main')
+    await import('~app/main')
   }
   applyVsCodeLanguageDefault(payload.language)
 }
