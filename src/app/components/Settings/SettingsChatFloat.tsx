@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { BiMessageSquare, BiX, BiTrash, BiCheck, BiChevronDown } from 'react-icons/bi'
 import { UserConfig, CustomApiConfig, SystemPromptMode, CustomApiProvider } from '~services/user-config'
 import { CustomBot } from '~app/bots/custombot'
+import { allIconChoices } from './IconSelect'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -61,6 +62,7 @@ function buildSettingsSystemPrompt(config: UserConfig): string {
       model: bot.model,
       provider: bot.provider,
       enabled: bot.enabled !== false,
+      avatar: bot.avatar || '',
       systemPromptMode: bot.systemPromptMode,
       systemMessage: sysMsg,
       thinkingMode: bot.thinkingMode ?? false,
@@ -97,6 +99,8 @@ function buildSettingsSystemPrompt(config: UserConfig): string {
     2,
   )
 
+  const iconList = allIconChoices.map((i) => `"${i.id}" (${i.name})`).join(', ')
+
   return `You are a helpful assistant for HuddleLLM, a Chrome extension for chatting with multiple AI APIs.
 The user is on the settings page and wants help with their configuration.
 
@@ -104,6 +108,8 @@ Current settings (API keys and endpoint URLs excluded for security):
 \`\`\`json
 ${settingsJson}
 \`\`\`
+
+Valid "avatar" icon IDs (use the exact id string, nothing else): ${iconList}
 
 You can answer questions about the settings AND propose configuration changes.
 When proposing changes, include a settings-apply block AFTER your explanation:
@@ -119,7 +125,7 @@ When proposing changes, include a settings-apply block AFTER your explanation:
     "temperature": 0.7,
     "systemMessage": "",
     "systemPromptMode": "common",
-    "avatar": "ChatGPT",
+    "avatar": "chatgpt",
     "apiKey": "",
     "host": "",
     "thinkingMode": false,
@@ -135,8 +141,13 @@ Or for updating an existing chatbot:
 {"type":"update_chatbot","name":"Existing Bot Name","changes":{"model":"new-model","temperature":0.5}}
 \`\`\`
 
-Leave apiKey and host as empty strings — the user will enter these securely in a popup.
-Only include a settings-apply block when the user explicitly asks to change or add settings.`
+Rules:
+- Base every answer and proposal on the current settings JSON above — never invent chatbots, models, or values that are not there.
+- For "update_chatbot", "name" MUST exactly match one of the existing chatbot names. Ask the user which one if it is ambiguous.
+- "avatar" MUST be one of the valid icon IDs listed above. If no icon fits (e.g. a brand with no icon), say so instead of guessing.
+- Only include fields you actually want to change in "changes".
+- Leave apiKey and host as empty strings — the user will enter these securely in a popup.
+- Only include a settings-apply block when the user explicitly asks to change or add settings.`
 }
 
 // ─── Apply Diff Modal ─────────────────────────────────────────────────────────

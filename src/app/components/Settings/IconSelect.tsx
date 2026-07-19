@@ -150,6 +150,15 @@ const otherIcons: IconOption[] = [
   { id: 'xiaomi', name: 'Xiaomi', src: xiaomiLogo }
 ];
 
+// 全アイコンの有効ID一覧（Settings Assistant のプロンプト等で使用）
+export const allIconChoices: { id: string; name: string }[] = [
+  ...featuredIcons.map(({ id, name }) => ({ id, name })),
+  ...claudeIcons.map(({ id, name }) => ({ id, name })),
+  ...perplexityIcons.map(({ id, name }) => ({ id, name })),
+  ...openaiIcons.map(({ id, name }) => ({ id, name })),
+  ...otherIcons.map(({ id, name }) => ({ id, name })),
+];
+
 interface IconSelectProps {
   value: string;
   onChange: (value: string) => void;

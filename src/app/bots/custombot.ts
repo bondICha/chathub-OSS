@@ -316,13 +316,26 @@ export class CustomBot extends AsyncAbstractBot {
             case CustomApiProvider.Google:
                 {
                     const googleAuthMode = (providerRef?.AuthMode || 'header')
+
+                    // Gateway mode: a custom host is configured (e.g. Rakuten AI Gateway or another
+                    // Vertex AI-compatible proxy). Official endpoint mode: host is blank, so the
+                    // @google/genai SDK routes to generativelanguage.googleapis.com (Gemini API) or
+                    // aiplatform.googleapis.com (Vertex Express / Gemini Enterprise Agent Platform)
+                    // and authenticates via its own x-goog-api-key header.
+                    const hasCustomHost = !!(effectiveHost && effectiveHost.trim().length > 0)
+
                     const extraHeaders: Record<string, string> = {}
-                    if (googleAuthMode === 'header' && effectiveApiKey && effectiveApiKey.trim().length > 0) {
+                    if (
+                        hasCustomHost &&
+                        googleAuthMode === 'header' &&
+                        effectiveApiKey &&
+                        effectiveApiKey.trim().length > 0
+                    ) {
                         // Gateway-style auth: raw key in Authorization header
                         extraHeaders.Authorization = effectiveApiKey
                     }
 
-                    // Resolve Vertex AI mode: Provider setting takes precedence
+                    // Resolve Vertex AI mode (Gemini Enterprise Agent Platform): Provider setting takes precedence
                     const vertexMode = providerRef?.VertexMode ?? config.geminiVertexMode ?? false;
 
                     botInstance = new GeminiApiBot({
@@ -336,9 +349,9 @@ export class CustomBot extends AsyncAbstractBot {
                         thinkingBudget: config.thinkingBudget,
                         thinkingLevel: config.thinkingLevel,
                         geminiImageConfig: config.geminiImageConfig,
-                        // For advanced setups, these fields allow routing via gateways
-                        // or custom endpoints using js-genai HttpOptions.
-                        baseUrl: (effectiveHost && effectiveHost.trim().length > 0) ? effectiveHost : undefined,
+                        // For advanced gateway setups, route the SDK to a custom base URL.
+                        // When blank, the SDK uses its default official endpoints.
+                        baseUrl: hasCustomHost ? effectiveHost : undefined,
                         apiVersion: undefined,
                         extraHeaders,
                         vertexai: vertexMode,

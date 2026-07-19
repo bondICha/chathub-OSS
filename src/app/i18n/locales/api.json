@@ -348,16 +348,16 @@
     "zh-TW": "Vertex AI 模式"
   },
   "Enable for Vertex AI endpoints and Rakuten AI Gateway": {
-    "en": "Enable for Vertex AI endpoints (required when using Vertex AI API format)",
-    "ja": "Vertex AI形式のAPIを使用する場合に有効化してください",
-    "zh-CN": "使用 Vertex AI 格式的 API 时启用",
-    "zh-TW": "使用 Vertex AI 格式的 API 時啟用"
+    "en": "Enable for Gemini Enterprise Agent Platform (Vertex AI). A Google Cloud API key (express mode) is enough — leave host blank for the official endpoint, or set a host for gateways like Rakuten AI Gateway.",
+    "ja": "Gemini Enterprise Agent Platform（Vertex AI）を有効化。Google Cloud API Key（express mode）を入力するだけで利用できます。公式エンドポイントを使う場合はホストを空欄のままにし、Rakuten AI Gateway などのゲートウェイを使う場合のみホストを設定してください。",
+    "zh-CN": "启用 Gemini Enterprise Agent Platform（Vertex AI）。只需输入 Google Cloud API 密钥（express 模式）即可使用。使用官方端点时请将主机留空，仅在使用 Rakuten AI Gateway 等网关时才设置主机。",
+    "zh-TW": "啟用 Gemini Enterprise Agent Platform（Vertex AI）。只需輸入 Google Cloud API 金鑰（express 模式）即可使用。使用官方端點時請將主機留空，僅在使用 Rakuten AI Gateway 等閘道時才設定主機。"
   },
   "Enable for Vertex AI endpoints and Rakuten AI Gateway (requires vertexai=True in SDK)": {
-    "en": "Enable for Vertex AI endpoints (required when using Vertex AI API format)",
-    "ja": "Vertex AI形式のAPIを使用する場合に有効化してください",
-    "zh-CN": "使用 Vertex AI 格式的 API 时启用",
-    "zh-TW": "使用 Vertex AI 格式的 API 時啟用"
+    "en": "Enable for Gemini Enterprise Agent Platform (Vertex AI). A Google Cloud API key (express mode) is enough — leave host blank for the official endpoint, or set a host for gateways like Rakuten AI Gateway.",
+    "ja": "Gemini Enterprise Agent Platform（Vertex AI）を有効化。Google Cloud API Key（express mode）を入力するだけで利用できます。公式エンドポイントを使う場合はホストを空欄のままにし、Rakuten AI Gateway などのゲートウェイを使う場合のみホストを設定してください。",
+    "zh-CN": "启用 Gemini Enterprise Agent Platform（Vertex AI）。只需输入 Google Cloud API 密钥（express 模式）即可使用。使用官方端点时请将主机留空，仅在使用 Rakuten AI Gateway 等网关时才设置主机。",
+    "zh-TW": "啟用 Gemini Enterprise Agent Platform（Vertex AI）。只需輸入 Google Cloud API 金鑰（express 模式）即可使用。使用官方端點時請將主機留空，僅在使用 Rakuten AI Gateway 等閘道時才設定主機。"
   },
   "Select Provider": {
     "en": "Select Provider",
