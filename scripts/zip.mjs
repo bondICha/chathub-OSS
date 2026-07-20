@@ -39,10 +39,11 @@ archive.on('error', (err) => {
 
 archive.pipe(output);
 
-// Add all files from dist directory except .vite directory
+// Add all files from dist directory except .vite (both the directory entry
+// itself and everything under it — some store validators choke if a
+// directory entry ends up physically first in the zip, ahead of manifest.json)
 archive.directory('dist', false, (entry) => {
-  // Exclude .vite directory
-  if (entry.name.startsWith('.vite/')) {
+  if (entry.name === '.vite' || entry.name.startsWith('.vite/')) {
     return false;
   }
   return entry;
