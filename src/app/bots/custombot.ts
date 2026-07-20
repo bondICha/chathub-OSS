@@ -322,21 +322,10 @@ export class CustomBot extends AsyncAbstractBot {
             case CustomApiProvider.Google:
                 {
                     const googleAuthMode = (providerRef?.AuthMode || 'header')
-
-                    // Gateway mode: a custom host is configured (e.g. Rakuten AI Gateway or another
-                    // Vertex AI-compatible proxy). Official endpoint mode: host is blank, so the
-                    // @google/genai SDK routes to generativelanguage.googleapis.com (Gemini API) or
-                    // aiplatform.googleapis.com (Vertex Express / Gemini Enterprise Agent Platform)
-                    // and authenticates via its own x-goog-api-key header.
                     const hasCustomHost = !!(effectiveHost && effectiveHost.trim().length > 0)
 
                     const extraHeaders: Record<string, string> = {}
-                    if (
-                        hasCustomHost &&
-                        googleAuthMode === 'header' &&
-                        effectiveApiKey &&
-                        effectiveApiKey.trim().length > 0
-                    ) {
+                    if (googleAuthMode === 'header' && effectiveApiKey && effectiveApiKey.trim().length > 0) {
                         // Gateway-style auth: raw key in Authorization header
                         extraHeaders.Authorization = effectiveApiKey
                     }
