@@ -38,6 +38,7 @@ import { getVersion } from '~utils'
 import PagePanel from '../components/Page'
 import { getCompanyProfileConfigs, getCompanyProfileState, CompanyProfileStatus } from '~services/company-profile'
 import OldStorageNotification from '~app/components/Settings/OldStorageNotification'
+import SettingsChatFloat from '~app/components/Settings/SettingsChatFloat'
 
 
 const ChatBotSettingPanel: FC<PropsWithChildren<{ title: string }>> = (props) => {
@@ -210,6 +211,7 @@ function SettingPage() {
 
   return (
     <div className="flex flex-col overflow-hidden bg-primary-background dark:text-primary-text rounded-2xl h-full">
+      <SettingsChatFloat userConfig={userConfig} onUpdateConfig={updateConfigValue} />
       <div className="text-center border-b border-solid border-primary-border flex flex-col justify-center mx-10 py-2 flex-shrink-0">
         <span className="font-semibold text-lg">{t('Settings')} (v{getVersion()})</span>
       </div>

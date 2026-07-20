@@ -33,7 +33,7 @@ interface Props {
   updateConfigValue: (update: Partial<UserConfig>) => void;
 }
 
-const MAX_CUSTOM_MODELS = 50;
+export const MAX_CUSTOM_MODELS = 50;
 const TOOL_DEFINITION_EXPAND_OFFSET = 4000;
 
 const providerIsImageMode = (providerConfig?: ProviderConfig) => {
@@ -226,7 +226,7 @@ const ChatbotSettings: FC<Props> = ({ userConfig, updateConfigValue }) => {
 
   const addNewCustomModel = () => {
     if (customApiConfigs.length >= MAX_CUSTOM_MODELS) {
-      alert(t(`Maximum number of custom models (${MAX_CUSTOM_MODELS}) reached.`));
+      alert(t('Maximum number of custom models ({{count}}) reached.', { count: MAX_CUSTOM_MODELS }));
       return;
     }
     const newId = Math.max(...customApiConfigs.map(c => c.id ?? 0), 0) + 1;

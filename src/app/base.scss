@@ -124,3 +124,26 @@ body {
 .custom-scrollbar > button {
   bottom: 3rem; /* Raise it above the input area */
 }
+
+/* Settings Chat Float: compact markdown rendering inside the narrow panel.
+   Overrides Markdown component's forced !text-base so assistant messages
+   match the user bubble's text-xs scale. */
+.settings-chat-markdown .markdown-body {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+.settings-chat-markdown .markdown-body p {
+  margin: 0 0 0.35rem 0;
+}
+.settings-chat-markdown .markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.settings-chat-markdown .markdown-body pre,
+.settings-chat-markdown .markdown-body code {
+  font-size: 11px !important;
+}
+.settings-chat-markdown .markdown-body ul,
+.settings-chat-markdown .markdown-body ol {
+  margin: 0.25rem 0;
+  padding-left: 1.1rem;
+}
