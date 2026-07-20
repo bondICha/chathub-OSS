@@ -1,9 +1,15 @@
 {
   "releasenote_v2182_settings_assistant": {
-    "en": "Settings Assistant (β): a floating AI chat panel on the settings page that answers questions about your config and can propose changes (add/update chatbots, set up a new provider + chatbot together — including Gemini providers, old \"Vertex\" naming and all — or look up a provider's real available models) for you to review and apply. API keys are never sent to the AI.",
-    "ja": "設定アシスタント（β）を追加。設定ページに常駐するAIチャットパネルで、現在の設定について質問に答えたり、設定変更（チャットボットの追加・更新、プロバイダー＋チャットボットのまとめ設定〈Gemini系プロバイダー、旧Vertex表記も含む〉、実際に使えるモデル一覧の確認）を提案します。API キーはAIに送信されません。",
-    "zh-CN": "新增设置助手（β）：设置页面上的浮动 AI 聊天面板，可以回答关于当前配置的问题，并提出配置变更建议（添加/更新聊天机器人、一次性设置新的提供商+聊天机器人——包括 Gemini 系提供商，含旧的 Vertex 命名、查询提供商实际可用的模型列表），供您审核后应用。API 密钥不会发送给 AI。",
-    "zh-TW": "新增設定助手（β）：設定頁面上的浮動 AI 聊天面板，可回答關於目前設定的問題，並提出設定變更建議（新增/更新聊天機器人、一次設定新的提供者+聊天機器人——包括 Gemini 系提供者，含舊的 Vertex 命名、查詢提供者實際可用的模型清單），供您審核後套用。API 金鑰不會傳送給 AI。"
+    "en": "Settings Assistant (β): a floating AI chat panel on the settings page that answers questions about your config and can propose changes — add/update chatbots, set up a new provider together with the chatbot(s) that use it, or look up a provider's real available models — for you to review and apply. API keys are never sent to the AI.",
+    "ja": "設定アシスタント（β）を追加。設定ページに常駐するAIチャットパネルで、現在の設定について質問に答えたり、設定変更（チャットボットの追加・更新、プロバイダーとそれを使うチャットボットのまとめ新規追加、実際に使えるモデル一覧の確認）を提案し、確認のうえ適用できます。API キーはAIに送信されません。",
+    "zh-CN": "新增设置助手（β）：设置页面上的浮动 AI 聊天面板，可以回答关于当前配置的问题，并提出配置变更建议——添加/更新聊天机器人、一次性设置新的提供商及使用它的聊天机器人、查询提供商实际可用的模型列表——供您审核后应用。API 密钥不会发送给 AI。",
+    "zh-TW": "新增設定助手（β）：設定頁面上的浮動 AI 聊天面板，可回答關於目前設定的問題，並提出設定變更建議——新增/更新聊天機器人、一次設定新的提供者及使用它的聊天機器人、查詢提供者實際可用的模型清單——供您審核後套用。API 金鑰不會傳送給 AI。"
+  },
+  "releasenote_v2182_gemini_auth_fix": {
+    "en": "Fixed the Google Gemini provider sending an unnecessary raw Authorization header even when connecting to the official Gemini/Vertex endpoint directly (no custom host); it's now only added for custom gateway/proxy connections.",
+    "ja": "Google Geminiプロバイダーで、公式のGemini/Vertexエンドポイントに直接接続している場合（カスタムhost未設定）でも不要な生Authorizationヘッダーが送信されていた問題を修正。カスタムゲートウェイ/プロキシ接続時のみ付与するようになりました。",
+    "zh-CN": "修复了 Google Gemini 提供商在直接连接官方 Gemini/Vertex 端点时（未设置自定义主机）仍会发送不必要的原始 Authorization 标头的问题；现在仅在使用自定义网关/代理连接时才会添加。",
+    "zh-TW": "修復了 Google Gemini 提供者在直接連接官方 Gemini/Vertex 端點時（未設定自訂主機）仍會傳送不必要的原始 Authorization 標頭的問題；現在僅在使用自訂閘道/代理連線時才會加入。"
   },
   "releasenote_v2180_deep_search": {
     "en": "Deep full-text search across all chat history. Type a keyword to scan session bodies in real time with a progress indicator.",

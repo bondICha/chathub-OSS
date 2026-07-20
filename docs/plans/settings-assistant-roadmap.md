@@ -18,6 +18,33 @@ field). None of this is in the system prompt today, so the assistant can only
 guess from generic LLM knowledge — risk of confidently-wrong answers for
 custom/3rd-party hosts (v1 vs v3, gateway-style URLs, etc).
 
+## Known Gap: "google"-scheme AuthMode/VertexMode not documented (found via live Gemini test)
+Live-tested (background agent) asking the assistant to set up a brand-new direct
+Google Gemini API provider (non-Vertex, "Google AI Studio", host
+`https://generativelanguage.googleapis.com`). The assistant correctly picked
+scheme `google` and the right host, but left `AuthMode`/`VertexMode` unset.
+Root cause: the system prompt's `add_provider` guidance only says
+`"google" / "openai-gemini" / "vertexai-gemini" — Google Gemini variants.` —
+it never explains `AuthMode` or `VertexMode` at all, so the AI has no way to
+propose them correctly. This isn't an AI reasoning failure, it's a prompt gap:
+we never gave it the option.
+
+Why it matters (`custombot.ts:322-364`, `CustomApiProvider.Google` case):
+- When a non-empty `host` is set AND `AuthMode` resolves to its default
+  (`'header'`) AND an apiKey is present, HuddleLLM injects a raw
+  `Authorization: <key>` header — this path is meant for gateway/proxy
+  deployments (e.g. Rakuten AI Gateway), not the official endpoint (which the
+  `@google/genai` SDK already authenticates itself via `x-goog-api-key`).
+- Leaving `host` blank routes to the SDK's own default endpoint and skips this
+  branch entirely — the cleanest choice for "just the real Google API, no
+  gateway" cases like the one tested here.
+- `VertexMode` controls Vertex AI vs. the plain Generative Language API and is
+  also unmentioned in the prompt.
+
+Not fixed in this session (deferred per user instruction — same category as
+the URL/host gap above, candidate for the same agentic-lookup fix rather than
+hand-writing yet more provider-specific prose into the prompt).
+
 ## Proposed Direction: Agentic tool-calling (on demand)
 Rather than stuffing all provider URL rules into the system prompt for every
 message (token cost, staleness risk), give the assistant an optional tool it

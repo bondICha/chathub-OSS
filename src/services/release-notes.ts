@@ -9,6 +9,7 @@ export const RELEASE_NOTES = [
     version: '2.18.2',
     notes: [
       'releasenote_v2182_settings_assistant',
+      'releasenote_v2182_gemini_auth_fix',
     ],
   },
   {
