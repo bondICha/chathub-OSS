@@ -1,4 +1,10 @@
 {
+  "releasenote_v2182_settings_assistant": {
+    "en": "Settings Assistant (β): a floating AI chat panel on the settings page that answers questions about your config and can propose changes (add/update chatbots, set up a new provider + chatbot together — including Gemini providers, old \"Vertex\" naming and all — or look up a provider's real available models) for you to review and apply. API keys are never sent to the AI.",
+    "ja": "設定アシスタント（β）を追加。設定ページに常駐するAIチャットパネルで、現在の設定について質問に答えたり、設定変更（チャットボットの追加・更新、プロバイダー＋チャットボットのまとめ設定〈Gemini系プロバイダー、旧Vertex表記も含む〉、実際に使えるモデル一覧の確認）を提案します。API キーはAIに送信されません。",
+    "zh-CN": "新增设置助手（β）：设置页面上的浮动 AI 聊天面板，可以回答关于当前配置的问题，并提出配置变更建议（添加/更新聊天机器人、一次性设置新的提供商+聊天机器人——包括 Gemini 系提供商，含旧的 Vertex 命名、查询提供商实际可用的模型列表），供您审核后应用。API 密钥不会发送给 AI。",
+    "zh-TW": "新增設定助手（β）：設定頁面上的浮動 AI 聊天面板，可回答關於目前設定的問題，並提出設定變更建議（新增/更新聊天機器人、一次設定新的提供者+聊天機器人——包括 Gemini 系提供者，含舊的 Vertex 命名、查詢提供者實際可用的模型清單），供您審核後套用。API 金鑰不會傳送給 AI。"
+  },
   "releasenote_v2180_deep_search": {
     "en": "Deep full-text search across all chat history. Type a keyword to scan session bodies in real time with a progress indicator.",
     "ja": "履歴全文検索（Deep Search）を追加。キーワードを入力すると、過去の全セッション本文をリアルタイムでスキャンし、進捗バー付きで検索結果を表示します。",
